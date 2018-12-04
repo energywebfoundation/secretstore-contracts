@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Secret Store permissioning and service contracts collection and toolkit.",
   "main": "index.js",
+  "bin": {
+    "secretstore-contracts": "./index.js"
+  },
   "dependencies": {
     "web3": "^1.0.0-beta.36",
     "yargs": "^12.0.5"
