@@ -2,7 +2,7 @@
   "name": "secretstore-contracts",
   "version": "0.0.0",
   "description": "Secret Store permissioning and service contracts collection and toolkit.",
-  "main": "toolkit.js",
+  "main": "index.js",
   "dependencies": {
     "web3": "^1.0.0-beta.36",
     "yargs": "^12.0.5"
@@ -12,6 +12,7 @@
     "mocha": "^5.2.0"
   },
   "scripts": {
+    "start": "node index.js",
     "test": "mocha"
   },
   "repository": {
