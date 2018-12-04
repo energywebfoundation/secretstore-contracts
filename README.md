@@ -3,6 +3,8 @@ Collection of Secret Store permissioning contracts, service contracts and relate
 
 **Purpose:** To have a central collection of aforementioned contracts, and have a command line tool that makes deployment/checking of these contracts easy.
 
+**Disclaimer:** The contracts are not audited yet, thus they are not recommended to be relied on in a production environment.
+
 If you wonder how to set up a Secret Store cluster, check out the official [config guide](https://wiki.parity.io/Secret-Store-Configuration) and peek into [our other repo](https://github.com/energywebfoundation/local-tobalaba-ss-cluster).
 
 ## Maintainers
