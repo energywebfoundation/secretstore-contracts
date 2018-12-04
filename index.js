@@ -41,7 +41,7 @@ const clargs = require("yargs")
     }, (vargs) => {
         deploy(vargs);
     })
-    .command("checkpermission", "Check permission of accounts for deployed contracts.", (yargs) => {
+    .command("checkpermissions", "Check permission of accounts for deployed contracts.", (yargs) => {
         return yargs.option('address', {
             type: 'string',
             desc: "The address of the permissioning contract.",
@@ -58,7 +58,7 @@ const clargs = require("yargs")
             type: 'array',
             desc: "Accounts to check for the given document ID. Multiple can be given which are checked individually.",
             demandOption: true,
-            alias: "ac"
+            alias: "acc"
         })
         .option('rpc', {
             type: 'string',

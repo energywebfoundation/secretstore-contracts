@@ -38,7 +38,9 @@ async function checkPermissions(args) {
             from = web3.eth.defaultAccount;
         }
     }
-
+    
+    console.log("Checking permissions at contract: " + args.address);
+    let res = {};
     for (let i = 0; i < args.accounts.length; i++) {
         let acc = args.accounts[i];
         let data = await web3.eth.abi.encodeFunctionCall(checkPermissionsAbi, [acc, args.docid]);
@@ -46,8 +48,10 @@ async function checkPermissions(args) {
             to: args.address,
             data: data
         });
-        console.log(acc + ": " + (web3.utils.hexToNumber(result) === 1));
+        res[acc] = (web3.utils.hexToNumber(result) === 1);
+        console.log(acc + ": " + res[acc]);
     };
+    return res;
 }
 
 module.exports = checkPermissions;

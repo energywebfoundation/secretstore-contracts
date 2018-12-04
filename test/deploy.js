@@ -6,7 +6,7 @@ const assert = require('chai').assert;
 const expect = require('chai').expect;
 const web3 = new (require('web3'))("http://127.0.0.1:8545");
 
-const deployer = require("../tools/deploy.js");
+const deployer = require(path.join(__dirname, "../tools/deploy.js"));
 
 const alice = "0x3144de21da6de18061f818836fa3db8f3d6b6989";
 const bob = "0x6c4b8b199a41b721e0a95df9860cf0a18732e76d";
@@ -31,8 +31,8 @@ describe("Dynamic permissioning contract", async function() {
 
     const basicInput = {
         _: [ 'permission' ],
-        c: 'permissionerDynamic',
-        contract: 'permissionerDynamic',
+        c: 'PermissionerDynamic',
+        contract: 'PermissionerDynamic',
         docid: undefined,
         d: undefined,
         accounts: [],
@@ -55,7 +55,7 @@ describe("Dynamic permissioning contract", async function() {
         let vargs = basicInput;
         let contract = await deployer(vargs);
         await contract.methods.addPermission("0xfefefefe", [alice, bob]).send({from: from});
-        checkPermissionsTrue(contract);
+        await checkPermissionsTrue(contract);
     });
 
     it('should not add already existing document key permission', async () => {
@@ -110,7 +110,7 @@ describe("Fire and forget contract", async function() {
     it('should permit correctly', async () => {
         let vargs = basicInput;
         let contract = await deployer(vargs);
-        checkPermissionsTrue(contract);
+        await checkPermissionsTrue(contract);
     });
 
     it('should not permit not existing doc ids', async () => {
@@ -149,7 +149,7 @@ describe("No doc contract", async function() {
     it('should permit correctly', async () => {
         let vargs = basicInput;
         let contract = await deployer(vargs);
-        checkPermissionsTrue(contract);
+        await checkPermissionsTrue(contract);
     });
 
 });
@@ -182,7 +182,6 @@ describe("Static contract", async function() {
     it('should permit correctly', async () => {
         let vargs = basicInput;
         let contract = await deployer(vargs);
-        checkPermissionsTrue(contract);
 
         let allowed = await contract.methods.checkPermissions(alice, "0x45ce99addb0f8385bd24f30da619ddcc0cadadab73e2a4ffb7801083086b3fc2").call();
         assert.isTrue(allowed);

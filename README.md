@@ -1,2 +1,2 @@
 # secretstore-contracts
-Secret Store permissioning and service contracts collection
+Collection Secret Store permissioning contracts, service contracts and related tooling.
