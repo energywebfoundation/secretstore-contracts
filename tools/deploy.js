@@ -41,8 +41,6 @@ async function deploy(args) {
             from = web3.eth.defaultAccount;
         }
     }
-    console.log(ContractJSON.contractName);
-    console.log(argselector[ContractJSON.contractName]);
     let contract = await Contract.deploy({arguments: argselector[ContractJSON.contractName]})
         .send({from: from});
     

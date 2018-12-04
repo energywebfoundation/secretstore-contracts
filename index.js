@@ -1,4 +1,6 @@
+#!/usr/bin/env node
 "use strict";
+
 const {deploy, checkPermissions} = require("./tools");
 
 const clargs = require("yargs")
