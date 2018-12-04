@@ -3,10 +3,10 @@ const {deploy, checkPermissions} = require("./tools");
 
 const clargs = require("yargs")
     .usage('Usage: $0 <command> [options]')
-    .command("permission", "Deploy Secret Store permissioning contracts", (yargs) => {
+    .command("deploypermission", "Deploy Secret Store permissioning contracts", (yargs) => {
         return yargs.option('contract', {
             type: 'string',
-            desc: "Which contract to deploy. Please refer to it by name. E.g.: PermissionerDynamic, or just simply Dynamic. It is used for JSON ABI file lookup.",
+            desc: "Which contract to deploy. Please refer to it by name. E.g.: \"PermissionerDynamic\", or just simply \"Dynamic\". Case sensitive. It is used for JSON ABI file lookup.",
             demandOption: true,
             alias: "c"
         })
@@ -19,7 +19,7 @@ const clargs = require("yargs")
         })
         .option('accounts', {
             type: 'array',
-            desc: "Permissioned accounts to pass to the permissioning contract constructor. Defaults to an empty array.",
+            desc: "Permissioned accounts to pass to the permissioning contract constructor.",
             demandOption: false,
             alias: "acc",
             default: []
@@ -33,7 +33,7 @@ const clargs = require("yargs")
         })
         .option('rpc', {
             type: 'string',
-            desc: "HTTP RPC API endpoint. Defaults to http://localhost:8545",
+            desc: "HTTP RPC API endpoint.",
             demandOption: false,
             alias: "r",
             default: "http://localhost:8545" 
