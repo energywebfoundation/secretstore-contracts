@@ -31,8 +31,8 @@ describe("Dynamic permissioning contract", async function() {
 
     const basicInput = {
         _: [ 'permission' ],
-        c: 'PermissionerDynamic',
-        contract: 'PermissionerDynamic',
+        c: 'PermissioningDynamic',
+        contract: 'PermissioningDynamic',
         docid: undefined,
         d: undefined,
         accounts: [],
@@ -87,8 +87,8 @@ describe("Fire and forget contract", async function() {
 
     const basicInput = {
         _: [ 'permission' ],
-        c: 'PermissionerFireAndForget',
-        contract: 'PermissionerFireAndForget',
+        c: 'PermissioningFireAndForget',
+        contract: 'PermissioningFireAndForget',
         docid: "0xfefefefe",
         d: "0xfefefefe",
         accounts: [alice, bob],
@@ -126,8 +126,8 @@ describe("No doc contract", async function() {
 
     const basicInput = {
         _: [ 'permission' ],
-        c: 'PermissionerNoDoc',
-        contract: 'PermissionerNoDoc',
+        c: 'PermissioningNoDoc',
+        contract: 'PermissioningNoDoc',
         docid: undefined,
         d: undefined,
         accounts: [alice, bob],
@@ -159,8 +159,8 @@ describe("Static contract", async function() {
 
     const basicInput = {
         _: [ 'permission' ],
-        c: 'PermissionerStatic',
-        contract: 'PermissionerStatic',
+        c: 'PermissioningStatic',
+        contract: 'PermissioningStatic',
         docid: undefined,
         d: undefined,
         accounts: [],

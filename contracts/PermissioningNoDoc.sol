@@ -1,11 +1,11 @@
 pragma solidity ^0.4.24;
 
-import "./SecretStorePermissioner.sol";
+import "./SecretStorePermissioning.sol";
 
 // Another fire-and-forget permissioning contract that gives
 // access to any address specified irrespective of the document key
 // Note: this was used in the original Private Transactions tutorial, but not really life-like
-contract PermissionerNoDoc is SecretStorePermissioner {
+contract PermissioningNoDoc is SecretStorePermissioning {
     address[] public addresses;
 
     constructor(address[] _addresses) public {

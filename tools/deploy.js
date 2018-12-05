@@ -4,12 +4,12 @@
 const path = require("path");
 const Web3 = require("web3");
 
-const contractFirstStem = "Permissioner";
+const contractFirstStem = "Permissioning";
 const contractFirstStemLower = contractFirstStem.toLowerCase();
-const contractDynamic = "PermissionerDynamic";
-const contractFireAndForget = "PermissionerFireAndForget";
-const contractNoDoc = "PermissionerNoDoc";
-const contractStatic = "PermissionerStatic";
+const contractDynamic = "PermissioningDynamic";
+const contractFireAndForget = "PermissioningFireAndForget";
+const contractNoDoc = "PermissioningNoDoc";
+const contractStatic = "PermissioningStatic";
 
 async function deploy(args) {
     let argselector = {};

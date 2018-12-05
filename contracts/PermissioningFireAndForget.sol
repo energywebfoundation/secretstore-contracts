@@ -1,10 +1,10 @@
 pragma solidity ^0.4.24;
 
-import "./SecretStorePermissioner.sol";
+import "./SecretStorePermissioning.sol";
 
 // FIre-and-forget permissioning contract for one document key
 // Allows you to specify a doc key and permitted addresses in the constructor
-contract PermissionerFireAndForget is SecretStorePermissioner {
+contract PermissioningFireAndForget is SecretStorePermissioning {
     bytes32 public documentKeyId;
     address[] public addresses;
 

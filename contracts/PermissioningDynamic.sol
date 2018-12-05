@@ -1,10 +1,10 @@
 pragma solidity ^0.4.24;
 
-import "./SecretStorePermissioner.sol";
+import "./SecretStorePermissioning.sol";
 
 
 // Permissioning contract to add an arbitrary number of doc keys and users
-contract PermissionerDynamic is SecretStorePermissioner {
+contract PermissioningDynamic is SecretStorePermissioning {
 
     mapping(bytes32 => address[]) public permissions;
 
