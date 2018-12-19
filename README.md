@@ -63,6 +63,9 @@ Can be found in the [contracts](contracts) folder.
  - **FireAndForget**: one shot contract to only permisison one doc key with accounts. Can be set only in the constructor.
  - **NoDoc**: contract that allows access to all the given addresses irrespective of the document key
  - **Dynamic**: registry type contract to add an arbitrary number of doc keys and accounts
+ - **Registry**: a proper permissining registry contract implementation with ownership/admin support
+ - **Relay**: a permissioning relay contract for upgradeability
+ - **ERC165Query**: a contract that can query other contracts whether they support ERC165 and certain interfaces. Used in the relay contract.
 
 
 ## Contributing
@@ -97,6 +100,14 @@ npm run test
 If you want to compile the contracts, use Truffle
 ```bash
 truffle compile
+```
+
+## Deployment and migration
+
+To deploy simple contracts, use the deployer cl tool. The relay/registry contract is not supported by the tool yet. To deploy those, just simply run
+
+```bash
+truffle migrate
 ```
 
 ## Versioning

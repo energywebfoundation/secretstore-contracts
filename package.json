@@ -20,7 +20,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "npx mocha ./test/* && truffle test ./test/solidity/*",
-    "lint": "npx solium -d contracts/"
+    "lint": "npx solium -d contracts/",
+    "deploytobalaba": "truffle migrate --network tobalaba --reset"
   },
   "repository": {
     "type": "git",
