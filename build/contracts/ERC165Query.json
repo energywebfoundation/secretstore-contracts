@@ -52,8 +52,8 @@
   ],
   "bytecode": "0x608060405234801561001057600080fd5b506100437f01ffc9a70000000000000000000000000000000000000000000000000000000064010000000061007a810204565b6100757fe9c543840000000000000000000000000000000000000000000000000000000064010000000061007a810204565b6100e6565b7fffffffff0000000000000000000000000000000000000000000000000000000080821614156100a957600080fd5b7fffffffff00000000000000000000000000000000000000000000000000000000166000908152602081905260409020805460ff19166001179055565b610248806100f56000396000f30060806040526004361061004b5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166301ffc9a78114610050578063e9c5438414610086575b600080fd5b34801561005c57600080fd5b50610072600160e060020a0319600435166100c1565b604080519115158252519081900360200190f35b34801561009257600080fd5b5061007273ffffffffffffffffffffffffffffffffffffffff60043516600160e060020a0319602435166100e0565b600160e060020a03191660009081526020819052604090205460ff1690565b60006100ec83836100f3565b9392505050565b60006100fe8361010f565b80156100ec57506100ec838361015c565b600061013b827f01ffc9a70000000000000000000000000000000000000000000000000000000061015c565b8015610156575061015482600160e060020a031961015c565b155b92915050565b600080600061016b8585610182565b915091508180156101795750805b95945050505050565b60408051600160e060020a031983166024808301919091528251808303909101815260449091018252602081810180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167f01ffc9a700000000000000000000000000000000000000000000000000000000178152825193516000808252948594939091908183858b617530fa90519098909750955050505050505600a165627a7a72305820ba2e8cef990b1a6d2ade0b1cc0f81911b318de2c913cfb18746274ded809ac1c0029",
   "deployedBytecode": "0x60806040526004361061004b5763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166301ffc9a78114610050578063e9c5438414610086575b600080fd5b34801561005c57600080fd5b50610072600160e060020a0319600435166100c1565b604080519115158252519081900360200190f35b34801561009257600080fd5b5061007273ffffffffffffffffffffffffffffffffffffffff60043516600160e060020a0319602435166100e0565b600160e060020a03191660009081526020819052604090205460ff1690565b60006100ec83836100f3565b9392505050565b60006100fe8361010f565b80156100ec57506100ec838361015c565b600061013b827f01ffc9a70000000000000000000000000000000000000000000000000000000061015c565b8015610156575061015482600160e060020a031961015c565b155b92915050565b600080600061016b8585610182565b915091508180156101795750805b95945050505050565b60408051600160e060020a031983166024808301919091528251808303909101815260449091018252602081810180517bffffffffffffffffffffffffffffffffffffffffffffffffffffffff167f01ffc9a700000000000000000000000000000000000000000000000000000000178152825193516000808252948594939091908183858b617530fa90519098909750955050505050505600a165627a7a72305820ba2e8cef990b1a6d2ade0b1cc0f81911b318de2c913cfb18746274ded809ac1c0029",
-  "sourceMap": "209:352:0:-;;;261:102;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;612:39:10;631:19;612:18;;;;:39;:::i;:::-;292:64:0;311:44;292:18;;;;:64;:::i;:::-;209:352;;951:154:10;1028:25;;;;;;1020:34;;;;;;1060:33;;:20;:33;;;;;;;;;;:40;;-1:-1:-1;;1060:40:10;1096:4;1060:40;;;951:154::o;209:352:0:-;;;;;;;",
-  "deployedSourceMap": "209:352:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;739:141:10;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;739:141:10;-1:-1:-1;;;;;;739:141:10;;;;;;;;;;;;;;;;;;;;;;;369:190:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;369:190:0;;;;;-1:-1:-1;;;;;;369:190:0;;;;;739:141:10;-1:-1:-1;;;;;;842:33:10;821:4;842:33;;;;;;;;;;;;;;739:141::o;369:190:0:-;472:4;495:57;528:9;539:12;495:32;:57::i;:::-;488:64;369:190;-1:-1:-1;;;369:190:0:o;1543:286:11:-;1643:4;1744:24;1760:7;1744:15;:24::i;:::-;:80;;;;;1778:46;1803:7;1812:11;1778:24;:46::i;703:387::-;780:4;965:54;990:7;999:19;965:24;:54::i;:::-;:120;;;;-1:-1:-1;1030:55:11;1055:7;-1:-1:-1;;;;;;1030:24:11;:55::i;:::-;1029:56;965:120;958:127;703:387;-1:-1:-1;;703:387:11:o;3434:398::-;3539:4;3708:12;3722:11;3737:57;3773:7;3782:11;3737:28;:57::i;:::-;3707:87;;;;3809:7;:17;;;;;3820:6;3809:17;3801:26;3434:398;-1:-1:-1;;;;;3434:398:11:o;4331:879::-;4516:74;;;-1:-1:-1;;;;;;4516:74:11;;;;;;;;;;;;26:21:-1;;;22:32;;;6:49;;4516:74:11;;;;;;;25:18:-1;;;61:17;;4516:74:11;182:15:-1;4546:19:11;179:29:-1;160:49;;4757:20:11;;4799:11;;4452:12;4877:19;;;4452:12;;;4516:74;4757:20;;4799:11;;4757:20;25:18:-1;4977:7:11;4935:5;4915:234;5167:13;;4904:245;;5167:13;;-1:-1:-1;4666:540:11;-1:-1:-1;;;;;;4666:540:11:o",
+  "sourceMap": "209:352:0:-;;;261:102;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;612:39:12;631:19;612:18;;;;:39;:::i;:::-;292:64:0;311:44;292:18;;;;:64;:::i;:::-;209:352;;951:154:12;1028:25;;;;;;1020:34;;;;;;1060:33;;:20;:33;;;;;;;;;;:40;;-1:-1:-1;;1060:40:12;1096:4;1060:40;;;951:154::o;209:352:0:-;;;;;;;",
+  "deployedSourceMap": "209:352:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;739:141:12;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;739:141:12;-1:-1:-1;;;;;;739:141:12;;;;;;;;;;;;;;;;;;;;;;;369:190:0;;8:9:-1;5:2;;;30:1;27;20:12;5:2;-1:-1;369:190:0;;;;;-1:-1:-1;;;;;;369:190:0;;;;;739:141:12;-1:-1:-1;;;;;;842:33:12;821:4;842:33;;;;;;;;;;;;;;739:141::o;369:190:0:-;472:4;495:57;528:9;539:12;495:32;:57::i;:::-;488:64;369:190;-1:-1:-1;;;369:190:0:o;1543:286:13:-;1643:4;1744:24;1760:7;1744:15;:24::i;:::-;:80;;;;;1778:46;1803:7;1812:11;1778:24;:46::i;703:387::-;780:4;965:54;990:7;999:19;965:24;:54::i;:::-;:120;;;;-1:-1:-1;1030:55:13;1055:7;-1:-1:-1;;;;;;1030:24:13;:55::i;:::-;1029:56;965:120;958:127;703:387;-1:-1:-1;;703:387:13:o;3434:398::-;3539:4;3708:12;3722:11;3737:57;3773:7;3782:11;3737:28;:57::i;:::-;3707:87;;;;3809:7;:17;;;;;3820:6;3809:17;3801:26;3434:398;-1:-1:-1;;;;;3434:398:13:o;4331:879::-;4516:74;;;-1:-1:-1;;;;;;4516:74:13;;;;;;;;;;;;26:21:-1;;;22:32;;;6:49;;4516:74:13;;;;;;;25:18:-1;;;61:17;;4516:74:13;182:15:-1;4546:19:13;179:29:-1;160:49;;4757:20:13;;4799:11;;4452:12;4877:19;;;4452:12;;;4516:74;4757:20;;4799:11;;4757:20;25:18:-1;4977:7:13;4935:5;4915:234;5167:13;;4904:245;;5167:13;;-1:-1:-1;4666:540:13;-1:-1:-1;;;;;;4666:540:13:o",
   "source": "pragma solidity ^0.4.24;\n\nimport \"./interfaces/IERC165Query.sol\";\nimport \"openzeppelin-solidity/contracts/introspection/ERC165Checker.sol\";\nimport \"openzeppelin-solidity/contracts/introspection/ERC165.sol\";\n\n\ncontract ERC165Query is IERC165Query, ERC165 {\n\n    constructor() public {\n        _registerInterface(this.doesContractImplementInterface.selector);\n    }\n\n    function doesContractImplementInterface(address _contract, bytes4 _interfaceId) external view returns (bool) {\n        return ERC165Checker._supportsInterface(_contract, _interfaceId);\n    }\n}\n\n",
   "sourcePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/ERC165Query.sol",
   "ast": {
@@ -94,7 +94,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 36,
-        "sourceUnit": 1099,
+        "sourceUnit": 2370,
         "src": "66:73:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -105,7 +105,7 @@
         "id": 4,
         "nodeType": "ImportDirective",
         "scope": 36,
-        "sourceUnit": 962,
+        "sourceUnit": 2233,
         "src": "140:66:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -137,10 +137,10 @@
               "id": 7,
               "name": "ERC165",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 961,
+              "referencedDeclaration": 2232,
               "src": "247:6:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC165_$961",
+                "typeIdentifier": "t_contract$_ERC165_$2232",
                 "typeString": "contract ERC165"
               }
             },
@@ -151,8 +151,8 @@
         ],
         "contractDependencies": [
           637,
-          961,
-          1108
+          2232,
+          2379
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -160,8 +160,8 @@
         "id": 35,
         "linearizedBaseContracts": [
           35,
-          961,
-          1108,
+          2232,
+          2379,
           637
         ],
         "name": "ERC165Query",
@@ -187,7 +187,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1253,
+                            "referencedDeclaration": 2524,
                             "src": "311:4:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_ERC165Query_$35",
@@ -234,7 +234,7 @@
                       "name": "_registerInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 960,
+                      "referencedDeclaration": 2231,
                       "src": "292:18:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes4_$returns$__$",
@@ -342,10 +342,10 @@
                         "name": "ERC165Checker",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1098,
+                        "referencedDeclaration": 2369,
                         "src": "495:13:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC165Checker_$1098_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC165Checker_$2369_$",
                           "typeString": "type(library ERC165Checker)"
                         }
                       },
@@ -356,7 +356,7 @@
                       "lValueRequested": false,
                       "memberName": "_supportsInterface",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1007,
+                      "referencedDeclaration": 2278,
                       "src": "495:32:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$_t_bytes4_$returns$_t_bool_$",
@@ -536,7 +536,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 36,
-        "sourceUnit": 1099,
+        "sourceUnit": 2370,
         "src": "66:73:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -547,7 +547,7 @@
         "id": 4,
         "nodeType": "ImportDirective",
         "scope": 36,
-        "sourceUnit": 962,
+        "sourceUnit": 2233,
         "src": "140:66:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -579,10 +579,10 @@
               "id": 7,
               "name": "ERC165",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 961,
+              "referencedDeclaration": 2232,
               "src": "247:6:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC165_$961",
+                "typeIdentifier": "t_contract$_ERC165_$2232",
                 "typeString": "contract ERC165"
               }
             },
@@ -593,8 +593,8 @@
         ],
         "contractDependencies": [
           637,
-          961,
-          1108
+          2232,
+          2379
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -602,8 +602,8 @@
         "id": 35,
         "linearizedBaseContracts": [
           35,
-          961,
-          1108,
+          2232,
+          2379,
           637
         ],
         "name": "ERC165Query",
@@ -629,7 +629,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1253,
+                            "referencedDeclaration": 2524,
                             "src": "311:4:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_ERC165Query_$35",
@@ -676,7 +676,7 @@
                       "name": "_registerInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 960,
+                      "referencedDeclaration": 2231,
                       "src": "292:18:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes4_$returns$__$",
@@ -784,10 +784,10 @@
                         "name": "ERC165Checker",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1098,
+                        "referencedDeclaration": 2369,
                         "src": "495:13:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC165Checker_$1098_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC165Checker_$2369_$",
                           "typeString": "type(library ERC165Checker)"
                         }
                       },
@@ -798,7 +798,7 @@
                       "lValueRequested": false,
                       "memberName": "_supportsInterface",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1007,
+                      "referencedDeclaration": 2278,
                       "src": "495:32:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$_t_bytes4_$returns$_t_bool_$",
@@ -944,14 +944,7 @@
     "name": "solc",
     "version": "0.4.24+commit.e67f0147.Emscripten.clang"
   },
-  "networks": {
-    "401697": {
-      "events": {},
-      "links": {},
-      "address": "0x2a7b7c65db86d2918d442d9f2eb61f2a8d6576b2",
-      "transactionHash": "0x707b57c2047f7f05213ec1e57c7d3425f808822e2c2faf8e7e7b138bfca7c06d"
-    }
-  },
+  "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-01-02T14:43:39.294Z"
+  "updatedAt": "2019-01-04T14:19:13.099Z"
 }

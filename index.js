@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
-const {deploy, checkPermissions} = require("./tools");
+const {deployPermission, checkPermissions, deploySet} = require("./tools");
 
 const clargs = require("yargs")
     .usage('Usage: $0 <command> [options]')
@@ -41,7 +41,25 @@ const clargs = require("yargs")
             default: "http://localhost:8545" 
         })
     }, (vargs) => {
-        deploy(vargs);
+        deployPermission(vargs);
+    })
+    .command("deployset", "Deploy Secret Store node-set contract", (yargs) => {
+        return yargs.option('from', {
+            type: 'string',
+            desc: "Deployer account. Defaults to the first account of the local accounts list.",
+            demandOption: false,
+            alias: "f",
+            default: undefined
+        })
+        .option('rpc', {
+            type: 'string',
+            desc: "HTTP RPC API endpoint.",
+            demandOption: false,
+            alias: "r",
+            default: "http://localhost:8545" 
+        })
+    }, (vargs) => {
+        deploySet(vargs);
     })
     .command("checkpermissions", "Check permission of accounts for deployed contracts.", (yargs) => {
         return yargs.option('address', {

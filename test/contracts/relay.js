@@ -125,15 +125,7 @@ describe("Permissioning relay contract", async function() {
         let registry = new web3.eth.Contract(ContractRegistryJSON.abi, address.registry);
         await registry.methods.permission(testDoc, [alice, bob]).send({from: from});
         checkPermissionsTrue(contract);
-        assert.isFalse(await contract.methods.checkPermissions(alice, "0xcaca").call());
-    });
-
-    it('should query permission correctly', async function() {
-        let contract = await tutils.deployRelay(web3, [address.query, address.registry], {from: from});
-        let registry = await tutils.deployRegistry(web3, [], {from: from});
-        let res = await contract.methods.setPermissioningContract(registry.options.address).send({from: from});
-        let old = await contract.methods.oldPermissioningContracts(0).call();
-        assert.equal(web3.utils.toChecksumAddress(address.registry), old);
+        assert.isFalse(await contract.methods.checkPermissions(alice, testDoc).call());
     });
 
     it('should set new query contract', async function() {
