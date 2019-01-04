@@ -1,8 +1,10 @@
 "use strict";
-const deploy = require("./deploy.js");
+const deployPermission = require("./deploypermission.js");
 const checkPermissions = require("./checkpermissions.js");
+const deploySet = require("./deployset.js");
 
 module.exports = {
-    deploy,
-    checkPermissions
+    deployPermission,
+    checkPermissions,
+    deploySet
 }

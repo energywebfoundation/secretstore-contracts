@@ -6,7 +6,7 @@ const assert = require('chai').assert;
 const expect = require('chai').expect;
 const web3 = new (require('web3'))("http://127.0.0.1:8545");
 
-const deployer = require(path.join(__dirname, "../../tools/deploy.js"));
+const deployer = require(path.join(__dirname, "../../tools/deploypermission.js"));
 
 const alice = "0x3144de21da6de18061f818836fa3db8f3d6b6989";
 const bob = "0x6c4b8b199a41b721e0a95df9860cf0a18732e76d";
@@ -41,7 +41,7 @@ describe("Dynamic permissioning contract", async function() {
         f: undefined,
         rpc: 'http://localhost:8545',
         r: 'http://localhost:8545',
-        '$0': 'deploy.js',
+        '$0': 'deploypermission.js',
     };
     
     it('should deploy', async function() {
@@ -97,7 +97,7 @@ describe("Fire and forget contract", async function() {
         f: undefined,
         rpc: 'http://localhost:8545',
         r: 'http://localhost:8545',
-        '$0': 'deploy.js',
+        '$0': 'deploypermission.js',
     };
     
     it('should deploy', async function() {
@@ -136,7 +136,7 @@ describe("No doc contract", async function() {
         f: undefined,
         rpc: 'http://localhost:8545',
         r: 'http://localhost:8545',
-        '$0': 'deploy.js',
+        '$0': 'deploypermission.js',
     };
     
     it('should deploy', async function() {
@@ -169,7 +169,7 @@ describe("Static contract", async function() {
         f: undefined,
         rpc: 'http://localhost:8545',
         r: 'http://localhost:8545',
-        '$0': 'deploy.js',
+        '$0': 'deploypermission.js',
     };
     
     it('should deploy', async function() {

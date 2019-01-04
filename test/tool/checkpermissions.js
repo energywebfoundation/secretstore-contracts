@@ -9,7 +9,7 @@ const assert = require('chai').assert;
 const expect = require('chai').expect;
 
 const checker = require(path.join(__dirname, "../../tools/checkpermissions.js"));
-const deployer = require(path.join(__dirname, "../../tools/deploy.js"));
+const deployer = require(path.join(__dirname, "../../tools/deploypermission.js"));
 
 const alice = "0x3144de21da6de18061f818836fa3db8f3d6b6989";
 const bob = "0x6c4b8b199a41b721e0a95df9860cf0a18732e76d";

@@ -11,7 +11,7 @@ const contractFireAndForget = "PermissioningFireAndForget";
 const contractNoDoc = "PermissioningNoDoc";
 const contractStatic = "PermissioningStatic";
 
-async function deploy(args) {
+async function deployPermission(args) {
     let argselector = {};
     argselector[contractDynamic] = [];
     argselector[contractFireAndForget] = [args.docid, args.accounts];
@@ -48,4 +48,4 @@ async function deploy(args) {
     return contract;
 }
 
-module.exports = deploy;
+module.exports = deployPermission;
