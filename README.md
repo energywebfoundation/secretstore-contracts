@@ -57,16 +57,22 @@ secretstore-contracts <command> --help
 
 
 #### Contracts
-Can be found in the [contracts](contracts) folder.
- - Permissioning contract **interface**
- - **Static**: contract with burned-in addresses and doc-key
- - **FireAndForget**: one shot contract to only permisison one doc key with accounts. Can be set only in the constructor.
- - **NoDoc**: contract that allows access to all the given addresses irrespective of the document key
- - **Dynamic**: registry type contract to add an arbitrary number of doc keys and accounts
- - **Registry**: a proper permissining registry contract implementation with ownership/admin support
- - **Relay**: a permissioning relay contract for upgradeability
- - **ERC165Query**: a contract that can query other contracts whether they support ERC165 and certain interfaces. Used in the relay contract.
+They can be found in the [contracts](contracts) folder.
 
+- **Permissioning contract interface**
+- **Simple permissioning contracts**
+  - **Static**: contract with burned-in addresses and doc-key
+  - **FireAndForget**: one shot contract to only permisison one doc key with accounts. Can be set only in the constructor.
+  - **NoDoc**: contract that allows access to all the given addresses irrespective of the document key
+  - **Dynamic**: registry type contract to add an arbitrary number of doc keys and accounts
+
+- **Nodes-set contract with migration support**: Taken from [here](https://github.com/parity-contracts/secretstore-key-server-set) and described [here](https://wiki.parity.io/Secret-Store-Configuration#node-set-contracts).
+
+- **Registry**: a proper permissining registry contract implementation with ownership/admin support
+
+- **Relay**: a permissioning relay contract for upgradeability
+  
+- ERC165Query and interface. Contract that can query which interface other contracts implement according to [ERC165](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-165.md).
 
 ## Contributing
 
