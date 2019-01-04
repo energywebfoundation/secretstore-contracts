@@ -1,19 +1,19 @@
 {
-  "contractName": "SecretStorePermissioner",
+  "contractName": "IERC165Query",
   "abi": [
     {
       "constant": true,
       "inputs": [
         {
-          "name": "user",
+          "name": "_contract",
           "type": "address"
         },
         {
-          "name": "document",
-          "type": "bytes32"
+          "name": "_interfaceId",
+          "type": "bytes4"
         }
       ],
-      "name": "checkPermissions",
+      "name": "doesContractImplementInterface",
       "outputs": [
         {
           "name": "",
@@ -29,28 +29,28 @@
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.4.21;\n\ncontract SecretStorePermissioner {\n\n    // Must return true if user has permission to get the specified key, false otherwise\n    function checkPermissions(address user, bytes32 document) public view returns (bool);\n}",
-  "sourcePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/SecretStorePermissioner.sol",
+  "source": "pragma solidity ^0.4.24;\n\n\ncontract IERC165Query {\n\n    function doesContractImplementInterface(address _contract, bytes4 _interfaceId) external view returns (bool);\n}",
+  "sourcePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/IERC165Query.sol",
   "ast": {
-    "absolutePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/SecretStorePermissioner.sol",
+    "absolutePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/IERC165Query.sol",
     "exportedSymbols": {
-      "SecretStorePermissioner": [
-        78
+      "IERC165Query": [
+        637
       ]
     },
-    "id": 79,
+    "id": 638,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 68,
+        "id": 627,
         "literals": [
           "solidity",
           "^",
           "0.4",
-          ".21"
+          ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:1"
+        "src": "0:24:4"
       },
       {
         "baseContracts": [],
@@ -58,34 +58,34 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 78,
+        "id": 637,
         "linearizedBaseContracts": [
-          78
+          637
         ],
-        "name": "SecretStorePermissioner",
+        "name": "IERC165Query",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": null,
             "documentation": null,
-            "id": 77,
+            "id": 636,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
             "modifiers": [],
-            "name": "checkPermissions",
+            "name": "doesContractImplementInterface",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 73,
+              "id": 632,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 70,
-                  "name": "user",
+                  "id": 629,
+                  "name": "_contract",
                   "nodeType": "VariableDeclaration",
-                  "scope": 77,
-                  "src": "181:12:1",
+                  "scope": 636,
+                  "src": "96:17:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -93,10 +93,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 69,
+                    "id": 628,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "181:7:1",
+                    "src": "96:7:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -107,45 +107,45 @@
                 },
                 {
                   "constant": false,
-                  "id": 72,
-                  "name": "document",
+                  "id": 631,
+                  "name": "_interfaceId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 77,
-                  "src": "195:16:1",
+                  "scope": 636,
+                  "src": "115:19:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 71,
-                    "name": "bytes32",
+                    "id": 630,
+                    "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "195:7:1",
+                    "src": "115:6:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
                     }
                   },
                   "value": null,
                   "visibility": "internal"
                 }
               ],
-              "src": "180:32:1"
+              "src": "95:40:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 76,
+              "id": 635,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 75,
+                  "id": 634,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 77,
-                  "src": "234:4:1",
+                  "scope": 636,
+                  "src": "159:4:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -153,10 +153,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 74,
+                    "id": 633,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "234:4:1",
+                    "src": "159:4:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -166,41 +166,41 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "233:6:1"
+              "src": "158:6:4"
             },
-            "scope": 78,
-            "src": "155:85:1",
+            "scope": 637,
+            "src": "56:109:4",
             "stateMutability": "view",
             "superFunction": null,
-            "visibility": "public"
+            "visibility": "external"
           }
         ],
-        "scope": 79,
-        "src": "26:216:1"
+        "scope": 638,
+        "src": "27:140:4"
       }
     ],
-    "src": "0:242:1"
+    "src": "0:167:4"
   },
   "legacyAST": {
-    "absolutePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/SecretStorePermissioner.sol",
+    "absolutePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/IERC165Query.sol",
     "exportedSymbols": {
-      "SecretStorePermissioner": [
-        78
+      "IERC165Query": [
+        637
       ]
     },
-    "id": 79,
+    "id": 638,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 68,
+        "id": 627,
         "literals": [
           "solidity",
           "^",
           "0.4",
-          ".21"
+          ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:1"
+        "src": "0:24:4"
       },
       {
         "baseContracts": [],
@@ -208,34 +208,34 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 78,
+        "id": 637,
         "linearizedBaseContracts": [
-          78
+          637
         ],
-        "name": "SecretStorePermissioner",
+        "name": "IERC165Query",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": null,
             "documentation": null,
-            "id": 77,
+            "id": 636,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
             "modifiers": [],
-            "name": "checkPermissions",
+            "name": "doesContractImplementInterface",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 73,
+              "id": 632,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 70,
-                  "name": "user",
+                  "id": 629,
+                  "name": "_contract",
                   "nodeType": "VariableDeclaration",
-                  "scope": 77,
-                  "src": "181:12:1",
+                  "scope": 636,
+                  "src": "96:17:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -243,10 +243,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 69,
+                    "id": 628,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "181:7:1",
+                    "src": "96:7:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -257,45 +257,45 @@
                 },
                 {
                   "constant": false,
-                  "id": 72,
-                  "name": "document",
+                  "id": 631,
+                  "name": "_interfaceId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 77,
-                  "src": "195:16:1",
+                  "scope": 636,
+                  "src": "115:19:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_bytes32",
-                    "typeString": "bytes32"
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 71,
-                    "name": "bytes32",
+                    "id": 630,
+                    "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "195:7:1",
+                    "src": "115:6:4",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_bytes32",
-                      "typeString": "bytes32"
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
                     }
                   },
                   "value": null,
                   "visibility": "internal"
                 }
               ],
-              "src": "180:32:1"
+              "src": "95:40:4"
             },
             "payable": false,
             "returnParameters": {
-              "id": 76,
+              "id": 635,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 75,
+                  "id": 634,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 77,
-                  "src": "234:4:1",
+                  "scope": 636,
+                  "src": "159:4:4",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -303,10 +303,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 74,
+                    "id": 633,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "234:4:1",
+                    "src": "159:4:4",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -316,20 +316,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "233:6:1"
+              "src": "158:6:4"
             },
-            "scope": 78,
-            "src": "155:85:1",
+            "scope": 637,
+            "src": "56:109:4",
             "stateMutability": "view",
             "superFunction": null,
-            "visibility": "public"
+            "visibility": "external"
           }
         ],
-        "scope": 79,
-        "src": "26:216:1"
+        "scope": 638,
+        "src": "27:140:4"
       }
     ],
-    "src": "0:242:1"
+    "src": "0:167:4"
   },
   "compiler": {
     "name": "solc",
@@ -337,5 +337,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-12-05T10:38:05.010Z"
+  "updatedAt": "2018-12-19T16:07:54.993Z"
 }

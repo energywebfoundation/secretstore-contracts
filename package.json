@@ -7,16 +7,21 @@
     "secretstore-contracts": "./index.js"
   },
   "dependencies": {
-    "web3": "^1.0.0-beta.36",
+    "openzeppelin-solidity": "^2.0.0",
+    "web3": "^1.0.0-beta.37",
     "yargs": "^12.0.5"
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^5.2.0"
+    "chai-as-promised": "^7.1.1",
+    "mocha": "^5.2.0",
+    "solium": "^1.1.8"
   },
   "scripts": {
     "start": "node index.js",
-    "test": "mocha"
+    "test": "npx mocha ./test/* && truffle test ./test/solidity/*",
+    "lint": "npx solium -d contracts/",
+    "deploytobalaba": "truffle migrate --network tobalaba --reset"
   },
   "repository": {
     "type": "git",
@@ -32,7 +37,7 @@
     "cl"
   ],
   "author": "Adam Nagy @ EWF (adam.nagy@energyweb.org)",
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "GPLv3",
   "bugs": {
     "url": "https://github.com/energywebfoundation/secretstore-contracts/issues"
   },
