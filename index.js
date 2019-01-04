@@ -5,10 +5,12 @@ const {deployPermission, checkPermissions, deploySet} = require("./tools");
 
 const clargs = require("yargs")
     .usage('Usage: $0 <command> [options]')
-    .command("deploypermission", "Deploy Secret Store permissioning contracts", (yargs) => {
-        return yargs.option('contract', {
+    .command("deploypermission", "Deploy simple Secret Store permissioning contracts", (yargs) => {
+        return yargs
+        .option('contract', {
             type: 'string',
-            desc: "Which contract to deploy. Please refer to it by name. E.g.: \"PermissionerDynamic\", or just simply \"Dynamic\". Case sensitive. It is used for JSON ABI file lookup.",
+            desc: "Which contract to deploy. Please refer to it by name. E.g.: \"PermissioningDynamic\", or just simply \"Dynamic\". Case sensitive. It is used for JSON ABI file lookup.",
+            choices: ['PermissioningDynamic', 'Dynamic', 'PermissioningNoDoc', 'NoDoc', 'PermissioningStatic', 'Static', 'PermissioningFireAndForget', 'FireAndForget'],
             demandOption: true,
             alias: "c"
         })
