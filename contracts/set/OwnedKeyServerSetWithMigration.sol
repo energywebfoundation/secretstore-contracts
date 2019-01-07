@@ -58,61 +58,61 @@ contract OwnedKeyServerSetWithMigration is Ownable, KeyServerSetWithMigration {
 
     modifier notAnEmptyString(string value) {
         bytes memory castValue = bytes(value);
-        require(castValue.length != 0);
+        require(castValue.length != 0, "String is empty.");
         _;
     }
 
     /// Only if valid public is passed
     modifier isValidPublic(bytes keyServerPublic) {
-        require(checkPublic(keyServerPublic));
+        require(checkPublic(keyServerPublic), "Public key is not valid.");
         _;
     }
 
     /// Only run if server is currently on current set.
     modifier isOnCurrentSet(address keyServer) {
-        require(keccak256(bytes(currentSet.map[keyServer].ip)) != keccak256(""));
+        require(keccak256(bytes(currentSet.map[keyServer].ip)) != keccak256(""), "Server is not in the current set.");
         _;
     }
 
     /// Only run if server is currently on migration set.
     modifier isOnMigrationSet(address keyServer) {
-        require(keccak256(bytes(migrationSet.map[keyServer].ip)) != keccak256(""));
+        require(keccak256(bytes(migrationSet.map[keyServer].ip)) != keccak256(""), "Server is not in the migrations set.");
         _;
     }
 
     /// Only run if server is currently on new set.
     modifier isOnNewSet(address keyServer) {
-        require(keccak256(bytes(newSet.map[keyServer].ip)) != keccak256(""));
+        require(keccak256(bytes(newSet.map[keyServer].ip)) != keccak256(""), "Server is not in the new set.");
         _;
     }
 
     /// Only run if server is currently on new set.
     modifier isNotOnNewSet(address keyServer) {
-        require(keccak256(bytes(newSet.map[keyServer].ip)) == keccak256(""));
+        require(keccak256(bytes(newSet.map[keyServer].ip)) == keccak256(""), "Server is in the new set.");
         _;
     }
 
     /// Only when no active migration process.
     modifier noActiveMigration {
-        require(migrationMaster == address(0));
+        require(migrationMaster == address(0), "There is an active migration.");
         _;
     }
 
     /// Only when migration with given id is in progress.
     modifier isActiveMigration(bytes32 id) {
-        require(migrationId == id);
+        require(migrationId == id, "Migration with given id is not active.");
         _;
     }
 
     /// Only when migration id is valid.
     modifier isValidMigrationId(bytes32 id) {
-        require(id != bytes32(0));
+        require(id != bytes32(0), "Migration id is not valid.");
         _;
     }
 
     /// Only when migration is required.
     modifier whenMigrationRequired {
-        require(!areEqualSets(currentSet, newSet));
+        require(!areEqualSets(currentSet, newSet), "Migration is not required.");
         _;
     }
 
@@ -120,7 +120,8 @@ contract OwnedKeyServerSetWithMigration is Ownable, KeyServerSetWithMigration {
     modifier isPossibleMigrationParticipant {
         require(
             keccak256(bytes(currentSet.map[msg.sender].ip)) != keccak256("") ||
-            keccak256(bytes(newSet.map[msg.sender].ip)) != keccak256(""));
+            keccak256(bytes(newSet.map[msg.sender].ip)) != keccak256(""),
+            "Sender is not a potential migration participant.");
         _;
     }
 
@@ -128,12 +129,15 @@ contract OwnedKeyServerSetWithMigration is Ownable, KeyServerSetWithMigration {
     modifier isMigrationParticipant(address keyServer) {
         require(
             keccak256(bytes(currentSet.map[keyServer].ip)) != keccak256("") ||
-            keccak256(bytes(migrationSet.map[keyServer].ip)) != keccak256(""));
+            keccak256(bytes(migrationSet.map[keyServer].ip)) != keccak256(""),
+            "Server is not a migration participant.");
         _;
     }
 
     /// We do not support direct payments.
-    function() payable public { revert(); }
+    function() public payable {
+        revert("Contract does not support direct payments.");
+    }
 
     /// Get number of block when current set has been changed last time.
     function getCurrentLastChange() external view returns (uint256) {
@@ -143,7 +147,7 @@ contract OwnedKeyServerSetWithMigration is Ownable, KeyServerSetWithMigration {
     /// Get index of given key server in current set.
     function getCurrentKeyServerIndex(address keyServer) external view returns (uint8) {
         KeyServer storage entry = currentSet.map[keyServer];
-        require(keccak256(bytes(entry.ip)) != keccak256(""));
+        require(keccak256(bytes(entry.ip)) != keccak256(""), "Entry does not exist.");
         return entry.index;
     }
 
@@ -154,7 +158,7 @@ contract OwnedKeyServerSetWithMigration is Ownable, KeyServerSetWithMigration {
 
     /// Get address of key server in current set.
     function getCurrentKeyServer(uint8 index) external view returns (address) {
-        require(index < currentSet.list.length);
+        require(index < currentSet.list.length, "Index is out of bounds.");
         return currentSet.list[index];
     }
 
@@ -164,12 +168,12 @@ contract OwnedKeyServerSetWithMigration is Ownable, KeyServerSetWithMigration {
     }
 
     /// Get current key server public key.
-    function getCurrentKeyServerPublic(address keyServer) isOnCurrentSet(keyServer) external view returns (bytes) {
+    function getCurrentKeyServerPublic(address keyServer) external view isOnCurrentSet(keyServer) returns (bytes) {
         return currentSet.map[keyServer].publicKey;
     }
 
     /// Get current key server address.
-    function getCurrentKeyServerAddress(address keyServer) isOnCurrentSet(keyServer) external view returns (string) {
+    function getCurrentKeyServerAddress(address keyServer) external view isOnCurrentSet(keyServer) returns (string) {
         return currentSet.map[keyServer].ip;
     }
 
@@ -179,12 +183,12 @@ contract OwnedKeyServerSetWithMigration is Ownable, KeyServerSetWithMigration {
     }
 
     /// Get migration key server public key.
-    function getMigrationKeyServerPublic(address keyServer) isOnMigrationSet(keyServer) external view returns (bytes) {
+    function getMigrationKeyServerPublic(address keyServer) external view isOnMigrationSet(keyServer) returns (bytes) {
         return migrationSet.map[keyServer].publicKey;
     }
 
     /// Get migration key server address.
-    function getMigrationKeyServerAddress(address keyServer) isOnMigrationSet(keyServer) external view returns (string) {
+    function getMigrationKeyServerAddress(address keyServer) external view isOnMigrationSet(keyServer) returns (string) {
         return migrationSet.map[keyServer].ip;
     }
 
@@ -194,24 +198,24 @@ contract OwnedKeyServerSetWithMigration is Ownable, KeyServerSetWithMigration {
     }
 
     /// Get new key server public key.
-    function getNewKeyServerPublic(address keyServer) isOnNewSet(keyServer) external view returns (bytes) {
+    function getNewKeyServerPublic(address keyServer) external view isOnNewSet(keyServer) returns (bytes) {
         return newSet.map[keyServer].publicKey;
     }
 
     /// Get new key server address.
-    function getNewKeyServerAddress(address keyServer) isOnNewSet(keyServer) external view returns (string) {
+    function getNewKeyServerAddress(address keyServer) external view isOnNewSet(keyServer) returns (string) {
         return newSet.map[keyServer].ip;
     }
 
     /// Get migration id.
-    function getMigrationId() isValidMigrationId(migrationId) external view returns (bytes32) {
+    function getMigrationId() external view isValidMigrationId(migrationId) returns (bytes32) {
         return migrationId;
     }
 
     /// Start migration.
     function startMigration(bytes32 id) external noActiveMigration isValidMigrationId(id) whenMigrationRequired isPossibleMigrationParticipant {
         // migration to empty set is impossible
-        require (newSet.list.length != 0);
+        require (newSet.list.length != 0, "Migration to empty set is impossible.");
 
         migrationMaster = msg.sender;
         migrationId = id;
@@ -221,7 +225,7 @@ contract OwnedKeyServerSetWithMigration is Ownable, KeyServerSetWithMigration {
 
     /// Confirm migration.
     function confirmMigration(bytes32 id) external isValidMigrationId(id) isActiveMigration(id) isOnMigrationSet(msg.sender) {
-        require(!migrationConfirmations[msg.sender]);
+        require(!migrationConfirmations[msg.sender], "Migration is already confirmed.");
         migrationConfirmations[msg.sender] = true;
 
         // check if migration is completed
@@ -263,7 +267,7 @@ contract OwnedKeyServerSetWithMigration is Ownable, KeyServerSetWithMigration {
     /// Complete initialization. Before this function is called, all calls to addKeyServer/removeKeyServer
     /// affect both newSet and currentSet.
     function completeInitialization() public onlyOwner {
-        require(!isInitialized);
+        require(!isInitialized, "Not initialized!");
         isInitialized = true;
     }
 
@@ -347,7 +351,7 @@ contract OwnedKeyServerSetWithMigration is Ownable, KeyServerSetWithMigration {
     /// Append new key serer to set.
     function appendToSet(Set storage set, bytes keyServerPublic, string keyServerIp) private returns (address) {
         // we do not support > 256 key servers in the list
-        require(set.list.length < 256);
+        require(set.list.length < 256, "Number of servers must be smaller than 256.");
 
         address keyServer = computeAddress(keyServerPublic);
         set.map[keyServer].index = uint8(set.list.length);

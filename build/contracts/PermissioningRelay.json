@@ -290,7 +290,7 @@
         "id": 417,
         "nodeType": "ImportDirective",
         "scope": 626,
-        "sourceUnit": 2511,
+        "sourceUnit": 2530,
         "src": "147:63:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -301,7 +301,7 @@
         "id": 418,
         "nodeType": "ImportDirective",
         "scope": 626,
-        "sourceUnit": 2255,
+        "sourceUnit": 2274,
         "src": "211:66:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -333,10 +333,10 @@
               "id": 421,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2510,
+              "referencedDeclaration": 2529,
               "src": "338:7:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$2510",
+                "typeIdentifier": "t_contract$_Ownable_$2529",
                 "typeString": "contract Ownable"
               }
             },
@@ -351,10 +351,10 @@
               "id": 423,
               "name": "ERC165",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2254,
+              "referencedDeclaration": 2273,
               "src": "347:6:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC165_$2254",
+                "typeIdentifier": "t_contract$_ERC165_$2273",
                 "typeString": "contract ERC165"
               }
             },
@@ -365,9 +365,9 @@
         ],
         "contractDependencies": [
           649,
-          2254,
-          2401,
-          2510
+          2273,
+          2420,
+          2529
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -375,9 +375,9 @@
         "id": 625,
         "linearizedBaseContracts": [
           625,
-          2254,
-          2401,
-          2510,
+          2273,
+          2420,
+          2529,
           649
         ],
         "name": "PermissioningRelay",
@@ -649,10 +649,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2528,
-                        2529
+                        2547,
+                        2548
                       ],
-                      "referencedDeclaration": 2529,
+                      "referencedDeclaration": 2548,
                       "src": "670:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -846,10 +846,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2528,
-                        2529
+                        2547,
+                        2548
                       ],
-                      "referencedDeclaration": 2529,
+                      "referencedDeclaration": 2548,
                       "src": "824:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -888,7 +888,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2556,
+                            "referencedDeclaration": 2575,
                             "src": "1071:4:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -935,7 +935,7 @@
                       "name": "_registerInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2253,
+                      "referencedDeclaration": 2272,
                       "src": "1052:18:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes4_$returns$__$",
@@ -1007,7 +1007,7 @@
                                   "name": "this",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2556,
+                                  "referencedDeclaration": 2575,
                                   "src": "1144:4:3",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -1021,7 +1021,7 @@
                                 "lValueRequested": false,
                                 "memberName": "owner",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 2435,
+                                "referencedDeclaration": 2454,
                                 "src": "1144:10:3",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
@@ -1054,7 +1054,7 @@
                                   "name": "this",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2556,
+                                  "referencedDeclaration": 2575,
                                   "src": "1178:4:3",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -1068,7 +1068,7 @@
                                 "lValueRequested": false,
                                 "memberName": "isOwner",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 2455,
+                                "referencedDeclaration": 2474,
                                 "src": "1178:12:3",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_external_view$__$returns$_t_bool_$",
@@ -1107,7 +1107,7 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2556,
+                                "referencedDeclaration": 2575,
                                 "src": "1214:4:3",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -1121,7 +1121,7 @@
                               "lValueRequested": false,
                               "memberName": "renounceOwnership",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 2474,
+                              "referencedDeclaration": 2493,
                               "src": "1214:22:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
@@ -1160,7 +1160,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2556,
+                              "referencedDeclaration": 2575,
                               "src": "1260:4:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -1174,7 +1174,7 @@
                             "lValueRequested": false,
                             "memberName": "transferOwnership",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 2486,
+                            "referencedDeclaration": 2505,
                             "src": "1260:22:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -1213,7 +1213,7 @@
                       "name": "_registerInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2253,
+                      "referencedDeclaration": 2272,
                       "src": "1112:18:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes4_$returns$__$",
@@ -1786,10 +1786,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2528,
-                        2529
+                        2547,
+                        2548
                       ],
-                      "referencedDeclaration": 2529,
+                      "referencedDeclaration": 2548,
                       "src": "1739:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1838,7 +1838,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2556,
+                              "referencedDeclaration": 2575,
                               "src": "1886:4:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -1935,10 +1935,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2528,
-                        2529
+                        2547,
+                        2548
                       ],
-                      "referencedDeclaration": 2529,
+                      "referencedDeclaration": 2548,
                       "src": "1870:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2050,10 +2050,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2528,
-                        2529
+                        2547,
+                        2548
                       ],
-                      "referencedDeclaration": 2529,
+                      "referencedDeclaration": 2548,
                       "src": "1968:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2438,7 +2438,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2444,
+                  "referencedDeclaration": 2463,
                   "src": "1701:9:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -2656,10 +2656,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2528,
-                        2529
+                        2547,
+                        2548
                       ],
-                      "referencedDeclaration": 2529,
+                      "referencedDeclaration": 2548,
                       "src": "2539:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2889,7 +2889,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2444,
+                  "referencedDeclaration": 2463,
                   "src": "2501:9:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -3008,7 +3008,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2556,
+                            "referencedDeclaration": 2575,
                             "src": "2927:4:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -3251,7 +3251,7 @@
         "id": 417,
         "nodeType": "ImportDirective",
         "scope": 626,
-        "sourceUnit": 2511,
+        "sourceUnit": 2530,
         "src": "147:63:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -3262,7 +3262,7 @@
         "id": 418,
         "nodeType": "ImportDirective",
         "scope": 626,
-        "sourceUnit": 2255,
+        "sourceUnit": 2274,
         "src": "211:66:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -3294,10 +3294,10 @@
               "id": 421,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2510,
+              "referencedDeclaration": 2529,
               "src": "338:7:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$2510",
+                "typeIdentifier": "t_contract$_Ownable_$2529",
                 "typeString": "contract Ownable"
               }
             },
@@ -3312,10 +3312,10 @@
               "id": 423,
               "name": "ERC165",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2254,
+              "referencedDeclaration": 2273,
               "src": "347:6:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC165_$2254",
+                "typeIdentifier": "t_contract$_ERC165_$2273",
                 "typeString": "contract ERC165"
               }
             },
@@ -3326,9 +3326,9 @@
         ],
         "contractDependencies": [
           649,
-          2254,
-          2401,
-          2510
+          2273,
+          2420,
+          2529
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -3336,9 +3336,9 @@
         "id": 625,
         "linearizedBaseContracts": [
           625,
-          2254,
-          2401,
-          2510,
+          2273,
+          2420,
+          2529,
           649
         ],
         "name": "PermissioningRelay",
@@ -3610,10 +3610,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2528,
-                        2529
+                        2547,
+                        2548
                       ],
-                      "referencedDeclaration": 2529,
+                      "referencedDeclaration": 2548,
                       "src": "670:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -3807,10 +3807,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2528,
-                        2529
+                        2547,
+                        2548
                       ],
-                      "referencedDeclaration": 2529,
+                      "referencedDeclaration": 2548,
                       "src": "824:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -3849,7 +3849,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2556,
+                            "referencedDeclaration": 2575,
                             "src": "1071:4:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -3896,7 +3896,7 @@
                       "name": "_registerInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2253,
+                      "referencedDeclaration": 2272,
                       "src": "1052:18:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes4_$returns$__$",
@@ -3968,7 +3968,7 @@
                                   "name": "this",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2556,
+                                  "referencedDeclaration": 2575,
                                   "src": "1144:4:3",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -3982,7 +3982,7 @@
                                 "lValueRequested": false,
                                 "memberName": "owner",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 2435,
+                                "referencedDeclaration": 2454,
                                 "src": "1144:10:3",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_external_view$__$returns$_t_address_$",
@@ -4015,7 +4015,7 @@
                                   "name": "this",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 2556,
+                                  "referencedDeclaration": 2575,
                                   "src": "1178:4:3",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -4029,7 +4029,7 @@
                                 "lValueRequested": false,
                                 "memberName": "isOwner",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 2455,
+                                "referencedDeclaration": 2474,
                                 "src": "1178:12:3",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_external_view$__$returns$_t_bool_$",
@@ -4068,7 +4068,7 @@
                                 "name": "this",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 2556,
+                                "referencedDeclaration": 2575,
                                 "src": "1214:4:3",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -4082,7 +4082,7 @@
                               "lValueRequested": false,
                               "memberName": "renounceOwnership",
                               "nodeType": "MemberAccess",
-                              "referencedDeclaration": 2474,
+                              "referencedDeclaration": 2493,
                               "src": "1214:22:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
@@ -4121,7 +4121,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2556,
+                              "referencedDeclaration": 2575,
                               "src": "1260:4:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -4135,7 +4135,7 @@
                             "lValueRequested": false,
                             "memberName": "transferOwnership",
                             "nodeType": "MemberAccess",
-                            "referencedDeclaration": 2486,
+                            "referencedDeclaration": 2505,
                             "src": "1260:22:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
@@ -4174,7 +4174,7 @@
                       "name": "_registerInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2253,
+                      "referencedDeclaration": 2272,
                       "src": "1112:18:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes4_$returns$__$",
@@ -4747,10 +4747,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2528,
-                        2529
+                        2547,
+                        2548
                       ],
-                      "referencedDeclaration": 2529,
+                      "referencedDeclaration": 2548,
                       "src": "1739:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4799,7 +4799,7 @@
                               "name": "this",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2556,
+                              "referencedDeclaration": 2575,
                               "src": "1886:4:3",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -4896,10 +4896,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2528,
-                        2529
+                        2547,
+                        2548
                       ],
-                      "referencedDeclaration": 2529,
+                      "referencedDeclaration": 2548,
                       "src": "1870:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -5011,10 +5011,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2528,
-                        2529
+                        2547,
+                        2548
                       ],
-                      "referencedDeclaration": 2529,
+                      "referencedDeclaration": 2548,
                       "src": "1968:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -5399,7 +5399,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2444,
+                  "referencedDeclaration": 2463,
                   "src": "1701:9:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -5617,10 +5617,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2528,
-                        2529
+                        2547,
+                        2548
                       ],
-                      "referencedDeclaration": 2529,
+                      "referencedDeclaration": 2548,
                       "src": "2539:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -5850,7 +5850,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 2444,
+                  "referencedDeclaration": 2463,
                   "src": "2501:9:3",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -5969,7 +5969,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2556,
+                            "referencedDeclaration": 2575,
                             "src": "2927:4:3",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_PermissioningRelay_$625",
@@ -6158,5 +6158,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-01-04T15:28:12.928Z"
+  "updatedAt": "2019-01-07T13:12:12.702Z"
 }
