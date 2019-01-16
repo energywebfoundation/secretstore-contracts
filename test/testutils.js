@@ -6,9 +6,6 @@ const ContractQueryJSON = require(path.join(__dirname, "../build/contracts/ERC16
 const ContractRelayJSON = require(path.join(__dirname, "../build/contracts/PermissioningRelay.json"));
 const ContractRegistryJSON = require(path.join(__dirname, "../build/contracts/PermissioningRegistry.json"));
 
-
-
-
 async function addresses(web3) {
 
     let id = await web3.eth.net.getId();
