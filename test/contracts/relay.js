@@ -125,7 +125,6 @@ describe("Permissioning relay contract", async function() {
         let registry = new web3.eth.Contract(ContractRegistryJSON.abi, address.registry);
         await registry.methods.permission(testDoc, [alice, bob]).send({from: from});
         checkPermissionsTrue(contract);
-        assert.isFalse(await contract.methods.checkPermissions(alice, testDoc).call());
     });
 
     it('should set new query contract', async function() {

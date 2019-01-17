@@ -345,17 +345,17 @@
     "absolutePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/set/KeyServerSet.sol",
     "exportedSymbols": {
       "KeyServerSet": [
-        696
+        452
       ],
       "KeyServerSetWithMigration": [
-        820
+        576
       ]
     },
-    "id": 821,
+    "id": 577,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 651,
+        "id": 407,
         "literals": [
           "solidity",
           "^",
@@ -363,7 +363,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "671:24:6"
+        "src": "671:24:2"
       },
       {
         "baseContracts": [],
@@ -371,9 +371,9 @@
         "contractKind": "interface",
         "documentation": "Simple key server set.",
         "fullyImplemented": false,
-        "id": 696,
+        "id": 452,
         "linearizedBaseContracts": [
-          696
+          452
         ],
         "name": "KeyServerSet",
         "nodeType": "ContractDefinition",
@@ -381,7 +381,7 @@
           {
             "body": null,
             "documentation": "Get number of block when current set has been changed last time.",
-            "id": 656,
+            "id": 412,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -389,23 +389,23 @@
             "name": "getCurrentLastChange",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 652,
+              "id": 408,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "855:2:6"
+              "src": "855:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 655,
+              "id": 411,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 654,
+                  "id": 410,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 656,
-                  "src": "881:7:6",
+                  "scope": 412,
+                  "src": "881:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -413,10 +413,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 653,
+                    "id": 409,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "881:7:6",
+                    "src": "881:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -426,10 +426,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "880:9:6"
+              "src": "880:9:2"
             },
-            "scope": 696,
-            "src": "826:64:6",
+            "scope": 452,
+            "src": "826:64:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -437,7 +437,7 @@
           {
             "body": null,
             "documentation": "Get index of given key server in current set.",
-            "id": 663,
+            "id": 419,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -445,16 +445,16 @@
             "name": "getCurrentKeyServerIndex",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 659,
+              "id": 415,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 658,
+                  "id": 414,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 663,
-                  "src": "983:17:6",
+                  "scope": 419,
+                  "src": "983:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -462,10 +462,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 657,
+                    "id": 413,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "983:7:6",
+                    "src": "983:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -475,20 +475,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "982:19:6"
+              "src": "982:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 662,
+              "id": 418,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 661,
+                  "id": 417,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 663,
-                  "src": "1025:5:6",
+                  "scope": 419,
+                  "src": "1025:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -496,10 +496,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 660,
+                    "id": 416,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1025:5:6",
+                    "src": "1025:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -509,10 +509,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1024:7:6"
+              "src": "1024:7:2"
             },
-            "scope": 696,
-            "src": "949:83:6",
+            "scope": 452,
+            "src": "949:83:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -520,7 +520,7 @@
           {
             "body": null,
             "documentation": "Get count of key servers in current set.",
-            "id": 668,
+            "id": 424,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -528,23 +528,23 @@
             "name": "getCurrentKeyServersCount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 664,
+              "id": 420,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1120:2:6"
+              "src": "1120:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 667,
+              "id": 423,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 666,
+                  "id": 422,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 668,
-                  "src": "1146:5:6",
+                  "scope": 424,
+                  "src": "1146:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -552,10 +552,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 665,
+                    "id": 421,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1146:5:6",
+                    "src": "1146:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -565,10 +565,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1145:7:6"
+              "src": "1145:7:2"
             },
-            "scope": 696,
-            "src": "1086:67:6",
+            "scope": 452,
+            "src": "1086:67:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -576,7 +576,7 @@
           {
             "body": null,
             "documentation": "Get address of key server in current set.",
-            "id": 675,
+            "id": 431,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -584,16 +584,16 @@
             "name": "getCurrentKeyServer",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 671,
+              "id": 427,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 670,
+                  "id": 426,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 675,
-                  "src": "1237:11:6",
+                  "scope": 431,
+                  "src": "1237:11:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -601,10 +601,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 669,
+                    "id": 425,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1237:5:6",
+                    "src": "1237:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -614,20 +614,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1236:13:6"
+              "src": "1236:13:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 674,
+              "id": 430,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 673,
+                  "id": 429,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 675,
-                  "src": "1273:7:6",
+                  "scope": 431,
+                  "src": "1273:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -635,10 +635,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 672,
+                    "id": 428,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1273:7:6",
+                    "src": "1273:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -648,10 +648,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1272:9:6"
+              "src": "1272:9:2"
             },
-            "scope": 696,
-            "src": "1208:74:6",
+            "scope": 452,
+            "src": "1208:74:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -659,7 +659,7 @@
           {
             "body": null,
             "documentation": "Get all current key servers.",
-            "id": 681,
+            "id": 437,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -667,23 +667,23 @@
             "name": "getCurrentKeyServers",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 676,
+              "id": 432,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1354:2:6"
+              "src": "1354:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 680,
+              "id": 436,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 679,
+                  "id": 435,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 681,
-                  "src": "1380:9:6",
+                  "scope": 437,
+                  "src": "1380:9:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -692,19 +692,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 677,
+                      "id": 433,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1380:7:6",
+                      "src": "1380:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 678,
+                    "id": 434,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "1380:9:6",
+                    "src": "1380:9:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -714,10 +714,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1379:11:6"
+              "src": "1379:11:2"
             },
-            "scope": 696,
-            "src": "1325:66:6",
+            "scope": 452,
+            "src": "1325:66:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -725,7 +725,7 @@
           {
             "body": null,
             "documentation": "Get current key server public key.",
-            "id": 688,
+            "id": 444,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -733,16 +733,16 @@
             "name": "getCurrentKeyServerPublic",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 684,
+              "id": 440,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 683,
+                  "id": 439,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 688,
-                  "src": "1474:17:6",
+                  "scope": 444,
+                  "src": "1474:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -750,10 +750,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 682,
+                    "id": 438,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1474:7:6",
+                    "src": "1474:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -763,20 +763,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1473:19:6"
+              "src": "1473:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 687,
+              "id": 443,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 686,
+                  "id": 442,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 688,
-                  "src": "1516:5:6",
+                  "scope": 444,
+                  "src": "1516:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -784,10 +784,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 685,
+                    "id": 441,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1516:5:6",
+                    "src": "1516:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -797,10 +797,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1515:7:6"
+              "src": "1515:7:2"
             },
-            "scope": 696,
-            "src": "1439:84:6",
+            "scope": 452,
+            "src": "1439:84:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -808,7 +808,7 @@
           {
             "body": null,
             "documentation": "Get current key server address.",
-            "id": 695,
+            "id": 451,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -816,16 +816,16 @@
             "name": "getCurrentKeyServerAddress",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 691,
+              "id": 447,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 690,
+                  "id": 446,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 695,
-                  "src": "1604:17:6",
+                  "scope": 451,
+                  "src": "1604:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -833,10 +833,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 689,
+                    "id": 445,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1604:7:6",
+                    "src": "1604:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -846,20 +846,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1603:19:6"
+              "src": "1603:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 694,
+              "id": 450,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 693,
+                  "id": 449,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 695,
-                  "src": "1646:6:6",
+                  "scope": 451,
+                  "src": "1646:6:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -867,10 +867,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 692,
+                    "id": 448,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1646:6:6",
+                    "src": "1646:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -880,17 +880,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1645:8:6"
+              "src": "1645:8:2"
             },
-            "scope": 696,
-            "src": "1568:86:6",
+            "scope": 452,
+            "src": "1568:86:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 821,
-        "src": "724:932:6"
+        "scope": 577,
+        "src": "724:932:2"
       },
       {
         "baseContracts": [],
@@ -898,9 +898,9 @@
         "contractKind": "interface",
         "documentation": "Key server set with migration support.",
         "fullyImplemented": false,
-        "id": 820,
+        "id": 576,
         "linearizedBaseContracts": [
-          820
+          576
         ],
         "name": "KeyServerSetWithMigration",
         "nodeType": "ContractDefinition",
@@ -908,21 +908,21 @@
           {
             "anonymous": false,
             "documentation": "When new server is added to new set.",
-            "id": 700,
+            "id": 456,
             "name": "KeyServerAdded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 699,
+              "id": 455,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 698,
+                  "id": 454,
                   "indexed": false,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 700,
-                  "src": "1809:17:6",
+                  "scope": 456,
+                  "src": "1809:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -930,10 +930,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 697,
+                    "id": 453,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1809:7:6",
+                    "src": "1809:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -943,28 +943,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1808:19:6"
+              "src": "1808:19:2"
             },
-            "src": "1788:40:6"
+            "src": "1788:40:2"
           },
           {
             "anonymous": false,
             "documentation": "When existing server is removed from new set.",
-            "id": 704,
+            "id": 460,
             "name": "KeyServerRemoved",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 703,
+              "id": 459,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 702,
+                  "id": 458,
                   "indexed": false,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 704,
-                  "src": "1910:17:6",
+                  "scope": 460,
+                  "src": "1910:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -972,10 +972,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 701,
+                    "id": 457,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1910:7:6",
+                    "src": "1910:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -985,42 +985,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1909:19:6"
+              "src": "1909:19:2"
             },
-            "src": "1887:42:6"
+            "src": "1887:42:2"
           },
           {
             "anonymous": false,
             "documentation": "When migration is started.",
-            "id": 706,
+            "id": 462,
             "name": "MigrationStarted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 705,
+              "id": 461,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1991:2:6"
+              "src": "1991:2:2"
             },
-            "src": "1969:25:6"
+            "src": "1969:25:2"
           },
           {
             "anonymous": false,
             "documentation": "When migration is completed.",
-            "id": 708,
+            "id": 464,
             "name": "MigrationCompleted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 707,
+              "id": 463,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2060:2:6"
+              "src": "2060:2:2"
             },
-            "src": "2036:27:6"
+            "src": "2036:27:2"
           },
           {
             "body": null,
             "documentation": "Get number of block when current set has been changed last time.",
-            "id": 713,
+            "id": 469,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1028,23 +1028,23 @@
             "name": "getCurrentLastChange",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 709,
+              "id": 465,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2171:2:6"
+              "src": "2171:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 712,
+              "id": 468,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 711,
+                  "id": 467,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 713,
-                  "src": "2197:7:6",
+                  "scope": 469,
+                  "src": "2197:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1052,10 +1052,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 710,
+                    "id": 466,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2197:7:6",
+                    "src": "2197:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1065,10 +1065,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2196:9:6"
+              "src": "2196:9:2"
             },
-            "scope": 820,
-            "src": "2142:64:6",
+            "scope": 576,
+            "src": "2142:64:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1076,7 +1076,7 @@
           {
             "body": null,
             "documentation": "Get index of given key server in current set.",
-            "id": 720,
+            "id": 476,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1084,16 +1084,16 @@
             "name": "getCurrentKeyServerIndex",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 716,
+              "id": 472,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 715,
+                  "id": 471,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 720,
-                  "src": "2299:17:6",
+                  "scope": 476,
+                  "src": "2299:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1101,10 +1101,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 714,
+                    "id": 470,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2299:7:6",
+                    "src": "2299:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1114,20 +1114,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2298:19:6"
+              "src": "2298:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 719,
+              "id": 475,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 718,
+                  "id": 474,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 720,
-                  "src": "2341:5:6",
+                  "scope": 476,
+                  "src": "2341:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1135,10 +1135,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 717,
+                    "id": 473,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2341:5:6",
+                    "src": "2341:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -1148,10 +1148,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2340:7:6"
+              "src": "2340:7:2"
             },
-            "scope": 820,
-            "src": "2265:83:6",
+            "scope": 576,
+            "src": "2265:83:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1159,7 +1159,7 @@
           {
             "body": null,
             "documentation": "Get count of key servers in current set.",
-            "id": 725,
+            "id": 481,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1167,23 +1167,23 @@
             "name": "getCurrentKeyServersCount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 721,
+              "id": 477,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2436:2:6"
+              "src": "2436:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 724,
+              "id": 480,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 723,
+                  "id": 479,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 725,
-                  "src": "2462:5:6",
+                  "scope": 481,
+                  "src": "2462:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1191,10 +1191,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 722,
+                    "id": 478,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2462:5:6",
+                    "src": "2462:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -1204,10 +1204,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2461:7:6"
+              "src": "2461:7:2"
             },
-            "scope": 820,
-            "src": "2402:67:6",
+            "scope": 576,
+            "src": "2402:67:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1215,7 +1215,7 @@
           {
             "body": null,
             "documentation": "Get address of key server in current set.",
-            "id": 732,
+            "id": 488,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1223,16 +1223,16 @@
             "name": "getCurrentKeyServer",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 728,
+              "id": 484,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 727,
+                  "id": 483,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 732,
-                  "src": "2553:11:6",
+                  "scope": 488,
+                  "src": "2553:11:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1240,10 +1240,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 726,
+                    "id": 482,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2553:5:6",
+                    "src": "2553:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -1253,20 +1253,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2552:13:6"
+              "src": "2552:13:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 731,
+              "id": 487,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 730,
+                  "id": 486,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 732,
-                  "src": "2589:7:6",
+                  "scope": 488,
+                  "src": "2589:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1274,10 +1274,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 729,
+                    "id": 485,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2589:7:6",
+                    "src": "2589:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1287,10 +1287,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2588:9:6"
+              "src": "2588:9:2"
             },
-            "scope": 820,
-            "src": "2524:74:6",
+            "scope": 576,
+            "src": "2524:74:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1298,7 +1298,7 @@
           {
             "body": null,
             "documentation": "Get all current key servers.",
-            "id": 738,
+            "id": 494,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1306,23 +1306,23 @@
             "name": "getCurrentKeyServers",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 733,
+              "id": 489,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2670:2:6"
+              "src": "2670:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 737,
+              "id": 493,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 736,
+                  "id": 492,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 738,
-                  "src": "2696:9:6",
+                  "scope": 494,
+                  "src": "2696:9:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1331,19 +1331,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 734,
+                      "id": 490,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2696:7:6",
+                      "src": "2696:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 735,
+                    "id": 491,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "2696:9:6",
+                    "src": "2696:9:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -1353,10 +1353,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2695:11:6"
+              "src": "2695:11:2"
             },
-            "scope": 820,
-            "src": "2641:66:6",
+            "scope": 576,
+            "src": "2641:66:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1364,7 +1364,7 @@
           {
             "body": null,
             "documentation": "Get current key server public key.",
-            "id": 745,
+            "id": 501,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1372,16 +1372,16 @@
             "name": "getCurrentKeyServerPublic",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 741,
+              "id": 497,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 740,
+                  "id": 496,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 745,
-                  "src": "2790:17:6",
+                  "scope": 501,
+                  "src": "2790:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1389,10 +1389,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 739,
+                    "id": 495,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2790:7:6",
+                    "src": "2790:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1402,20 +1402,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2789:19:6"
+              "src": "2789:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 744,
+              "id": 500,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 743,
+                  "id": 499,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 745,
-                  "src": "2832:5:6",
+                  "scope": 501,
+                  "src": "2832:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1423,10 +1423,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 742,
+                    "id": 498,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2832:5:6",
+                    "src": "2832:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -1436,10 +1436,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2831:7:6"
+              "src": "2831:7:2"
             },
-            "scope": 820,
-            "src": "2755:84:6",
+            "scope": 576,
+            "src": "2755:84:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1447,7 +1447,7 @@
           {
             "body": null,
             "documentation": "Get current key server address.",
-            "id": 752,
+            "id": 508,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1455,16 +1455,16 @@
             "name": "getCurrentKeyServerAddress",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 748,
+              "id": 504,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 747,
+                  "id": 503,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 752,
-                  "src": "2920:17:6",
+                  "scope": 508,
+                  "src": "2920:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1472,10 +1472,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 746,
+                    "id": 502,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2920:7:6",
+                    "src": "2920:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1485,20 +1485,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2919:19:6"
+              "src": "2919:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 751,
+              "id": 507,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 750,
+                  "id": 506,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 752,
-                  "src": "2962:6:6",
+                  "scope": 508,
+                  "src": "2962:6:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1506,10 +1506,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 749,
+                    "id": 505,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2962:6:6",
+                    "src": "2962:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1519,10 +1519,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2961:8:6"
+              "src": "2961:8:2"
             },
-            "scope": 820,
-            "src": "2884:86:6",
+            "scope": 576,
+            "src": "2884:86:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1530,7 +1530,7 @@
           {
             "body": null,
             "documentation": "Get all migration key servers.",
-            "id": 758,
+            "id": 514,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1538,23 +1538,23 @@
             "name": "getMigrationKeyServers",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 753,
+              "id": 509,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3046:2:6"
+              "src": "3046:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 757,
+              "id": 513,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 756,
+                  "id": 512,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 758,
-                  "src": "3072:9:6",
+                  "scope": 514,
+                  "src": "3072:9:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1563,19 +1563,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 754,
+                      "id": 510,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "3072:7:6",
+                      "src": "3072:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 755,
+                    "id": 511,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "3072:9:6",
+                    "src": "3072:9:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -1585,10 +1585,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3071:11:6"
+              "src": "3071:11:2"
             },
-            "scope": 820,
-            "src": "3015:68:6",
+            "scope": 576,
+            "src": "3015:68:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1596,7 +1596,7 @@
           {
             "body": null,
             "documentation": "Get migration key server public key.",
-            "id": 765,
+            "id": 521,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1604,16 +1604,16 @@
             "name": "getMigrationKeyServerPublic",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 761,
+              "id": 517,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 760,
+                  "id": 516,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 765,
-                  "src": "3170:17:6",
+                  "scope": 521,
+                  "src": "3170:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1621,10 +1621,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 759,
+                    "id": 515,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3170:7:6",
+                    "src": "3170:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1634,20 +1634,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3169:19:6"
+              "src": "3169:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 764,
+              "id": 520,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 763,
+                  "id": 519,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 765,
-                  "src": "3212:5:6",
+                  "scope": 521,
+                  "src": "3212:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1655,10 +1655,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 762,
+                    "id": 518,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3212:5:6",
+                    "src": "3212:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -1668,10 +1668,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3211:7:6"
+              "src": "3211:7:2"
             },
-            "scope": 820,
-            "src": "3133:86:6",
+            "scope": 576,
+            "src": "3133:86:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1679,7 +1679,7 @@
           {
             "body": null,
             "documentation": "Get migration key server address.",
-            "id": 772,
+            "id": 528,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1687,16 +1687,16 @@
             "name": "getMigrationKeyServerAddress",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 768,
+              "id": 524,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 767,
+                  "id": 523,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 772,
-                  "src": "3304:17:6",
+                  "scope": 528,
+                  "src": "3304:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1704,10 +1704,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 766,
+                    "id": 522,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3304:7:6",
+                    "src": "3304:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1717,20 +1717,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3303:19:6"
+              "src": "3303:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 771,
+              "id": 527,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 770,
+                  "id": 526,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 772,
-                  "src": "3346:6:6",
+                  "scope": 528,
+                  "src": "3346:6:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1738,10 +1738,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 769,
+                    "id": 525,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3346:6:6",
+                    "src": "3346:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1751,10 +1751,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3345:8:6"
+              "src": "3345:8:2"
             },
-            "scope": 820,
-            "src": "3266:88:6",
+            "scope": 576,
+            "src": "3266:88:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1762,7 +1762,7 @@
           {
             "body": null,
             "documentation": "Get all new key servers.",
-            "id": 778,
+            "id": 534,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1770,23 +1770,23 @@
             "name": "getNewKeyServers",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 773,
+              "id": 529,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3418:2:6"
+              "src": "3418:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 777,
+              "id": 533,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 776,
+                  "id": 532,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 778,
-                  "src": "3444:9:6",
+                  "scope": 534,
+                  "src": "3444:9:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1795,19 +1795,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 774,
+                      "id": 530,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "3444:7:6",
+                      "src": "3444:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 775,
+                    "id": 531,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "3444:9:6",
+                    "src": "3444:9:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -1817,10 +1817,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3443:11:6"
+              "src": "3443:11:2"
             },
-            "scope": 820,
-            "src": "3393:62:6",
+            "scope": 576,
+            "src": "3393:62:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1828,7 +1828,7 @@
           {
             "body": null,
             "documentation": "Get new key server public key.",
-            "id": 785,
+            "id": 541,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1836,16 +1836,16 @@
             "name": "getNewKeyServerPublic",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 781,
+              "id": 537,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 780,
+                  "id": 536,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 785,
-                  "src": "3530:17:6",
+                  "scope": 541,
+                  "src": "3530:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1853,10 +1853,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 779,
+                    "id": 535,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3530:7:6",
+                    "src": "3530:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1866,20 +1866,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3529:19:6"
+              "src": "3529:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 784,
+              "id": 540,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 783,
+                  "id": 539,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 785,
-                  "src": "3572:5:6",
+                  "scope": 541,
+                  "src": "3572:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1887,10 +1887,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 782,
+                    "id": 538,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3572:5:6",
+                    "src": "3572:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -1900,10 +1900,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3571:7:6"
+              "src": "3571:7:2"
             },
-            "scope": 820,
-            "src": "3499:80:6",
+            "scope": 576,
+            "src": "3499:80:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1911,7 +1911,7 @@
           {
             "body": null,
             "documentation": "Get new key server address.",
-            "id": 792,
+            "id": 548,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -1919,16 +1919,16 @@
             "name": "getNewKeyServerAddress",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 788,
+              "id": 544,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 787,
+                  "id": 543,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 792,
-                  "src": "3652:17:6",
+                  "scope": 548,
+                  "src": "3652:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1936,10 +1936,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 786,
+                    "id": 542,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3652:7:6",
+                    "src": "3652:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1949,20 +1949,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3651:19:6"
+              "src": "3651:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 791,
+              "id": 547,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 790,
+                  "id": 546,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 792,
-                  "src": "3694:6:6",
+                  "scope": 548,
+                  "src": "3694:6:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1970,10 +1970,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 789,
+                    "id": 545,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3694:6:6",
+                    "src": "3694:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1983,10 +1983,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3693:8:6"
+              "src": "3693:8:2"
             },
-            "scope": 820,
-            "src": "3620:82:6",
+            "scope": 576,
+            "src": "3620:82:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -1994,7 +1994,7 @@
           {
             "body": null,
             "documentation": "Get migration id.",
-            "id": 797,
+            "id": 553,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2002,23 +2002,23 @@
             "name": "getMigrationId",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 793,
+              "id": 549,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3757:2:6"
+              "src": "3757:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 796,
+              "id": 552,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 795,
+                  "id": 551,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 797,
-                  "src": "3783:7:6",
+                  "scope": 553,
+                  "src": "3783:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2026,10 +2026,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 794,
+                    "id": 550,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3783:7:6",
+                    "src": "3783:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2039,10 +2039,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3782:9:6"
+              "src": "3782:9:2"
             },
-            "scope": 820,
-            "src": "3734:58:6",
+            "scope": 576,
+            "src": "3734:58:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -2050,7 +2050,7 @@
           {
             "body": null,
             "documentation": "Get migration master.",
-            "id": 802,
+            "id": 558,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2058,23 +2058,23 @@
             "name": "getMigrationMaster",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 798,
+              "id": 554,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3854:2:6"
+              "src": "3854:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 801,
+              "id": 557,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 800,
+                  "id": 556,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 802,
-                  "src": "3880:7:6",
+                  "scope": 558,
+                  "src": "3880:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2082,10 +2082,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 799,
+                    "id": 555,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3880:7:6",
+                    "src": "3880:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2095,10 +2095,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3879:9:6"
+              "src": "3879:9:2"
             },
-            "scope": 820,
-            "src": "3827:62:6",
+            "scope": 576,
+            "src": "3827:62:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -2106,7 +2106,7 @@
           {
             "body": null,
             "documentation": "Is migration confirmed by given node?",
-            "id": 809,
+            "id": 565,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2114,16 +2114,16 @@
             "name": "isMigrationConfirmed",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 805,
+              "id": 561,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 804,
+                  "id": 560,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 809,
-                  "src": "3970:17:6",
+                  "scope": 565,
+                  "src": "3970:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2131,10 +2131,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 803,
+                    "id": 559,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3970:7:6",
+                    "src": "3970:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2144,20 +2144,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3969:19:6"
+              "src": "3969:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 808,
+              "id": 564,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 807,
+                  "id": 563,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 809,
-                  "src": "4012:4:6",
+                  "scope": 565,
+                  "src": "4012:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2165,10 +2165,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 806,
+                    "id": 562,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4012:4:6",
+                    "src": "4012:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2178,10 +2178,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4011:6:6"
+              "src": "4011:6:2"
             },
-            "scope": 820,
-            "src": "3940:78:6",
+            "scope": 576,
+            "src": "3940:78:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -2189,7 +2189,7 @@
           {
             "body": null,
             "documentation": "Start migration.",
-            "id": 814,
+            "id": 570,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2197,16 +2197,16 @@
             "name": "startMigration",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 812,
+              "id": 568,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 811,
+                  "id": 567,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 814,
-                  "src": "4072:10:6",
+                  "scope": 570,
+                  "src": "4072:10:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2214,10 +2214,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 810,
+                    "id": 566,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4072:7:6",
+                    "src": "4072:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2227,17 +2227,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4071:12:6"
+              "src": "4071:12:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 813,
+              "id": 569,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4092:0:6"
+              "src": "4092:0:2"
             },
-            "scope": 820,
-            "src": "4048:45:6",
+            "scope": 576,
+            "src": "4048:45:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -2245,7 +2245,7 @@
           {
             "body": null,
             "documentation": "Confirm migration.",
-            "id": 819,
+            "id": 575,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -2253,16 +2253,16 @@
             "name": "confirmMigration",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 817,
+              "id": 573,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 816,
+                  "id": 572,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 819,
-                  "src": "4151:10:6",
+                  "scope": 575,
+                  "src": "4151:10:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2270,10 +2270,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 815,
+                    "id": 571,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4151:7:6",
+                    "src": "4151:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2283,43 +2283,43 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4150:12:6"
+              "src": "4150:12:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 818,
+              "id": 574,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4171:0:6"
+              "src": "4171:0:2"
             },
-            "scope": 820,
-            "src": "4125:47:6",
+            "scope": 576,
+            "src": "4125:47:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 821,
-        "src": "1701:2473:6"
+        "scope": 577,
+        "src": "1701:2473:2"
       }
     ],
-    "src": "671:3504:6"
+    "src": "671:3504:2"
   },
   "legacyAST": {
     "absolutePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/set/KeyServerSet.sol",
     "exportedSymbols": {
       "KeyServerSet": [
-        696
+        452
       ],
       "KeyServerSetWithMigration": [
-        820
+        576
       ]
     },
-    "id": 821,
+    "id": 577,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 651,
+        "id": 407,
         "literals": [
           "solidity",
           "^",
@@ -2327,7 +2327,7 @@
           ".24"
         ],
         "nodeType": "PragmaDirective",
-        "src": "671:24:6"
+        "src": "671:24:2"
       },
       {
         "baseContracts": [],
@@ -2335,9 +2335,9 @@
         "contractKind": "interface",
         "documentation": "Simple key server set.",
         "fullyImplemented": false,
-        "id": 696,
+        "id": 452,
         "linearizedBaseContracts": [
-          696
+          452
         ],
         "name": "KeyServerSet",
         "nodeType": "ContractDefinition",
@@ -2345,7 +2345,7 @@
           {
             "body": null,
             "documentation": "Get number of block when current set has been changed last time.",
-            "id": 656,
+            "id": 412,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2353,23 +2353,23 @@
             "name": "getCurrentLastChange",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 652,
+              "id": 408,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "855:2:6"
+              "src": "855:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 655,
+              "id": 411,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 654,
+                  "id": 410,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 656,
-                  "src": "881:7:6",
+                  "scope": 412,
+                  "src": "881:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2377,10 +2377,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 653,
+                    "id": 409,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "881:7:6",
+                    "src": "881:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2390,10 +2390,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "880:9:6"
+              "src": "880:9:2"
             },
-            "scope": 696,
-            "src": "826:64:6",
+            "scope": 452,
+            "src": "826:64:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -2401,7 +2401,7 @@
           {
             "body": null,
             "documentation": "Get index of given key server in current set.",
-            "id": 663,
+            "id": 419,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2409,16 +2409,16 @@
             "name": "getCurrentKeyServerIndex",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 659,
+              "id": 415,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 658,
+                  "id": 414,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 663,
-                  "src": "983:17:6",
+                  "scope": 419,
+                  "src": "983:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2426,10 +2426,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 657,
+                    "id": 413,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "983:7:6",
+                    "src": "983:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2439,20 +2439,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "982:19:6"
+              "src": "982:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 662,
+              "id": 418,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 661,
+                  "id": 417,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 663,
-                  "src": "1025:5:6",
+                  "scope": 419,
+                  "src": "1025:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2460,10 +2460,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 660,
+                    "id": 416,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1025:5:6",
+                    "src": "1025:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -2473,10 +2473,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1024:7:6"
+              "src": "1024:7:2"
             },
-            "scope": 696,
-            "src": "949:83:6",
+            "scope": 452,
+            "src": "949:83:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -2484,7 +2484,7 @@
           {
             "body": null,
             "documentation": "Get count of key servers in current set.",
-            "id": 668,
+            "id": 424,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2492,23 +2492,23 @@
             "name": "getCurrentKeyServersCount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 664,
+              "id": 420,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1120:2:6"
+              "src": "1120:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 667,
+              "id": 423,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 666,
+                  "id": 422,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 668,
-                  "src": "1146:5:6",
+                  "scope": 424,
+                  "src": "1146:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2516,10 +2516,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 665,
+                    "id": 421,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1146:5:6",
+                    "src": "1146:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -2529,10 +2529,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1145:7:6"
+              "src": "1145:7:2"
             },
-            "scope": 696,
-            "src": "1086:67:6",
+            "scope": 452,
+            "src": "1086:67:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -2540,7 +2540,7 @@
           {
             "body": null,
             "documentation": "Get address of key server in current set.",
-            "id": 675,
+            "id": 431,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2548,16 +2548,16 @@
             "name": "getCurrentKeyServer",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 671,
+              "id": 427,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 670,
+                  "id": 426,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 675,
-                  "src": "1237:11:6",
+                  "scope": 431,
+                  "src": "1237:11:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2565,10 +2565,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 669,
+                    "id": 425,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1237:5:6",
+                    "src": "1237:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -2578,20 +2578,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1236:13:6"
+              "src": "1236:13:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 674,
+              "id": 430,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 673,
+                  "id": 429,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 675,
-                  "src": "1273:7:6",
+                  "scope": 431,
+                  "src": "1273:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2599,10 +2599,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 672,
+                    "id": 428,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1273:7:6",
+                    "src": "1273:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2612,10 +2612,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1272:9:6"
+              "src": "1272:9:2"
             },
-            "scope": 696,
-            "src": "1208:74:6",
+            "scope": 452,
+            "src": "1208:74:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -2623,7 +2623,7 @@
           {
             "body": null,
             "documentation": "Get all current key servers.",
-            "id": 681,
+            "id": 437,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2631,23 +2631,23 @@
             "name": "getCurrentKeyServers",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 676,
+              "id": 432,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1354:2:6"
+              "src": "1354:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 680,
+              "id": 436,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 679,
+                  "id": 435,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 681,
-                  "src": "1380:9:6",
+                  "scope": 437,
+                  "src": "1380:9:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2656,19 +2656,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 677,
+                      "id": 433,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1380:7:6",
+                      "src": "1380:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 678,
+                    "id": 434,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "1380:9:6",
+                    "src": "1380:9:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -2678,10 +2678,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1379:11:6"
+              "src": "1379:11:2"
             },
-            "scope": 696,
-            "src": "1325:66:6",
+            "scope": 452,
+            "src": "1325:66:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -2689,7 +2689,7 @@
           {
             "body": null,
             "documentation": "Get current key server public key.",
-            "id": 688,
+            "id": 444,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2697,16 +2697,16 @@
             "name": "getCurrentKeyServerPublic",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 684,
+              "id": 440,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 683,
+                  "id": 439,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 688,
-                  "src": "1474:17:6",
+                  "scope": 444,
+                  "src": "1474:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2714,10 +2714,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 682,
+                    "id": 438,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1474:7:6",
+                    "src": "1474:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2727,20 +2727,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1473:19:6"
+              "src": "1473:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 687,
+              "id": 443,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 686,
+                  "id": 442,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 688,
-                  "src": "1516:5:6",
+                  "scope": 444,
+                  "src": "1516:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2748,10 +2748,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 685,
+                    "id": 441,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1516:5:6",
+                    "src": "1516:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -2761,10 +2761,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1515:7:6"
+              "src": "1515:7:2"
             },
-            "scope": 696,
-            "src": "1439:84:6",
+            "scope": 452,
+            "src": "1439:84:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -2772,7 +2772,7 @@
           {
             "body": null,
             "documentation": "Get current key server address.",
-            "id": 695,
+            "id": 451,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2780,16 +2780,16 @@
             "name": "getCurrentKeyServerAddress",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 691,
+              "id": 447,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 690,
+                  "id": 446,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 695,
-                  "src": "1604:17:6",
+                  "scope": 451,
+                  "src": "1604:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2797,10 +2797,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 689,
+                    "id": 445,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1604:7:6",
+                    "src": "1604:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2810,20 +2810,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1603:19:6"
+              "src": "1603:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 694,
+              "id": 450,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 693,
+                  "id": 449,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 695,
-                  "src": "1646:6:6",
+                  "scope": 451,
+                  "src": "1646:6:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2831,10 +2831,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 692,
+                    "id": 448,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1646:6:6",
+                    "src": "1646:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2844,17 +2844,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1645:8:6"
+              "src": "1645:8:2"
             },
-            "scope": 696,
-            "src": "1568:86:6",
+            "scope": 452,
+            "src": "1568:86:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 821,
-        "src": "724:932:6"
+        "scope": 577,
+        "src": "724:932:2"
       },
       {
         "baseContracts": [],
@@ -2862,9 +2862,9 @@
         "contractKind": "interface",
         "documentation": "Key server set with migration support.",
         "fullyImplemented": false,
-        "id": 820,
+        "id": 576,
         "linearizedBaseContracts": [
-          820
+          576
         ],
         "name": "KeyServerSetWithMigration",
         "nodeType": "ContractDefinition",
@@ -2872,21 +2872,21 @@
           {
             "anonymous": false,
             "documentation": "When new server is added to new set.",
-            "id": 700,
+            "id": 456,
             "name": "KeyServerAdded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 699,
+              "id": 455,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 698,
+                  "id": 454,
                   "indexed": false,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 700,
-                  "src": "1809:17:6",
+                  "scope": 456,
+                  "src": "1809:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2894,10 +2894,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 697,
+                    "id": 453,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1809:7:6",
+                    "src": "1809:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2907,28 +2907,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1808:19:6"
+              "src": "1808:19:2"
             },
-            "src": "1788:40:6"
+            "src": "1788:40:2"
           },
           {
             "anonymous": false,
             "documentation": "When existing server is removed from new set.",
-            "id": 704,
+            "id": 460,
             "name": "KeyServerRemoved",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 703,
+              "id": 459,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 702,
+                  "id": 458,
                   "indexed": false,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 704,
-                  "src": "1910:17:6",
+                  "scope": 460,
+                  "src": "1910:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2936,10 +2936,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 701,
+                    "id": 457,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1910:7:6",
+                    "src": "1910:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2949,42 +2949,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1909:19:6"
+              "src": "1909:19:2"
             },
-            "src": "1887:42:6"
+            "src": "1887:42:2"
           },
           {
             "anonymous": false,
             "documentation": "When migration is started.",
-            "id": 706,
+            "id": 462,
             "name": "MigrationStarted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 705,
+              "id": 461,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1991:2:6"
+              "src": "1991:2:2"
             },
-            "src": "1969:25:6"
+            "src": "1969:25:2"
           },
           {
             "anonymous": false,
             "documentation": "When migration is completed.",
-            "id": 708,
+            "id": 464,
             "name": "MigrationCompleted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 707,
+              "id": 463,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2060:2:6"
+              "src": "2060:2:2"
             },
-            "src": "2036:27:6"
+            "src": "2036:27:2"
           },
           {
             "body": null,
             "documentation": "Get number of block when current set has been changed last time.",
-            "id": 713,
+            "id": 469,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -2992,23 +2992,23 @@
             "name": "getCurrentLastChange",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 709,
+              "id": 465,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2171:2:6"
+              "src": "2171:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 712,
+              "id": 468,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 711,
+                  "id": 467,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 713,
-                  "src": "2197:7:6",
+                  "scope": 469,
+                  "src": "2197:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3016,10 +3016,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 710,
+                    "id": 466,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2197:7:6",
+                    "src": "2197:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3029,10 +3029,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2196:9:6"
+              "src": "2196:9:2"
             },
-            "scope": 820,
-            "src": "2142:64:6",
+            "scope": 576,
+            "src": "2142:64:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3040,7 +3040,7 @@
           {
             "body": null,
             "documentation": "Get index of given key server in current set.",
-            "id": 720,
+            "id": 476,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3048,16 +3048,16 @@
             "name": "getCurrentKeyServerIndex",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 716,
+              "id": 472,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 715,
+                  "id": 471,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 720,
-                  "src": "2299:17:6",
+                  "scope": 476,
+                  "src": "2299:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3065,10 +3065,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 714,
+                    "id": 470,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2299:7:6",
+                    "src": "2299:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3078,20 +3078,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2298:19:6"
+              "src": "2298:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 719,
+              "id": 475,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 718,
+                  "id": 474,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 720,
-                  "src": "2341:5:6",
+                  "scope": 476,
+                  "src": "2341:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3099,10 +3099,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 717,
+                    "id": 473,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2341:5:6",
+                    "src": "2341:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -3112,10 +3112,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2340:7:6"
+              "src": "2340:7:2"
             },
-            "scope": 820,
-            "src": "2265:83:6",
+            "scope": 576,
+            "src": "2265:83:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3123,7 +3123,7 @@
           {
             "body": null,
             "documentation": "Get count of key servers in current set.",
-            "id": 725,
+            "id": 481,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3131,23 +3131,23 @@
             "name": "getCurrentKeyServersCount",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 721,
+              "id": 477,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2436:2:6"
+              "src": "2436:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 724,
+              "id": 480,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 723,
+                  "id": 479,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 725,
-                  "src": "2462:5:6",
+                  "scope": 481,
+                  "src": "2462:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3155,10 +3155,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 722,
+                    "id": 478,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2462:5:6",
+                    "src": "2462:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -3168,10 +3168,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2461:7:6"
+              "src": "2461:7:2"
             },
-            "scope": 820,
-            "src": "2402:67:6",
+            "scope": 576,
+            "src": "2402:67:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3179,7 +3179,7 @@
           {
             "body": null,
             "documentation": "Get address of key server in current set.",
-            "id": 732,
+            "id": 488,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3187,16 +3187,16 @@
             "name": "getCurrentKeyServer",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 728,
+              "id": 484,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 727,
+                  "id": 483,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 732,
-                  "src": "2553:11:6",
+                  "scope": 488,
+                  "src": "2553:11:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3204,10 +3204,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 726,
+                    "id": 482,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2553:5:6",
+                    "src": "2553:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -3217,20 +3217,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2552:13:6"
+              "src": "2552:13:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 731,
+              "id": 487,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 730,
+                  "id": 486,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 732,
-                  "src": "2589:7:6",
+                  "scope": 488,
+                  "src": "2589:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3238,10 +3238,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 729,
+                    "id": 485,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2589:7:6",
+                    "src": "2589:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3251,10 +3251,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2588:9:6"
+              "src": "2588:9:2"
             },
-            "scope": 820,
-            "src": "2524:74:6",
+            "scope": 576,
+            "src": "2524:74:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3262,7 +3262,7 @@
           {
             "body": null,
             "documentation": "Get all current key servers.",
-            "id": 738,
+            "id": 494,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3270,23 +3270,23 @@
             "name": "getCurrentKeyServers",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 733,
+              "id": 489,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2670:2:6"
+              "src": "2670:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 737,
+              "id": 493,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 736,
+                  "id": 492,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 738,
-                  "src": "2696:9:6",
+                  "scope": 494,
+                  "src": "2696:9:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3295,19 +3295,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 734,
+                      "id": 490,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2696:7:6",
+                      "src": "2696:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 735,
+                    "id": 491,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "2696:9:6",
+                    "src": "2696:9:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -3317,10 +3317,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2695:11:6"
+              "src": "2695:11:2"
             },
-            "scope": 820,
-            "src": "2641:66:6",
+            "scope": 576,
+            "src": "2641:66:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3328,7 +3328,7 @@
           {
             "body": null,
             "documentation": "Get current key server public key.",
-            "id": 745,
+            "id": 501,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3336,16 +3336,16 @@
             "name": "getCurrentKeyServerPublic",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 741,
+              "id": 497,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 740,
+                  "id": 496,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 745,
-                  "src": "2790:17:6",
+                  "scope": 501,
+                  "src": "2790:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3353,10 +3353,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 739,
+                    "id": 495,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2790:7:6",
+                    "src": "2790:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3366,20 +3366,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2789:19:6"
+              "src": "2789:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 744,
+              "id": 500,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 743,
+                  "id": 499,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 745,
-                  "src": "2832:5:6",
+                  "scope": 501,
+                  "src": "2832:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3387,10 +3387,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 742,
+                    "id": 498,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2832:5:6",
+                    "src": "2832:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -3400,10 +3400,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2831:7:6"
+              "src": "2831:7:2"
             },
-            "scope": 820,
-            "src": "2755:84:6",
+            "scope": 576,
+            "src": "2755:84:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3411,7 +3411,7 @@
           {
             "body": null,
             "documentation": "Get current key server address.",
-            "id": 752,
+            "id": 508,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3419,16 +3419,16 @@
             "name": "getCurrentKeyServerAddress",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 748,
+              "id": 504,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 747,
+                  "id": 503,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 752,
-                  "src": "2920:17:6",
+                  "scope": 508,
+                  "src": "2920:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3436,10 +3436,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 746,
+                    "id": 502,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2920:7:6",
+                    "src": "2920:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3449,20 +3449,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2919:19:6"
+              "src": "2919:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 751,
+              "id": 507,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 750,
+                  "id": 506,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 752,
-                  "src": "2962:6:6",
+                  "scope": 508,
+                  "src": "2962:6:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3470,10 +3470,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 749,
+                    "id": 505,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2962:6:6",
+                    "src": "2962:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3483,10 +3483,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2961:8:6"
+              "src": "2961:8:2"
             },
-            "scope": 820,
-            "src": "2884:86:6",
+            "scope": 576,
+            "src": "2884:86:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3494,7 +3494,7 @@
           {
             "body": null,
             "documentation": "Get all migration key servers.",
-            "id": 758,
+            "id": 514,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3502,23 +3502,23 @@
             "name": "getMigrationKeyServers",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 753,
+              "id": 509,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3046:2:6"
+              "src": "3046:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 757,
+              "id": 513,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 756,
+                  "id": 512,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 758,
-                  "src": "3072:9:6",
+                  "scope": 514,
+                  "src": "3072:9:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3527,19 +3527,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 754,
+                      "id": 510,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "3072:7:6",
+                      "src": "3072:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 755,
+                    "id": 511,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "3072:9:6",
+                    "src": "3072:9:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -3549,10 +3549,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3071:11:6"
+              "src": "3071:11:2"
             },
-            "scope": 820,
-            "src": "3015:68:6",
+            "scope": 576,
+            "src": "3015:68:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3560,7 +3560,7 @@
           {
             "body": null,
             "documentation": "Get migration key server public key.",
-            "id": 765,
+            "id": 521,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3568,16 +3568,16 @@
             "name": "getMigrationKeyServerPublic",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 761,
+              "id": 517,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 760,
+                  "id": 516,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 765,
-                  "src": "3170:17:6",
+                  "scope": 521,
+                  "src": "3170:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3585,10 +3585,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 759,
+                    "id": 515,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3170:7:6",
+                    "src": "3170:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3598,20 +3598,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3169:19:6"
+              "src": "3169:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 764,
+              "id": 520,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 763,
+                  "id": 519,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 765,
-                  "src": "3212:5:6",
+                  "scope": 521,
+                  "src": "3212:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3619,10 +3619,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 762,
+                    "id": 518,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3212:5:6",
+                    "src": "3212:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -3632,10 +3632,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3211:7:6"
+              "src": "3211:7:2"
             },
-            "scope": 820,
-            "src": "3133:86:6",
+            "scope": 576,
+            "src": "3133:86:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3643,7 +3643,7 @@
           {
             "body": null,
             "documentation": "Get migration key server address.",
-            "id": 772,
+            "id": 528,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3651,16 +3651,16 @@
             "name": "getMigrationKeyServerAddress",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 768,
+              "id": 524,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 767,
+                  "id": 523,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 772,
-                  "src": "3304:17:6",
+                  "scope": 528,
+                  "src": "3304:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3668,10 +3668,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 766,
+                    "id": 522,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3304:7:6",
+                    "src": "3304:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3681,20 +3681,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3303:19:6"
+              "src": "3303:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 771,
+              "id": 527,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 770,
+                  "id": 526,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 772,
-                  "src": "3346:6:6",
+                  "scope": 528,
+                  "src": "3346:6:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3702,10 +3702,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 769,
+                    "id": 525,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3346:6:6",
+                    "src": "3346:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3715,10 +3715,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3345:8:6"
+              "src": "3345:8:2"
             },
-            "scope": 820,
-            "src": "3266:88:6",
+            "scope": 576,
+            "src": "3266:88:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3726,7 +3726,7 @@
           {
             "body": null,
             "documentation": "Get all new key servers.",
-            "id": 778,
+            "id": 534,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3734,23 +3734,23 @@
             "name": "getNewKeyServers",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 773,
+              "id": 529,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3418:2:6"
+              "src": "3418:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 777,
+              "id": 533,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 776,
+                  "id": 532,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 778,
-                  "src": "3444:9:6",
+                  "scope": 534,
+                  "src": "3444:9:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3759,19 +3759,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 774,
+                      "id": 530,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "3444:7:6",
+                      "src": "3444:7:2",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 775,
+                    "id": 531,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "3444:9:6",
+                    "src": "3444:9:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -3781,10 +3781,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3443:11:6"
+              "src": "3443:11:2"
             },
-            "scope": 820,
-            "src": "3393:62:6",
+            "scope": 576,
+            "src": "3393:62:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3792,7 +3792,7 @@
           {
             "body": null,
             "documentation": "Get new key server public key.",
-            "id": 785,
+            "id": 541,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3800,16 +3800,16 @@
             "name": "getNewKeyServerPublic",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 781,
+              "id": 537,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 780,
+                  "id": 536,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 785,
-                  "src": "3530:17:6",
+                  "scope": 541,
+                  "src": "3530:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3817,10 +3817,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 779,
+                    "id": 535,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3530:7:6",
+                    "src": "3530:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3830,20 +3830,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3529:19:6"
+              "src": "3529:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 784,
+              "id": 540,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 783,
+                  "id": 539,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 785,
-                  "src": "3572:5:6",
+                  "scope": 541,
+                  "src": "3572:5:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3851,10 +3851,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 782,
+                    "id": 538,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3572:5:6",
+                    "src": "3572:5:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -3864,10 +3864,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3571:7:6"
+              "src": "3571:7:2"
             },
-            "scope": 820,
-            "src": "3499:80:6",
+            "scope": 576,
+            "src": "3499:80:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3875,7 +3875,7 @@
           {
             "body": null,
             "documentation": "Get new key server address.",
-            "id": 792,
+            "id": 548,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3883,16 +3883,16 @@
             "name": "getNewKeyServerAddress",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 788,
+              "id": 544,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 787,
+                  "id": 543,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 792,
-                  "src": "3652:17:6",
+                  "scope": 548,
+                  "src": "3652:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3900,10 +3900,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 786,
+                    "id": 542,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3652:7:6",
+                    "src": "3652:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3913,20 +3913,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3651:19:6"
+              "src": "3651:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 791,
+              "id": 547,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 790,
+                  "id": 546,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 792,
-                  "src": "3694:6:6",
+                  "scope": 548,
+                  "src": "3694:6:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3934,10 +3934,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 789,
+                    "id": 545,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3694:6:6",
+                    "src": "3694:6:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3947,10 +3947,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3693:8:6"
+              "src": "3693:8:2"
             },
-            "scope": 820,
-            "src": "3620:82:6",
+            "scope": 576,
+            "src": "3620:82:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -3958,7 +3958,7 @@
           {
             "body": null,
             "documentation": "Get migration id.",
-            "id": 797,
+            "id": 553,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -3966,23 +3966,23 @@
             "name": "getMigrationId",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 793,
+              "id": 549,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3757:2:6"
+              "src": "3757:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 796,
+              "id": 552,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 795,
+                  "id": 551,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 797,
-                  "src": "3783:7:6",
+                  "scope": 553,
+                  "src": "3783:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3990,10 +3990,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 794,
+                    "id": 550,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3783:7:6",
+                    "src": "3783:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -4003,10 +4003,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3782:9:6"
+              "src": "3782:9:2"
             },
-            "scope": 820,
-            "src": "3734:58:6",
+            "scope": 576,
+            "src": "3734:58:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -4014,7 +4014,7 @@
           {
             "body": null,
             "documentation": "Get migration master.",
-            "id": 802,
+            "id": 558,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -4022,23 +4022,23 @@
             "name": "getMigrationMaster",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 798,
+              "id": 554,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3854:2:6"
+              "src": "3854:2:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 801,
+              "id": 557,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 800,
+                  "id": 556,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 802,
-                  "src": "3880:7:6",
+                  "scope": 558,
+                  "src": "3880:7:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4046,10 +4046,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 799,
+                    "id": 555,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3880:7:6",
+                    "src": "3880:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -4059,10 +4059,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3879:9:6"
+              "src": "3879:9:2"
             },
-            "scope": 820,
-            "src": "3827:62:6",
+            "scope": 576,
+            "src": "3827:62:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -4070,7 +4070,7 @@
           {
             "body": null,
             "documentation": "Is migration confirmed by given node?",
-            "id": 809,
+            "id": 565,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": true,
@@ -4078,16 +4078,16 @@
             "name": "isMigrationConfirmed",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 805,
+              "id": 561,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 804,
+                  "id": 560,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 809,
-                  "src": "3970:17:6",
+                  "scope": 565,
+                  "src": "3970:17:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4095,10 +4095,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 803,
+                    "id": 559,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3970:7:6",
+                    "src": "3970:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -4108,20 +4108,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3969:19:6"
+              "src": "3969:19:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 808,
+              "id": 564,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 807,
+                  "id": 563,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 809,
-                  "src": "4012:4:6",
+                  "scope": 565,
+                  "src": "4012:4:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4129,10 +4129,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 806,
+                    "id": 562,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4012:4:6",
+                    "src": "4012:4:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -4142,10 +4142,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4011:6:6"
+              "src": "4011:6:2"
             },
-            "scope": 820,
-            "src": "3940:78:6",
+            "scope": 576,
+            "src": "3940:78:2",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -4153,7 +4153,7 @@
           {
             "body": null,
             "documentation": "Start migration.",
-            "id": 814,
+            "id": 570,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -4161,16 +4161,16 @@
             "name": "startMigration",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 812,
+              "id": 568,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 811,
+                  "id": 567,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 814,
-                  "src": "4072:10:6",
+                  "scope": 570,
+                  "src": "4072:10:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4178,10 +4178,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 810,
+                    "id": 566,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4072:7:6",
+                    "src": "4072:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -4191,17 +4191,17 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4071:12:6"
+              "src": "4071:12:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 813,
+              "id": 569,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4092:0:6"
+              "src": "4092:0:2"
             },
-            "scope": 820,
-            "src": "4048:45:6",
+            "scope": 576,
+            "src": "4048:45:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
@@ -4209,7 +4209,7 @@
           {
             "body": null,
             "documentation": "Confirm migration.",
-            "id": 819,
+            "id": 575,
             "implemented": false,
             "isConstructor": false,
             "isDeclaredConst": false,
@@ -4217,16 +4217,16 @@
             "name": "confirmMigration",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 817,
+              "id": 573,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 816,
+                  "id": 572,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 819,
-                  "src": "4151:10:6",
+                  "scope": 575,
+                  "src": "4151:10:2",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4234,10 +4234,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 815,
+                    "id": 571,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4151:7:6",
+                    "src": "4151:7:2",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -4247,27 +4247,27 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4150:12:6"
+              "src": "4150:12:2"
             },
             "payable": false,
             "returnParameters": {
-              "id": 818,
+              "id": 574,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4171:0:6"
+              "src": "4171:0:2"
             },
-            "scope": 820,
-            "src": "4125:47:6",
+            "scope": 576,
+            "src": "4125:47:2",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 821,
-        "src": "1701:2473:6"
+        "scope": 577,
+        "src": "1701:2473:2"
       }
     ],
-    "src": "671:3504:6"
+    "src": "671:3504:2"
   },
   "compiler": {
     "name": "solc",
@@ -4275,5 +4275,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-01-07T13:12:12.704Z"
+  "updatedAt": "2019-01-16T19:43:08.204Z"
 }

@@ -10,6 +10,7 @@ contract PermissioningRegistry is ISecretStorePermissioning, Ownable, ERC165 {
     struct PermissionEntry {
         address[] users;
         address admin;
+        bool exposed;
     }
     
     mapping(bytes32 => PermissionEntry) public permissions;
@@ -18,7 +19,7 @@ contract PermissioningRegistry is ISecretStorePermissioning, Ownable, ERC165 {
     event Permission(bytes32 document);
 
     modifier onlyAdmins(bytes32 document) {
-        require(_onlyAdmins(document), "Caller has to be the current admin or owner.");
+        require(_isAdmin(document), "Caller has to be the current admin or owner.");
         _;
     }
 
@@ -46,6 +47,12 @@ contract PermissioningRegistry is ISecretStorePermissioning, Ownable, ERC165 {
         return true;
     }
 
+    function setExposed(bytes32 document, bool _exposed) external onlyAdmins(document) returns (bool) {
+        permissions[document].exposed = _exposed;
+        emit Permission(document);
+        return true;
+    }
+
     function addUser(bytes32 document, address newUser) external onlyAdmins(document) returns (bool) {
         permissions[document].users.push(newUser);
         emit Permission(document);
@@ -60,7 +67,7 @@ contract PermissioningRegistry is ISecretStorePermissioning, Ownable, ERC165 {
 
     function permission(bytes32 document, address[] _users) external returns (bool) {
         require(
-            permissions[document].admin == address(0) || _onlyAdmins(document),
+            permissions[document].admin == address(0) || _isAdmin(document),
             "You have to be admin or owner to change permissions."
         );
         permissions[document].admin = msg.sender;
@@ -70,6 +77,14 @@ contract PermissioningRegistry is ISecretStorePermissioning, Ownable, ERC165 {
     }
 
     function checkPermissions(address user, bytes32 document) public view returns (bool) {
+        if (!_isInitialized(document)) {
+            return false;
+        }
+        
+        if (permissions[document].exposed) {
+            return true;
+        }
+
         address[] storage users = permissions[document].users;
         for (uint i = 0; i < users.length; i++) {
             if (users[i] == user)
@@ -86,7 +101,15 @@ contract PermissioningRegistry is ISecretStorePermissioning, Ownable, ERC165 {
         return permissions[document].users;
     }
 
-    function _onlyAdmins(bytes32 document) internal view returns (bool) {
+    function isExposed(bytes32 document) public view returns (bool) {
+        return permissions[document].exposed;
+    }
+
+    function _isAdmin(bytes32 document) internal view returns (bool) {
         return (permissions[document].admin == msg.sender || isOwner());
+    }
+
+    function _isInitialized(bytes32 document) internal view returns (bool) {
+        return (permissions[document].admin != address(0));
     }
 }
