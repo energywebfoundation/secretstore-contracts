@@ -22,13 +22,6 @@ const ContractRegistryJSON = require(path.join(__dirname, "../../build/contracts
 const nullAddress = "0x0000000000000000000000000000000000000000";
 const testDoc = "0xfefefefe";
 
-let from;
-let accounts;
-web3.eth.getAccounts().then((accs) => {
-    accounts = accs;
-    from = accs[0];
-});
-
 async function checkPermissionsTrue(contract) {
     let allowed = await contract.methods.checkPermissions(alice, testDoc).call();
     assert.isTrue(allowed);
@@ -40,6 +33,14 @@ async function checkPermissionsTrue(contract) {
 
 describe("Permissioning registry contract", async function() {
     this.timeout(25000);
+
+    let from;
+    let accounts;
+
+    before(async function() {
+        accounts = await web3.eth.getAccounts();
+        from = accounts[0];
+    });
 
     it('should deploy successfully', async function() {
         let instance = await tutils.deployRegistry(web3, [], {from: from});
@@ -111,58 +112,58 @@ describe("Permissioning registry contract", async function() {
         assert.equal(await instance.methods.getAdmin(testDoc).call(), web3.utils.toChecksumAddress(accounts[2]));
     });
 
-    xit('should not be exposed uninitialized', async function() {
+    it('should not be exposed uninitialized', async function() {
         let instance = await tutils.deployRegistry(web3, [], {from: from});
-        let exposed = await contract.methods.isExposed(testDoc).call();
+        let exposed = await instance.methods.isExposed(testDoc).call();
         assert.isFalse(exposed);
     });
 
-    xit('should not be exposed by default', async function() {
+    it('should not be exposed by default', async function() {
         let instance = await tutils.deployRegistry(web3, [], {from: from});
         await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        let exposed = await contract.methods.isExposed(testDoc).call();
+        let exposed = await instance.methods.isExposed(testDoc).call();
         assert.isFalse(exposed);
     });
 
-    xit('should not allow uninitialized permission to return true', async function() {
+    it('should not allow uninitialized permission to return true', async function() {
         let instance = await tutils.deployRegistry(web3, [], {from: from});
-        let allowed = await contract.methods.checkPermissions(charlie, testDoc).call();
+        let allowed = await instance.methods.checkPermissions(charlie, testDoc).call();
         assert.isFalse(allowed);
     });
 
-    xit('should not allow default permission to return true on unexposed entry', async function() {
+    it('should not allow default permission to return true on unexposed entry', async function() {
         let instance = await tutils.deployRegistry(web3, [], {from: from});
         await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        let allowed = await contract.methods.checkPermissions(charlie, testDoc).call();
+        let allowed = await instance.methods.checkPermissions(bob, testDoc).call();
         assert.isFalse(allowed);
     });
     
-    xit('should allow owner to change exposed', async function() {
+    it('should allow owner to change exposed', async function() {
         let instance = await tutils.deployRegistry(web3, [], {from: from});
         await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
         await instance.methods.setExposed(testDoc, true).send({from: accounts[1]});
-        let exposed = await contract.methods.isExposed(testDoc).call();
+        let exposed = await instance.methods.isExposed(testDoc).call();
         assert.isTrue(exposed);
     });
 
-    xit('should not allow not-owner to change exposed', async function() {
+    it('should not allow not-owner to change exposed', async function() {
         let instance = await tutils.deployRegistry(web3, [], {from: from});
         await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
         await expect(instance.methods.setExposed(testDoc, true).send({from: accounts[2]}))
             .to.be.rejectedWith(Error);
     });
 
-    xit('should always return true on an initialized exposed entry', async function() {
+    it('should always return true on an initialized exposed entry', async function() {
         let instance = await tutils.deployRegistry(web3, [], {from: from});
         await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
         await instance.methods.setExposed(testDoc, true).send({from: accounts[1]});
-        let exposed = await contract.methods.isExposed(testDoc).call();
+        let exposed = await instance.methods.isExposed(testDoc).call();
         assert.isTrue(exposed);
-        let allowed = await contract.methods.checkPermissions(alice, testDoc).call();
+        let allowed = await instance.methods.checkPermissions(alice, testDoc).call();
         assert.isTrue(allowed);
-        allowed = await contract.methods.checkPermissions(bob, testDoc).call();
+        allowed = await instance.methods.checkPermissions(bob, testDoc).call();
         assert.isTrue(allowed);
-        allowed = await contract.methods.checkPermissions(charlie, testDoc).call();
+        allowed = await instance.methods.checkPermissions(charlie, testDoc).call();
         assert.isTrue(allowed);
     });
 
