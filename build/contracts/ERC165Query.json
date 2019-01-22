@@ -83,7 +83,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 36,
-        "sourceUnit": 638,
+        "sourceUnit": 713,
         "src": "26:39:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -94,7 +94,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 36,
-        "sourceUnit": 2411,
+        "sourceUnit": 2486,
         "src": "66:73:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -105,7 +105,7 @@
         "id": 4,
         "nodeType": "ImportDirective",
         "scope": 36,
-        "sourceUnit": 2274,
+        "sourceUnit": 2349,
         "src": "140:66:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -119,10 +119,10 @@
               "id": 5,
               "name": "IERC165Query",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 637,
+              "referencedDeclaration": 712,
               "src": "233:12:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IERC165Query_$637",
+                "typeIdentifier": "t_contract$_IERC165Query_$712",
                 "typeString": "contract IERC165Query"
               }
             },
@@ -137,10 +137,10 @@
               "id": 7,
               "name": "ERC165",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2273,
+              "referencedDeclaration": 2348,
               "src": "247:6:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC165_$2273",
+                "typeIdentifier": "t_contract$_ERC165_$2348",
                 "typeString": "contract ERC165"
               }
             },
@@ -150,9 +150,9 @@
           }
         ],
         "contractDependencies": [
-          637,
-          2273,
-          2420
+          712,
+          2348,
+          2495
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -160,9 +160,9 @@
         "id": 35,
         "linearizedBaseContracts": [
           35,
-          2273,
-          2420,
-          637
+          2348,
+          2495,
+          712
         ],
         "name": "ERC165Query",
         "nodeType": "ContractDefinition",
@@ -187,7 +187,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2565,
+                            "referencedDeclaration": 2640,
                             "src": "311:4:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_ERC165Query_$35",
@@ -234,7 +234,7 @@
                       "name": "_registerInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2272,
+                      "referencedDeclaration": 2347,
                       "src": "292:18:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes4_$returns$__$",
@@ -342,10 +342,10 @@
                         "name": "ERC165Checker",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2410,
+                        "referencedDeclaration": 2485,
                         "src": "495:13:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC165Checker_$2410_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC165Checker_$2485_$",
                           "typeString": "type(library ERC165Checker)"
                         }
                       },
@@ -356,7 +356,7 @@
                       "lValueRequested": false,
                       "memberName": "_supportsInterface",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2319,
+                      "referencedDeclaration": 2394,
                       "src": "495:32:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$_t_bytes4_$returns$_t_bool_$",
@@ -488,7 +488,7 @@
             "scope": 35,
             "src": "369:190:0",
             "stateMutability": "view",
-            "superFunction": 636,
+            "superFunction": 711,
             "visibility": "external"
           }
         ],
@@ -525,7 +525,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 36,
-        "sourceUnit": 638,
+        "sourceUnit": 713,
         "src": "26:39:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -536,7 +536,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 36,
-        "sourceUnit": 2411,
+        "sourceUnit": 2486,
         "src": "66:73:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -547,7 +547,7 @@
         "id": 4,
         "nodeType": "ImportDirective",
         "scope": 36,
-        "sourceUnit": 2274,
+        "sourceUnit": 2349,
         "src": "140:66:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -561,10 +561,10 @@
               "id": 5,
               "name": "IERC165Query",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 637,
+              "referencedDeclaration": 712,
               "src": "233:12:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IERC165Query_$637",
+                "typeIdentifier": "t_contract$_IERC165Query_$712",
                 "typeString": "contract IERC165Query"
               }
             },
@@ -579,10 +579,10 @@
               "id": 7,
               "name": "ERC165",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 2273,
+              "referencedDeclaration": 2348,
               "src": "247:6:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_ERC165_$2273",
+                "typeIdentifier": "t_contract$_ERC165_$2348",
                 "typeString": "contract ERC165"
               }
             },
@@ -592,9 +592,9 @@
           }
         ],
         "contractDependencies": [
-          637,
-          2273,
-          2420
+          712,
+          2348,
+          2495
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -602,9 +602,9 @@
         "id": 35,
         "linearizedBaseContracts": [
           35,
-          2273,
-          2420,
-          637
+          2348,
+          2495,
+          712
         ],
         "name": "ERC165Query",
         "nodeType": "ContractDefinition",
@@ -629,7 +629,7 @@
                             "name": "this",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 2565,
+                            "referencedDeclaration": 2640,
                             "src": "311:4:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_ERC165Query_$35",
@@ -676,7 +676,7 @@
                       "name": "_registerInterface",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2272,
+                      "referencedDeclaration": 2347,
                       "src": "292:18:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes4_$returns$__$",
@@ -784,10 +784,10 @@
                         "name": "ERC165Checker",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2410,
+                        "referencedDeclaration": 2485,
                         "src": "495:13:0",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_ERC165Checker_$2410_$",
+                          "typeIdentifier": "t_type$_t_contract$_ERC165Checker_$2485_$",
                           "typeString": "type(library ERC165Checker)"
                         }
                       },
@@ -798,7 +798,7 @@
                       "lValueRequested": false,
                       "memberName": "_supportsInterface",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2319,
+                      "referencedDeclaration": 2394,
                       "src": "495:32:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$_t_bytes4_$returns$_t_bool_$",
@@ -930,7 +930,7 @@
             "scope": 35,
             "src": "369:190:0",
             "stateMutability": "view",
-            "superFunction": 636,
+            "superFunction": 711,
             "visibility": "external"
           }
         ],
@@ -948,10 +948,10 @@
     "401697": {
       "events": {},
       "links": {},
-      "address": "0x2c0b8591562d6d6fd563e06be6a58ad0e06d51ef",
-      "transactionHash": "0xbddca2d6a422556fa955f2a1d3c0dd01f8f26bacd852d4dd996f6d2e7697b396"
+      "address": "0x66545edad82c30ddd701e1873f05654b3a7f2f66",
+      "transactionHash": "0x2b7a4537b550f20856420300ae61d65e70a58f1a644ba5d997178c4baac0c3e3"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2019-01-17T13:02:00.897Z"
+  "updatedAt": "2019-01-21T13:36:25.100Z"
 }

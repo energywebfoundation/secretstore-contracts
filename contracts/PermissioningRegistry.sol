@@ -15,8 +15,8 @@ contract PermissioningRegistry is ISecretStorePermissioning, Ownable, ERC165 {
     
     mapping(bytes32 => PermissionEntry) public permissions;
 
-    event NewAdmin(bytes32 document);
-    event Permission(bytes32 document);
+    event NewAdmin(bytes32 indexed document);
+    event Permission(bytes32 indexed document);
 
     modifier onlyAdmins(bytes32 document) {
         require(_isAdmin(document), "Caller has to be the current admin or owner.");
