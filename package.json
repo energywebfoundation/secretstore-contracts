@@ -1,6 +1,6 @@
 {
   "name": "secretstore-contracts",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Secret Store permissioning and service contracts collection and toolkit.",
   "main": "index.js",
   "bin": {
