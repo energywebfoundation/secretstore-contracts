@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 "use strict";
 
-const {deployPermission, checkPermissions, deploySet} = require("./tools");
+const {deployPermission, checkPermissions, deploySet, deployService} = require("./tools");
 
 const clargs = require("yargs")
     .usage('Usage: $0 <command> [options]')
