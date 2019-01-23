@@ -45,6 +45,40 @@ const clargs = require("yargs")
     }, (vargs) => {
         deployPermission(vargs);
     })
+    .command("deployservice", "Deploy Secret Store service contracts", (yargs) => {
+        return yargs
+        .option('contract', {
+            type: 'string',
+            desc: "Which contract to deploy. Please refer to it by name. E.g.: \"SecretStoreDocumentKeyStoreService\", or just simply \"DocumentKeyStoreService\". Case sensitive. It is used for JSON ABI file lookup.",
+            choices: ['SecretStoreDocumentKeyStoreService', 'DocumentKeyStoreService', 'SecretStoreDocumentKeyShadowRetrievalService', 'DocumentKeyShadowRetrievalService', 'SecretStoreServerKeyRetrievalService', 'ServerKeyRetrievalService', 'SecretStoreServerKeyGenerationService', 'ServerKeyGenerationService'],
+            demandOption: false,
+            default: undefined,
+            alias: "c"
+        })
+        .option('serverSet', {
+            type: 'string',
+            desc: "Address of the key server set (nodes) contract.",
+            demandOption: true,
+            alias: ["s", "k","address", "a", "serverset", "keyServerSet"],
+            default: undefined
+        })
+        .option('from', {
+            type: 'string',
+            desc: "Deployer account. Defaults to the first account of the local accounts list.",
+            demandOption: false,
+            alias: "f",
+            default: undefined
+        })
+        .option('rpc', {
+            type: 'string',
+            desc: "HTTP RPC API endpoint.",
+            demandOption: false,
+            alias: "r",
+            default: "http://localhost:8545" 
+        })
+    }, (vargs) => {
+        deployService(vargs);
+    })
     .command("deployset", "Deploy Secret Store node-set contract", (yargs) => {
         return yargs.option('from', {
             type: 'string',

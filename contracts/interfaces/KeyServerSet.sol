@@ -28,11 +28,11 @@ interface KeyServerSet {
     function getCurrentKeyServer(uint8 index) external view returns (address);
 
     /// Get all current key servers.
-    function getCurrentKeyServers() external view returns (address[]);
+    function getCurrentKeyServers() external view returns (address[] memory);
     /// Get current key server public key.
-    function getCurrentKeyServerPublic(address keyServer) external view returns (bytes);
+    function getCurrentKeyServerPublic(address keyServer) external view returns (bytes memory);
     /// Get current key server address.
-    function getCurrentKeyServerAddress(address keyServer) external view returns (string);
+    function getCurrentKeyServerAddress(address keyServer) external view returns (string memory);
 }
 
 /// Key server set with migration support.
@@ -56,25 +56,25 @@ interface KeyServerSetWithMigration {
     function getCurrentKeyServer(uint8 index) external view returns (address);
 
     /// Get all current key servers.
-    function getCurrentKeyServers() external view returns (address[]);
+    function getCurrentKeyServers() external view returns (address[] memory);
     /// Get current key server public key.
-    function getCurrentKeyServerPublic(address keyServer) external view returns (bytes);
+    function getCurrentKeyServerPublic(address keyServer) external view returns (bytes memory);
     /// Get current key server address.
-    function getCurrentKeyServerAddress(address keyServer) external view returns (string);
+    function getCurrentKeyServerAddress(address keyServer) external view returns (string memory);
 
     /// Get all migration key servers.
-    function getMigrationKeyServers() external view returns (address[]);
+    function getMigrationKeyServers() external view returns (address[] memory);
     /// Get migration key server public key.
-    function getMigrationKeyServerPublic(address keyServer) external view returns (bytes);
+    function getMigrationKeyServerPublic(address keyServer) external view returns (bytes memory);
     /// Get migration key server address.
-    function getMigrationKeyServerAddress(address keyServer) external view returns (string);
+    function getMigrationKeyServerAddress(address keyServer) external view returns (string memory);
 
     /// Get all new key servers.
-    function getNewKeyServers() external view returns (address[]);
+    function getNewKeyServers() external view returns (address[] memory);
     /// Get new key server public key.
-    function getNewKeyServerPublic(address keyServer) external view returns (bytes);
+    function getNewKeyServerPublic(address keyServer) external view returns (bytes memory);
     /// Get new key server address.
-    function getNewKeyServerAddress(address keyServer) external view returns (string);
+    function getNewKeyServerAddress(address keyServer) external view returns (string memory);
 
     /// Get migration id.
     function getMigrationId() external view returns (bytes32);
