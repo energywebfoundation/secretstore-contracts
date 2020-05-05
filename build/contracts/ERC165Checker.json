@@ -4613,6 +4613,12 @@
     "version": "0.6.5+commit.f956cc89.Emscripten.clang"
   },
   "networks": {
+    "73799": {
+      "events": {},
+      "links": {},
+      "address": "0x05bED38203f623EC1a85bE216F820D6C92bAB318",
+      "transactionHash": "0x1afdb39e8af3001856853df6cc9e7e638dd26fe8f2f5a9a913c4f111f7626e06"
+    },
     "401697": {
       "events": {},
       "links": {},
@@ -4621,7 +4627,8 @@
     }
   },
   "schemaVersion": "3.0.23",
-  "updatedAt": "2020-04-08T13:26:56.106Z",
+  "updatedAt": "2020-05-05T10:04:51.296Z",
+  "networkType": "ethereum",
   "devdoc": {
     "details": "Library used to query support of an interface declared via {IERC165}. * Note that these functions return the actual result of the query: they do not `revert` if an interface is not supported. It is up to the caller to decide what to do in these cases.",
     "methods": {}

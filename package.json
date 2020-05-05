@@ -22,8 +22,7 @@
     "mocha": "^5.2.0",
     "solhint": "^2.3.1",
     "solium-plugin-zeppelin": "0.0.2",
-    "truffle": "^5.1.20",
-    "truffle-plugin-verify": "^0.3.10"
+    "truffle": "^5.1.20"
   },
   "scripts": {
     "start": "node index.js",

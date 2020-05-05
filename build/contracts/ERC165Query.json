@@ -23,7 +23,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [
@@ -47,7 +48,8 @@
         }
       ],
       "stateMutability": "view",
-      "type": "function"
+      "type": "function",
+      "constant": true
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_contract\",\"type\":\"address\"},{\"internalType\":\"bytes4\",\"name\":\"_interfaceId\",\"type\":\"bytes4\"}],\"name\":\"doesContractImplementInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes4\",\"name\":\"interfaceId\",\"type\":\"bytes4\"}],\"name\":\"supportsInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"supportsInterface(bytes4)\":{\"details\":\"See {IERC165-supportsInterface}.     * Time complexity O(1), guaranteed to always use less than 30 000 gas.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/aznagy/work/secretstore/secretstore-contracts/contracts/ERC165Query.sol\":\"ERC165Query\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/aznagy/work/secretstore/secretstore-contracts/contracts/ERC165Query.sol\":{\"keccak256\":\"0xe6849620c02804c5e83d928f25ec1ef0a22e7c0821217e742ffb9525da73c4c1\",\"urls\":[\"bzz-raw://68f5341dd24e448fc687f8d381080eaa7a3c946f89262bcc7bc0710b83995689\",\"dweb:/ipfs/QmTae7MeZPTyecgkBrEDVoaMGSGVjs3acffvw1tgRuH3Xq\"]},\"/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/IERC165Query.sol\":{\"keccak256\":\"0x514d949f615abbcf6b849b6a3a42a4c066345f4e513220ffcc2f293ca5935d2c\",\"urls\":[\"bzz-raw://2624652a5e34c9e0dffe060a5c8d4c83732225e0a361f375a0ace4fefa0305d6\",\"dweb:/ipfs/QmaKhUdC9yfpLHSY3p6idG9c9iYrxV4DPg7MPejXNLfQKb\"]},\"@openzeppelin/contracts/introspection/ERC165.sol\":{\"keccak256\":\"0x98aa1380fd49a255d6cbea58558ea76bff35c59b218671fde8842907b44e7390\",\"urls\":[\"bzz-raw://613eaff66d4c270ddd87448c06267b6e043ef8c8223cb39d8767bc9daa9cb1ec\",\"dweb:/ipfs/Qmcg56orudv25ghmnZCxN37HwNKCXmTTDxj5cyoYYnvHTg\"]},\"@openzeppelin/contracts/introspection/ERC165Checker.sol\":{\"keccak256\":\"0xf70d2a5ba6eb617599255f3d84f654a801541dbf46c65c28545ad8f5d4e0535b\",\"urls\":[\"bzz-raw://9880709df166cb31b4daaf01e0c7725613ab2f14fcf2b38536c24fe0243bef3d\",\"dweb:/ipfs/QmNpteyywJzDytWuLomZGPU21mESzn8vzQsUtLDcFLuuCW\"]},\"@openzeppelin/contracts/introspection/IERC165.sol\":{\"keccak256\":\"0x9175561c374ec1fc33045e5dfdde2057e63e00debf432875f9e1e3395d99c149\",\"urls\":[\"bzz-raw://b0167043c1938b56904deaa481a73041aa4a9e054c60db0b0dfbebfe7869c06a\",\"dweb:/ipfs/QmUoYjhymBr6WUpExKgRvKxXD5fcdpQEe1o9ResKZu6CC5\"]}},\"version\":1}",
@@ -974,6 +976,12 @@
     "version": "0.6.5+commit.f956cc89.Emscripten.clang"
   },
   "networks": {
+    "73799": {
+      "events": {},
+      "links": {},
+      "address": "0x91Bb4d9428fE323713db4569174748D4866c383b",
+      "transactionHash": "0xb142d63f43a71361e75034a5bfcdf0bb4c83f59b568d7fa9f19f4a0735102738"
+    },
     "401697": {
       "events": {},
       "links": {},
@@ -982,7 +990,8 @@
     }
   },
   "schemaVersion": "3.0.23",
-  "updatedAt": "2020-04-08T13:26:55.869Z",
+  "updatedAt": "2020-05-05T10:05:20.722Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {
       "supportsInterface(bytes4)": {

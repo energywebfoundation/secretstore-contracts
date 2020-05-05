@@ -18,12 +18,14 @@ module.exports = {
     volta: {
       network_id: "73799",
       gas: 7000000,
-      provider: new HDWalletProvider(process.env.PRIVATE_KEY, "https://volta-rpc.energyweb.org")
+      provider: new HDWalletProvider(process.env.PRIVATE_KEY, "https://volta-rpc.energyweb.org"),
+      blockscoutUrl: "https://volta-explorer.energyweb.org/api"
     },
     ewc: {
       network_id: "246",
       gas: 7000000,
-      provider: new HDWalletProvider(process.env.PRIVATE_KEY, "https://rpc.energyweb.org")
+      provider: new HDWalletProvider(process.env.PRIVATE_KEY, "https://rpc.energyweb.org"),
+      blockscoutUrl: "https://explorer.energyweb.org/api"
     }
   },
   // Set default mocha options here, use special reporters etc.
@@ -43,12 +45,6 @@ module.exports = {
        }
       }
     }
-  },
-  plugins: [
-    'truffle-plugin-verify',
-  ],
-  api_keys: {
-    etherscan: process.env.ETHERSCAN_API_KEY
   }
 }
 
