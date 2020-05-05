@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.6.0;
 
 import "../interfaces/ISecretStorePermissioning.sol";
 
@@ -9,12 +9,19 @@ contract PermissioningFireAndForget is ISecretStorePermissioning {
     bytes32 public documentKeyId;
     address[] public addresses;
 
-    constructor(bytes32 docKeyId, address[] memory _addresses) public {
+    constructor(bytes32 docKeyId, address[] memory _addresses)
+        public
+    {
         documentKeyId = docKeyId;
         addresses = _addresses;
     }
 
-    function checkPermissions(address user, bytes32 document) public view returns (bool) {
+    function checkPermissions(address user, bytes32 document)
+        public
+        view
+        override
+        returns (bool) 
+    {
         if (document != documentKeyId)
             return false;
 
@@ -22,7 +29,7 @@ contract PermissioningFireAndForget is ISecretStorePermissioning {
             if (addresses[i] == user)
                 return true;
         }
-        
+
         return false;
     }
 }

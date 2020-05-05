@@ -14,15 +14,19 @@
 //! See the License for the specific language governing permissions and
 //! limitations under the License.
 
-pragma solidity ^0.4.24;
+pragma solidity ^0.6.0;
 
 import "../interfaces/SecretStoreService.sol";
 import "./SecretStoreServiceBase.sol";
 
 
-/// Document Key store service contract.
-contract SecretStoreDocumentKeyStoreService is SecretStoreServiceBase, DocumentKeyStoreServiceClientApi, DocumentKeyStoreServiceKeyServerApi {
-    /// Document key store request.
+/// Document Key store service contract
+contract SecretStoreDocumentKeyStoreService is
+    SecretStoreServiceBase,
+    DocumentKeyStoreServiceClientApi,
+    DocumentKeyStoreServiceKeyServerApi
+{
+    /// Document key store request
     struct DocumentKeyStoreRequest {
         address author;
         bytes commonPoint;
@@ -32,13 +36,18 @@ contract SecretStoreDocumentKeyStoreService is SecretStoreServiceBase, DocumentK
 
     /// When document key store request is received.
     event DocumentKeyStoreRequested(bytes32 serverKeyId, address author, bytes commonPoint, bytes encryptedPoint);
+
     /// When document key is stored.
     event DocumentKeyStored(bytes32 indexed serverKeyId);
+
     /// When error occurs during document key store.
     event DocumentKeyStoreError(bytes32 indexed serverKeyId);
 
     /// Constructor.
-    constructor(address keyServerSetAddressInit) SecretStoreServiceBase(keyServerSetAddressInit) public {
+    constructor(address keyServerSetAddressInit)
+        public
+        SecretStoreServiceBase(keyServerSetAddressInit)
+    {
         documentKeyStoreFee = 100 finney;
         maxDocumentKeyStoreRequests = 8;
     }
@@ -46,19 +55,29 @@ contract SecretStoreDocumentKeyStoreService is SecretStoreServiceBase, DocumentK
     // === Interface methods ===
 
     /// We do not support direct payments.
-    function() public payable {
+    receive() external payable {
         revert("Direct payments are not supported.");
     }
 
     /// Request document key store. Use `secretstore_generateDocumentKey` RPC to generate both
     /// `commonPoint` and `encryptedPoint`.
-    function storeDocumentKey(bytes32 serverKeyId, bytes commonPoint, bytes encryptedPoint) external payable
+    function storeDocumentKey(
+        bytes32 serverKeyId,
+        bytes calldata commonPoint,
+        bytes calldata encryptedPoint
+    )
+        external
+        payable
+        override
         whenFeePaid(documentKeyStoreFee)
         validPublic(commonPoint)
         validPublic(encryptedPoint)
     {
         // check maximum number of requests
-        require(documentKeyStoreRequestsKeys.length < maxDocumentKeyStoreRequests, "Maximum number of requests reached.");
+        require(
+            documentKeyStoreRequestsKeys.length < maxDocumentKeyStoreRequests,
+            "Maximum number of requests reached."
+        );
 
         DocumentKeyStoreRequest storage request = documentKeyStoreRequests[serverKeyId];
         require(request.author == address(0), "Request author address is 0x0.");
@@ -77,7 +96,10 @@ contract SecretStoreDocumentKeyStoreService is SecretStoreServiceBase, DocumentK
     }
 
     /// Called when store is reported by key server.
-    function documentKeyStored(bytes32 serverKeyId) external {
+    function documentKeyStored(bytes32 serverKeyId)
+        external
+        override
+    {
         // check if request still active
         DocumentKeyStoreRequest storage request = documentKeyStoreRequests[serverKeyId];
         if (request.author == address(0)) {
@@ -105,7 +127,10 @@ contract SecretStoreDocumentKeyStoreService is SecretStoreServiceBase, DocumentK
     }
 
     /// Called when error occurs during document key store.
-    function documentKeyStoreError(bytes32 serverKeyId) external {
+    function documentKeyStoreError(bytes32 serverKeyId)
+        external
+        override
+    {
         // check if request still active
         DocumentKeyStoreRequest storage request = documentKeyStoreRequests[serverKeyId];
         if (request.author == address(0)) {
@@ -122,13 +147,23 @@ contract SecretStoreDocumentKeyStoreService is SecretStoreServiceBase, DocumentK
     }
 
     /// Get count of pending document key store requests.
-    function documentKeyStoreRequestsCount() external view returns (uint256) {
+    function documentKeyStoreRequestsCount()
+        external
+        view
+        override
+        returns (uint256)
+    {
         return documentKeyStoreRequestsKeys.length;
     }
 
     /// Get document key store request with given index.
     /// Returns: (serverKeyId, author, commonPoint, encryptedPoint)
-    function getDocumentKeyStoreRequest(uint256 index) external view returns (bytes32, address, bytes, bytes) {
+    function getDocumentKeyStoreRequest(uint256 index)
+        external
+        view
+        override
+        returns (bytes32, address, bytes memory, bytes memory)
+    {
         bytes32 serverKeyId = documentKeyStoreRequestsKeys[index];
         DocumentKeyStoreRequest storage request = documentKeyStoreRequests[serverKeyId];
         return (
@@ -140,7 +175,12 @@ contract SecretStoreDocumentKeyStoreService is SecretStoreServiceBase, DocumentK
     }
 
     /// Returs true if response from given keyServer is required.
-    function isDocumentKeyStoreResponseRequired(bytes32 serverKeyId, address keyServer) external view returns (bool) {
+    function isDocumentKeyStoreResponseRequired(bytes32 serverKeyId, address keyServer)
+        external
+        view
+        override
+        returns (bool)
+    {
         uint8 keyServerIndex = requireKeyServer(keyServer);
         DocumentKeyStoreRequest storage request = documentKeyStoreRequests[serverKeyId];
         return isResponseRequired(request.responses, keyServerIndex);
@@ -178,7 +218,9 @@ contract SecretStoreDocumentKeyStoreService is SecretStoreServiceBase, DocumentK
     // === Internal methods ===
 
     /// Clear document key store request traces.
-    function clearDocumentKeyStoreRequest(bytes32 serverKeyId, DocumentKeyStoreRequest storage request) private {
+    function clearDocumentKeyStoreRequest(bytes32 serverKeyId, DocumentKeyStoreRequest storage request)
+        private
+    {
         clearResponses(request.responses);
         delete documentKeyStoreRequests[serverKeyId];
 

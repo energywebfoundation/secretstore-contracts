@@ -2,13 +2,14 @@
   "contractName": "IERC165Query",
   "abi": [
     {
-      "constant": true,
       "inputs": [
         {
+          "internalType": "address",
           "name": "_contract",
           "type": "address"
         },
         {
+          "internalType": "bytes4",
           "name": "_interfaceId",
           "type": "bytes4"
         }
@@ -16,51 +17,53 @@
       "name": "doesContractImplementInterface",
       "outputs": [
         {
+          "internalType": "bool",
           "name": "",
           "type": "bool"
         }
       ],
-      "payable": false,
       "stateMutability": "view",
       "type": "function"
     }
   ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_contract\",\"type\":\"address\"},{\"internalType\":\"bytes4\",\"name\":\"_interfaceId\",\"type\":\"bytes4\"}],\"name\":\"doesContractImplementInterface\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/IERC165Query.sol\":\"IERC165Query\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/IERC165Query.sol\":{\"keccak256\":\"0x514d949f615abbcf6b849b6a3a42a4c066345f4e513220ffcc2f293ca5935d2c\",\"urls\":[\"bzz-raw://2624652a5e34c9e0dffe060a5c8d4c83732225e0a361f375a0ace4fefa0305d6\",\"dweb:/ipfs/QmaKhUdC9yfpLHSY3p6idG9c9iYrxV4DPg7MPejXNLfQKb\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.4.24;\n\n\ncontract IERC165Query {\n\n    function doesContractImplementInterface(address _contract, bytes4 _interfaceId) external view returns (bool);\n}",
+  "source": "pragma solidity ^0.6.0;\n\n\ninterface IERC165Query {\n\n    function doesContractImplementInterface(address _contract, bytes4 _interfaceId)\n        external\n        view\n        returns (bool);\n}\n",
   "sourcePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/IERC165Query.sol",
   "ast": {
     "absolutePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/IERC165Query.sol",
     "exportedSymbols": {
       "IERC165Query": [
-        712
+        1256
       ]
     },
-    "id": 713,
+    "id": 1257,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 702,
+        "id": 1246,
         "literals": [
           "solidity",
           "^",
-          "0.4",
-          ".24"
+          "0.6",
+          ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:4"
+        "src": "0:23:5"
       },
       {
+        "abstract": false,
         "baseContracts": [],
         "contractDependencies": [],
-        "contractKind": "contract",
+        "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 712,
+        "id": 1256,
         "linearizedBaseContracts": [
-          712
+          1256
         ],
         "name": "IERC165Query",
         "nodeType": "ContractDefinition",
@@ -68,24 +71,26 @@
           {
             "body": null,
             "documentation": null,
-            "id": 711,
+            "functionSelector": "e9c54384",
+            "id": 1255,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "doesContractImplementInterface",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 707,
+              "id": 1251,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 704,
+                  "id": 1248,
                   "name": "_contract",
                   "nodeType": "VariableDeclaration",
-                  "scope": 711,
-                  "src": "96:17:4",
+                  "overrides": null,
+                  "scope": 1255,
+                  "src": "96:17:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -93,10 +98,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 703,
+                    "id": 1247,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "96:7:4",
+                    "src": "96:7:5",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -107,11 +113,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 706,
+                  "id": 1250,
                   "name": "_interfaceId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 711,
-                  "src": "115:19:4",
+                  "overrides": null,
+                  "scope": 1255,
+                  "src": "115:19:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -119,10 +126,10 @@
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 705,
+                    "id": 1249,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "115:6:4",
+                    "src": "115:6:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
@@ -132,20 +139,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "95:40:4"
+              "src": "95:40:5"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 710,
+              "id": 1254,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 709,
+                  "id": 1253,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 711,
-                  "src": "159:4:4",
+                  "overrides": null,
+                  "scope": 1255,
+                  "src": "183:4:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -153,10 +160,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 708,
+                    "id": 1252,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "159:4:4",
+                    "src": "183:4:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -166,51 +173,52 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "158:6:4"
+              "src": "182:6:5"
             },
-            "scope": 712,
-            "src": "56:109:4",
+            "scope": 1256,
+            "src": "56:133:5",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 713,
-        "src": "27:140:4"
+        "scope": 1257,
+        "src": "26:165:5"
       }
     ],
-    "src": "0:167:4"
+    "src": "0:192:5"
   },
   "legacyAST": {
     "absolutePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/IERC165Query.sol",
     "exportedSymbols": {
       "IERC165Query": [
-        712
+        1256
       ]
     },
-    "id": 713,
+    "id": 1257,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 702,
+        "id": 1246,
         "literals": [
           "solidity",
           "^",
-          "0.4",
-          ".24"
+          "0.6",
+          ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:24:4"
+        "src": "0:23:5"
       },
       {
+        "abstract": false,
         "baseContracts": [],
         "contractDependencies": [],
-        "contractKind": "contract",
+        "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 712,
+        "id": 1256,
         "linearizedBaseContracts": [
-          712
+          1256
         ],
         "name": "IERC165Query",
         "nodeType": "ContractDefinition",
@@ -218,24 +226,26 @@
           {
             "body": null,
             "documentation": null,
-            "id": 711,
+            "functionSelector": "e9c54384",
+            "id": 1255,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "doesContractImplementInterface",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 707,
+              "id": 1251,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 704,
+                  "id": 1248,
                   "name": "_contract",
                   "nodeType": "VariableDeclaration",
-                  "scope": 711,
-                  "src": "96:17:4",
+                  "overrides": null,
+                  "scope": 1255,
+                  "src": "96:17:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -243,10 +253,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 703,
+                    "id": 1247,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "96:7:4",
+                    "src": "96:7:5",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -257,11 +268,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 706,
+                  "id": 1250,
                   "name": "_interfaceId",
                   "nodeType": "VariableDeclaration",
-                  "scope": 711,
-                  "src": "115:19:4",
+                  "overrides": null,
+                  "scope": 1255,
+                  "src": "115:19:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -269,10 +281,10 @@
                     "typeString": "bytes4"
                   },
                   "typeName": {
-                    "id": 705,
+                    "id": 1249,
                     "name": "bytes4",
                     "nodeType": "ElementaryTypeName",
-                    "src": "115:6:4",
+                    "src": "115:6:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes4",
                       "typeString": "bytes4"
@@ -282,20 +294,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "95:40:4"
+              "src": "95:40:5"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 710,
+              "id": 1254,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 709,
+                  "id": 1253,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 711,
-                  "src": "159:4:4",
+                  "overrides": null,
+                  "scope": 1255,
+                  "src": "183:4:5",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -303,10 +315,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 708,
+                    "id": 1252,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "159:4:4",
+                    "src": "183:4:5",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -316,26 +328,32 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "158:6:4"
+              "src": "182:6:5"
             },
-            "scope": 712,
-            "src": "56:109:4",
+            "scope": 1256,
+            "src": "56:133:5",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 713,
-        "src": "27:140:4"
+        "scope": 1257,
+        "src": "26:165:5"
       }
     ],
-    "src": "0:167:4"
+    "src": "0:192:5"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "2.0.1",
-  "updatedAt": "2019-01-21T13:35:51.063Z"
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-04-08T13:26:55.907Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
 }

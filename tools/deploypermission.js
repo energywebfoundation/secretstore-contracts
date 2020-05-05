@@ -42,7 +42,7 @@ async function deployPermission(args) {
         }
     }
     let contract = await Contract.deploy({arguments: argselector[ContractJSON.contractName]})
-        .send({from: from});
+        .send({from: from, gas: 1000000, gasPrice: web3.utils.toWei("1", "gwei")});
     
     console.log(contractName + " deployed at: " + contract.options.address);
     return contract;

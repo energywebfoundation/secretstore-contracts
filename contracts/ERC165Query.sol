@@ -1,8 +1,8 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.6.0;
 
 import "./interfaces/IERC165Query.sol";
-import "openzeppelin-solidity/contracts/introspection/ERC165Checker.sol";
-import "openzeppelin-solidity/contracts/introspection/ERC165.sol";
+import "@openzeppelin/contracts/introspection/ERC165Checker.sol";
+import "@openzeppelin/contracts/introspection/ERC165.sol";
 
 
 contract ERC165Query is IERC165Query, ERC165 {
@@ -11,8 +11,12 @@ contract ERC165Query is IERC165Query, ERC165 {
         _registerInterface(this.doesContractImplementInterface.selector);
     }
 
-    function doesContractImplementInterface(address _contract, bytes4 _interfaceId) external view returns (bool) {
-        return ERC165Checker._supportsInterface(_contract, _interfaceId);
+    function doesContractImplementInterface(address _contract, bytes4 _interfaceId)
+        external
+        view
+        override
+        returns (bool)
+    {
+        return ERC165Checker.supportsInterface(_contract, _interfaceId);
     }
 }
-

@@ -1,276 +1,334 @@
-"use strict";
+const path = require("path");
+const ERC165Query = artifacts.require("../../contracts/ERC165Query.sol");
+const PermissioningRegistry = artifacts.require("../../contracts/PermissioningRegistry.sol");
+const NonERC165Contract = artifacts.require("../../contracts/simplepermissioning/PermissioningDynamic.sol");
 
-const path = require('path');
+require('chai')
+    .use(require('chai-as-promised'))
+    .use(require('chai-bn')(web3.utils.BN))
+    .should();
 
-const chai = require("chai");
-const chaiAsPromised = require("chai-as-promised");
-chai.use(chaiAsPromised);
+const {
+    EMPTY_ADDRESS
+} = require(path.join(__dirname, "../utils.js"));
 
-const assert = chai.assert;
-const expect = chai.expect;
+const testDoc = "0xfefefefe00000000000000000000000000000000000000000000000000000000";
 
-const web3 = new (require('web3'))("http://127.0.0.1:8545");
-
-const alice = "0x3144de21da6de18061f818836fa3db8f3d6b6989";
-const bob = "0x6c4b8b199a41b721e0a95df9860cf0a18732e76d";
-const charlie = "0x8b2c16e09bfb011c5e4883cedb105124ccf01af7";
-
-const tutils = require(path.join(__dirname, "../testutils.js"));
-
-const ContractQueryJSON = require(path.join(__dirname, "../../build/contracts/ERC165Query.json"));
-const ContractRegistryJSON = require(path.join(__dirname, "../../build/contracts/PermissioningRegistry.json"));
-const nullAddress = "0x0000000000000000000000000000000000000000";
-const testDoc = "0xfefefefe";
-
-async function checkPermissionsTrue(contract) {
-    let allowed = await contract.methods.checkPermissions(alice, testDoc).call();
-    assert.isTrue(allowed);
-    allowed = await contract.methods.checkPermissions(bob, testDoc).call();
-    assert.isTrue(allowed);
-    allowed = await contract.methods.checkPermissions(charlie, testDoc).call();
-    assert.isFalse(allowed);
-}
-
-describe("Permissioning registry contract", async function() {
-    this.timeout(25000);
-
-    let from;
-    let accounts;
+contract("Permissioning registry", function (accounts) {
+    let erc165query;
+    let registry;
+    let owner;
 
     before(async function() {
-        accounts = await web3.eth.getAccounts();
-        from = accounts[0];
+        erc165query = await ERC165Query.new();
     });
 
-    it('should deploy successfully', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        assert.exists(instance.options.address);
-        assert.isNotEmpty(instance.options.address);
+    beforeEach(async function() {
+        owner = accounts[0];
+        registry = await PermissioningRegistry.new({ from: owner }).should.be.fulfilled;
     });
 
-    it('should add permission successfully', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        
-        let rec = await instance.methods.permission(testDoc, [alice, bob]).send({from: from});
-        checkPermissionsTrue(instance);
+    describe('constructor', async function () {
+        it('should deploy successfully', async function() {
+            registry.address.should.exist;
+        });
     });
 
-    it('should emit event on permisson add', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        
-        let rec = await instance.methods.permission(testDoc, [alice, bob]).send({from: from});
-        assert.isTrue(rec.events.hasOwnProperty("Permission"));
+
+    describe('permission management', async function () {
+        it('should add permission successfully', async function() {
+            let rec = await registry.permission(testDoc, [accounts[1], accounts[2]], {from: owner})
+                .should.be.fulfilled;
+            let allowed = await registry.checkPermissions(accounts[1], testDoc);
+            allowed.should.be.true;
+            allowed = await registry.checkPermissions(accounts[2], testDoc);
+            allowed.should.be.true;
+            allowed = await registry.checkPermissions(accounts[3], testDoc);
+            allowed.should.be.false;
+        });
+
+        it('should emit event on permisson add', async function() {
+            let rec = await registry.permission(testDoc, [accounts[1], accounts[2]], {from: owner})
+                .should.be.fulfilled;
+            const currentBlocknumber = (await web3.eth.getBlockNumber());
+            const events = await registry.getPastEvents(
+                "Permission",
+                {
+                    "fromBlock": currentBlocknumber,
+                    "toBlock": currentBlocknumber
+                }
+            );
+            events.length.should.equal(1);
+            events[0].args.document.should.be.deep.equal(testDoc);
+        });
+
+        it('should allow only admin to modify', async function() {
+            let rec = await registry.permission(testDoc, [accounts[1], accounts[2]], {from: accounts[1]})
+                .should.be.fulfilled;
+            await registry.permission(testDoc, [accounts[3], accounts[2]], {from: accounts[2]})
+                .should.be.rejectedWith();
+        });
+
+        it('should allow owner to modify anything', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]})
+                .should.be.fulfilled;
+            let allowed = await registry.checkPermissions(accounts[1], testDoc);
+            allowed.should.be.false;
+            allowed = await registry.checkPermissions(accounts[2], testDoc);
+            allowed.should.be.false;
+            allowed = await registry.checkPermissions(accounts[3], testDoc);
+            allowed.should.be.true;
+            
+            await registry.permission(testDoc, [accounts[1], accounts[2]], {from: owner})
+                .should.be.fulfilled;
+            allowed = await registry.checkPermissions(accounts[1], testDoc);
+            allowed.should.be.true;
+            allowed = await registry.checkPermissions(accounts[2], testDoc);
+            allowed.should.be.true;
+            allowed = await registry.checkPermissions(accounts[3], testDoc);
+            allowed.should.be.false;
+        });
+
+        it('should allow admin to delete permission', async function() {
+            await registry.permission(testDoc, [accounts[1], accounts[2]], {from: accounts[1]})
+                .should.be.fulfilled;
+            await registry.removePermission(testDoc, {from: accounts[1]})
+                .should.be.fulfilled;
+            (await registry.getAdmin(testDoc)).should.be.equal(EMPTY_ADDRESS);
+            (await registry.getUsers(testDoc)).should.be.deep.equal([]);
+        });
+
+        it('should emit event on permission delete', async function() {
+            await registry.permission(testDoc, [accounts[1], accounts[2]], {from: accounts[1]})
+                .should.be.fulfilled;
+            let rec = await registry.removePermission(testDoc, {from: accounts[1]})
+                .should.be.fulfilled;
+            const currentBlocknumber = (await web3.eth.getBlockNumber());
+            const events = await registry.getPastEvents(
+                "Permission",
+                {
+                    "fromBlock": currentBlocknumber,
+                    "toBlock": currentBlocknumber
+                }
+            );
+            events.length.should.equal(1);
+            events[0].args.document.should.be.deep.equal(testDoc);
+        });
+
+        it('should allow owner to delete permission', async function() {
+            await registry.permission(testDoc, [accounts[1], accounts[2]], {from: accounts[1]})
+                .should.be.fulfilled;
+            await registry.removePermission(testDoc, {from: owner})
+                .should.be.fulfilled;
+            (await registry.getAdmin(testDoc)).should.be.equal(EMPTY_ADDRESS);
+            (await registry.getUsers(testDoc)).should.be.deep.equal([]);
+        });
+
+        it('should not allow unauthorized user to delete permission', async function() {
+            await registry.permission(testDoc, [accounts[1], accounts[2]], {from: accounts[1]})
+                .should.be.fulfilled;
+            await registry.removePermission(testDoc, {from: accounts[2]})
+                .should.be.rejectedWith();
+        });
     });
 
-    it('should allow only admin to modify', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        let rec = await instance.methods.permission(testDoc, [alice, bob]).send({from: accounts[1]});
-        assert.isTrue(rec.status);
-        await expect(instance.methods.permission(testDoc, [charlie, bob]).send({from: accounts[2]}))
-            .to.be.rejectedWith(Error);
+    describe('admin', async function () {
+        it('should change admin successfully', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]}).should.be.fulfilled;
+            await registry.setAdmin(testDoc, accounts[2], {from: accounts[1]}).should.be.fulfilled;
+            web3.utils.toChecksumAddress(accounts[2]).should.be.deep.equal(await registry.getAdmin(testDoc));
+        });
+
+        it('should emit event on admin change', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]});
+            let rec = await registry.setAdmin(testDoc, accounts[2], {from: accounts[1]});
+            const currentBlocknumber = (await web3.eth.getBlockNumber());
+            const events = await registry.getPastEvents(
+                "NewAdmin",
+                {
+                    "fromBlock": currentBlocknumber,
+                    "toBlock": currentBlocknumber
+                }
+            );
+            events.length.should.equal(1);
+            events[0].args.document.should.be.deep.equal(testDoc);
+        });
+
+        it('should not allow new admin to be 0x0', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: owner}).should.be.fulfilled;
+            await registry.setAdmin(testDoc, EMPTY_ADDRESS, {from: owner})
+                .should.be.rejectedWith();
+        });
+
+        it('should not allow unathorized person to change admin', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]}).should.be.fulfilled;
+            await registry.setAdmin(testDoc, accounts[2], {from: accounts[2]})
+                .should.be.rejectedWith();
+        });
+
+        it('should allow owner to change admin', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]})
+                .should.be.fulfilled;
+            await registry.setAdmin(testDoc, accounts[2], {from: owner})
+                .should.be.fulfilled;
+            web3.utils.toChecksumAddress(accounts[2]).should.be.equal(await registry.getAdmin(testDoc));
+        });
     });
 
-    it('should allow owner to modify anything', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        await instance.methods.permission(testDoc, [alice, bob]).send({from: from});
-        checkPermissionsTrue(instance);
-    });
+    
+    describe('exposed', async function () {
+        it('should not be exposed uninitialized', async function() {
+            let exposed = await registry.isExposed(testDoc);
+            exposed.should.be.false;
+        });
 
-    it('should change admin successfully', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        await instance.methods.setAdmin(testDoc, accounts[2]).send({from: accounts[1]});
-        assert.equal(await instance.methods.getAdmin(testDoc).call(), web3.utils.toChecksumAddress(accounts[2]));
-    });
+        it('should not be exposed by default', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]})
+                .should.be.fulfilled;
+            let exposed = await registry.isExposed(testDoc);
+            exposed.should.be.false;
+        });
 
-    it('should emit event on admin change', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        let rec = await instance.methods.setAdmin(testDoc, accounts[2]).send({from: accounts[1]});
-        assert.isTrue(rec.events.hasOwnProperty("NewAdmin"));
-    });
+        it('should allow owner to change exposed', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]})
+                .should.be.fulfilled;
+            await registry.setExposed(testDoc, true, {from: accounts[1]})
+                .should.be.fulfilled;
+            let exposed = await registry.isExposed(testDoc);
+            exposed.should.be.true;
+        });
 
-    it('should not allow new admin to be 0x0', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: from});
-        await expect(instance.methods.setAdmin(testDoc, nullAddress).send({from: from}))
-            .to.be.rejectedWith(Error);
-    });
+        it('should not allow not-owner to change exposed', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]});
+            await registry.setExposed(testDoc, true, {from: accounts[2]})
+                .should.be.rejectedWith();
+        });
 
-    it('should not allow unathorized person to change admin', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        await expect(instance.methods.setAdmin(testDoc, accounts[2]).send({from: accounts[2]}))
-            .to.be.rejectedWith(Error);
-    });
-
-    it('should allow owner to change admin', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        await instance.methods.setAdmin(testDoc, accounts[2]).send({from: from});
-        assert.equal(await instance.methods.getAdmin(testDoc).call(), web3.utils.toChecksumAddress(accounts[2]));
-    });
-
-    it('should not be exposed uninitialized', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        let exposed = await instance.methods.isExposed(testDoc).call();
-        assert.isFalse(exposed);
-    });
-
-    it('should not be exposed by default', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        let exposed = await instance.methods.isExposed(testDoc).call();
-        assert.isFalse(exposed);
-    });
-
-    it('should not allow uninitialized permission to return true', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        let allowed = await instance.methods.checkPermissions(charlie, testDoc).call();
-        assert.isFalse(allowed);
-    });
-
-    it('should not allow default permission to return true on unexposed entry', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        let allowed = await instance.methods.checkPermissions(bob, testDoc).call();
-        assert.isFalse(allowed);
+        it('should always return true on an initialized exposed entry', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]})
+                .should.be.fulfilled;
+            await registry.setExposed(testDoc, true, {from: accounts[1]})
+                .should.be.fulfilled;
+            let exposed = await registry.isExposed(testDoc);
+            exposed.should.be.true;
+            let allowed = await registry.checkPermissions(accounts[1], testDoc);
+            allowed.should.be.true;
+            allowed = await registry.checkPermissions(accounts[2], testDoc);
+            allowed.should.be.true;
+            allowed = await registry.checkPermissions(accounts[3], testDoc);
+            allowed.should.be.true;
+        });
     });
     
-    it('should allow owner to change exposed', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        await instance.methods.setExposed(testDoc, true).send({from: accounts[1]});
-        let exposed = await instance.methods.isExposed(testDoc).call();
-        assert.isTrue(exposed);
+    describe('permission check', async function () {
+        it('should not allow uninitialized permission to return true', async function() {
+            let allowed = await registry.checkPermissions(accounts[3], testDoc);
+            allowed.should.be.false;
+        });
+
+        it('should not allow default permission to return true on unexposed entry', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]})
+                .should.be.fulfilled;
+            let allowed = await registry.checkPermissions(accounts[2], testDoc);
+            allowed.should.be.false;
+        });
     });
 
-    it('should not allow not-owner to change exposed', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        await expect(instance.methods.setExposed(testDoc, true).send({from: accounts[2]}))
-            .to.be.rejectedWith(Error);
-    });
+    describe('user change', async function () {
+        it('should change users successfully', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]})
+                .should.be.fulfilled;
+            await registry.setUsers(testDoc, [accounts[1], accounts[2]], {from: accounts[1]})
+                .should.be.fulfilled;
+            [web3.utils.toChecksumAddress(accounts[1]), web3.utils.toChecksumAddress(accounts[2])]
+                .should.be.deep.equal(await registry.getUsers(testDoc));
+        });
 
-    it('should always return true on an initialized exposed entry', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        await instance.methods.setExposed(testDoc, true).send({from: accounts[1]});
-        let exposed = await instance.methods.isExposed(testDoc).call();
-        assert.isTrue(exposed);
-        let allowed = await instance.methods.checkPermissions(alice, testDoc).call();
-        assert.isTrue(allowed);
-        allowed = await instance.methods.checkPermissions(bob, testDoc).call();
-        assert.isTrue(allowed);
-        allowed = await instance.methods.checkPermissions(charlie, testDoc).call();
-        assert.isTrue(allowed);
-    });
+        it('should change users successfully to empty', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]})
+                .should.be.fulfilled;
+            await registry.setUsers(testDoc, [], {from: accounts[1]})
+                .should.be.fulfilled;
+            (await registry.getUsers(testDoc)).should.be.deep.equal([]);
+        });
 
-    it('should change users successfully', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        await instance.methods.setUsers(testDoc, [alice, bob]).send({from: accounts[1]});
-        assert.deepEqual(await instance.methods.getUsers(testDoc).call(), [web3.utils.toChecksumAddress(alice), web3.utils.toChecksumAddress(bob)]);
-    });
+        it('should emit event on users change', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]})
+                .should.be.fulfilled;
+            let rec = await registry.setUsers(testDoc, [accounts[1], accounts[2]], {from: accounts[1]})
+                .should.be.fulfilled;
+            const currentBlocknumber = (await web3.eth.getBlockNumber());
+            const events = await registry.getPastEvents(
+                "Permission",
+                {
+                    "fromBlock": currentBlocknumber,
+                    "toBlock": currentBlocknumber
+                }
+            );
+            events.length.should.equal(1);
+            events[0].args.document.should.be.deep.equal(testDoc);
+        });
 
-    it('should change users successfully to empty', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        await instance.methods.setUsers(testDoc, []).send({from: accounts[1]});
-        assert.deepEqual(await instance.methods.getUsers(testDoc).call(), []);
-    });
+        it('should not allow unathorized person to change users', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]})
+                .should.be.fulfilled;
+            await registry.setUsers(testDoc, [accounts[1], accounts[2]], {from: accounts[2]})
+                .should.be.rejectedWith();
+        });
 
-    it('should emit event on users change', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        let rec = await instance.methods.setUsers(testDoc, [alice, bob]).send({from: accounts[1]});
-        assert.isTrue(rec.events.hasOwnProperty("Permission"));
-    });
+        it('should allow owner to change users', async function() {
+            await registry.permission(testDoc, [accounts[3]], {from: accounts[1]})
+                .should.be.fulfilled;
+            await registry.setUsers(testDoc, [accounts[1], accounts[2]], {from: owner})
+                .should.be.fulfilled;
+            (await registry.getUsers(testDoc)).should.be.deep.equal([web3.utils.toChecksumAddress(accounts[1]), web3.utils.toChecksumAddress(accounts[2])]);
+        });
 
-    it('should not allow unathorized person to change users', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        await expect(instance.methods.setUsers(testDoc, [alice, bob]).send({from: accounts[2]}))
-            .to.be.rejectedWith(Error);
-    });
+        it('should allow admin to add users', async function() {
+            await registry.permission(testDoc, [accounts[1]], {from: accounts[1]})
+                .should.be.fulfilled;
+            await registry.addUser(testDoc, accounts[2], {from: accounts[1]})
+                .should.be.fulfilled;
+            (await registry.getUsers(testDoc)).should.be.deep.equal([web3.utils.toChecksumAddress(accounts[1]), web3.utils.toChecksumAddress(accounts[2])]);
+        });
 
-    it('should allow owner to change users', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [charlie]).send({from: accounts[1]});
-        await instance.methods.setUsers(testDoc, [alice, bob]).send({from: from});
-        assert.deepEqual(await instance.methods.getUsers(testDoc).call(), [web3.utils.toChecksumAddress(alice), web3.utils.toChecksumAddress(bob)]);
-    });
+        it('should allow owner to add users', async function() {
+            await registry.permission(testDoc, [accounts[1]], {from: accounts[1]})
+                .should.be.fulfilled;
+            await registry.addUser(testDoc, accounts[2], {from: owner})
+                .should.be.fulfilled;
+            (await registry.getUsers(testDoc)).should.be.deep.equal([web3.utils.toChecksumAddress(accounts[1]), web3.utils.toChecksumAddress(accounts[2])]);
+        });
 
-    it('should allow admin to add users', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [alice]).send({from: accounts[1]});
-        await instance.methods.addUser(testDoc, bob).send({from: accounts[1]});
-        assert.deepEqual(await instance.methods.getUsers(testDoc).call(), [web3.utils.toChecksumAddress(alice), web3.utils.toChecksumAddress(bob)]);
+        it('should emit event on user add', async function() {
+            await registry.permission(testDoc, [accounts[1]], {from: accounts[1]})
+                .should.be.fulfilled;
+            let rec = await registry.addUser(testDoc, accounts[2], {from: accounts[1]})
+                .should.be.fulfilled;
+            const currentBlocknumber = (await web3.eth.getBlockNumber());
+            const events = await registry.getPastEvents(
+                "Permission",
+                {
+                    "fromBlock": currentBlocknumber,
+                    "toBlock": currentBlocknumber
+                }
+            );
+            events.length.should.equal(1);
+            events[0].args.document.should.be.deep.equal(testDoc);
+        });
     });
+    
+    describe('erc1645', async function () {
+        it('should support the erc165 interface', async function() {
+            (await registry.supportsInterface("0x01ffc9a7")).should.be.true;
+        });
 
-    it('should allow owner to add users', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [alice]).send({from: accounts[1]});
-        await instance.methods.addUser(testDoc, bob).send({from: from});
-        assert.deepEqual(await instance.methods.getUsers(testDoc).call(), [web3.utils.toChecksumAddress(alice), web3.utils.toChecksumAddress(bob)]);
+        it('should not support the 0xffffffff interface', async function() {
+            (await registry.supportsInterface("0xffffffff")).should.be.false;
+        });
+
+        it('should support the secret store permissioning interface', async function() {
+            (await registry.supportsInterface("0xb36a9a7c")).should.be.true;
+        });
     });
-
-    it('should emit event on user add', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [alice]).send({from: accounts[1]});
-        let rec = await instance.methods.addUser(testDoc, bob).send({from: accounts[1]});
-        assert.isTrue(rec.events.hasOwnProperty("Permission"));
-    });
-
-    it('should allow admin to delete permission', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [alice, bob]).send({from: accounts[1]});
-        await instance.methods.removePermission(testDoc).send({from: accounts[1]});
-        assert.equal(await instance.methods.getAdmin(testDoc).call(), nullAddress);
-        assert.deepEqual(await instance.methods.getUsers(testDoc).call(), []);
-    });
-
-    it('should emit event on permission delete', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [alice, bob]).send({from: accounts[1]});
-        let rec = await instance.methods.removePermission(testDoc).send({from: accounts[1]});
-        assert.isTrue(rec.events.hasOwnProperty("Permission"));
-    });
-
-    it('should allow owner to delete permission', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [alice, bob]).send({from: accounts[1]});
-        await instance.methods.removePermission(testDoc).send({from: from});
-        assert.equal(await instance.methods.getAdmin(testDoc).call(), nullAddress);
-        assert.deepEqual(await instance.methods.getUsers(testDoc).call(), []);
-    });
-
-    it('should not allow unauthorized user to delete permission', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        await instance.methods.permission(testDoc, [alice, bob]).send({from: accounts[1]});
-        await expect(instance.methods.removePermission(testDoc).send({from: accounts[2]}))
-            .to.be.rejectedWith(Error);
-    });
-
-    it('should support the erc165 interface', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        assert.isTrue(await instance.methods.supportsInterface("0x01ffc9a7").call());
-    });
-
-    it('should not support the 0xffffffff interface', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        assert.isFalse(await instance.methods.supportsInterface("0xffffffff").call());
-    });
-
-    it('should support the secret store permissioning interface', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        assert.isTrue(await instance.methods.supportsInterface("0xb36a9a7c").call());
-    });
-
-    it('should support the ownable interface', async function() {
-        let instance = await tutils.deployRegistry(web3, [], {from: from});
-        assert.isTrue(await instance.methods.supportsInterface("0x813ae5ed").call());
-    });
-
 });

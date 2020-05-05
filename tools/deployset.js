@@ -20,7 +20,7 @@ async function deploySet(args) {
             from = web3.eth.defaultAccount;
         }
     }
-    let contract = await Contract.deploy({arguments: []}).send({from: from, gas: 3000000});
+    let contract = await Contract.deploy({arguments: []}).send({from: from, gas: 5000000});
     
     console.log(contractName + " deployed at: " + contract.options.address);
     return contract;

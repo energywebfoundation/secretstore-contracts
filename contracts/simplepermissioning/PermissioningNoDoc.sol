@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.6.0;
 
 import "../interfaces/ISecretStorePermissioning.sol";
 
@@ -14,10 +14,16 @@ contract PermissioningNoDoc is ISecretStorePermissioning {
     }
 
     // We only check users
-    function checkPermissions(address user, bytes32 document) public view returns (bool) {
+    function checkPermissions(address user, bytes32 document)
+        public
+        view
+        override
+        returns (bool)
+    {
         for (uint i = 0; i < addresses.length; i++) {
-            if (addresses[i] == user)
-            return true;
+            if (addresses[i] == user) {
+                return true;
+            }
         }
         return false;
     }

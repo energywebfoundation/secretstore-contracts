@@ -7,21 +7,34 @@
     "secretstore-contracts": "./index.js"
   },
   "dependencies": {
-    "openzeppelin-solidity": "^2.0.0",
-    "web3": "^1.0.0-beta.37",
+    "@openzeppelin/contracts": "^3.0.0-rc.1",
+    "web3": "^1.2.1",
     "yargs": "^12.0.5"
   },
   "devDependencies": {
+    "@truffle/hdwallet-provider": "^1.0.34",
     "chai": "^4.2.0",
     "chai-as-promised": "^7.1.1",
+    "chai-bn": "^0.2.1",
+    "dotenv": "^8.2.0",
+    "ethlint": "^1.2.5",
+    "ganache-cli": "^6.9.1",
     "mocha": "^5.2.0",
-    "solium": "^1.1.8"
+    "solhint": "^2.3.1",
+    "solium-plugin-zeppelin": "0.0.2",
+    "truffle": "^5.1.20",
+    "truffle-plugin-verify": "^0.3.10"
   },
   "scripts": {
     "start": "node index.js",
-    "test": "npx mocha ./test/* && truffle test ./test/solidity/*",
+    "test": "scripts/test.sh",
     "lint": "npx solium -d contracts/",
-    "deploytobalaba": "truffle migrate --network tobalaba --reset"
+    "deploy:volta": "truffle migrate --network volta --reset",
+    "deploy:ewc": "truffle migrate --network ewc --reset",
+    "lint:solium": "npx solium -d contracts/",
+    "lint:solium:fix": "npx solium -d contracts/ --fix",
+    "lint:solhint": "npx solhint \"contracts/**/*.sol\"",
+    "ganache": "npx ganache-cli --port 8545"
   },
   "repository": {
     "type": "git",

@@ -14,9 +14,9 @@
 //! See the License for the specific language governing permissions and
 //! limitations under the License.
 
-pragma solidity ^0.4.24;
+pragma solidity ^0.6.0;
 
-import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 import "../interfaces/KeyServerSet.sol";
 
 
@@ -52,7 +52,7 @@ contract SecretStoreServiceBase is Ownable {
     }
 
     /// Only pass when 'valid' public is passed.
-    modifier validPublic(bytes publicKey) {
+    modifier validPublic(bytes memory publicKey) {
         require(publicKey.length == 64, "Public key is not valid.");
         _;
     }
@@ -167,7 +167,7 @@ contract SecretStoreServiceBase is Ownable {
         for (uint i = 0; i < requests.length; ++i) {
             if (requests[i] == request) {
                 requests[i] = requests[requests.length - 1];
-                requests.length = requests.length - 1;
+                requests.pop();
                 break;
             }
         }
@@ -180,7 +180,7 @@ contract SecretStoreServiceBase is Ownable {
         responses.respondedKeyServersMask = 0;
         responses.respondedKeyServersCount = 0;
         responses.maxResponseSupport = 0;
-        responses.responses.length = 0;
+        delete responses.responses;
     }
 
     /// Address of KeyServerSet contract.

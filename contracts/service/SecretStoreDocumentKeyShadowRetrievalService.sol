@@ -14,7 +14,7 @@
 //! See the License for the specific language governing permissions and
 //! limitations under the License.
 
-pragma solidity ^0.4.24;
+pragma solidity ^0.6.0;
 
 import "../interfaces/SecretStoreService.sol";
 import "./SecretStoreServiceBase.sol";
@@ -22,7 +22,11 @@ import "./SecretStoreServiceBase.sol";
 
 /// Document Key shadow retrieval service contract.
 /* solium-disable-next-line */
-contract SecretStoreDocumentKeyShadowRetrievalService is SecretStoreServiceBase, DocumentKeyShadowRetrievalServiceClientApi, DocumentKeyShadowRetrievalServiceKeyServerApi {
+contract SecretStoreDocumentKeyShadowRetrievalService is 
+    SecretStoreServiceBase,
+    DocumentKeyShadowRetrievalServiceClientApi,
+    DocumentKeyShadowRetrievalServiceKeyServerApi
+{
     /// Document key shadow retrieval request.
     struct DocumentKeyShadowRetrievalRequest {
         // public portion-related data
@@ -46,8 +50,9 @@ contract SecretStoreDocumentKeyShadowRetrievalService is SecretStoreServiceBase,
     }
 
     //// Only pass when caller is the owner of given public key.
-    modifier onlyPublicOwner(bytes publicKey) {
-        require(address(uint(keccak256(publicKey)) & 0x00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF) == msg.sender,
+    modifier onlyPublicOwner(bytes memory publicKey) {
+        require(
+            address(uint(keccak256(publicKey)) & 0x00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF) == msg.sender,
             "Caller is not owner of the given public key."
         );
         _;
@@ -55,14 +60,28 @@ contract SecretStoreDocumentKeyShadowRetrievalService is SecretStoreServiceBase,
 
     /// When document key common-portion retrieval request is received.
     event DocumentKeyCommonRetrievalRequested(bytes32 serverKeyId, address requester);
+
     /// When document key personal-portion retrieval request is received.
     event DocumentKeyPersonalRetrievalRequested(bytes32 serverKeyId, bytes requesterPublic);
+
     /// When document key common portion is retrieved. Ater this event s fired, wait for
     /// exactly `threshold+1` `DocumentKeyPersonalRetrieved` events with the same `decryptedSecret` value.
-    event DocumentKeyCommonRetrieved(bytes32 indexed serverKeyId, address indexed requester, bytes commonPoint, uint8 threshold);
+    event DocumentKeyCommonRetrieved(
+        bytes32 indexed serverKeyId,
+        address indexed requester,
+        bytes commonPoint,
+        uint8 threshold
+    );
+
     /// When document key personal portion is retrieved. After enough events are fired, use `secretstore_shadowDecrypt`
     /// to decrypt document contents.
-    event DocumentKeyPersonalRetrieved(bytes32 indexed serverKeyId, address indexed requester, bytes decryptedSecret, bytes shadow);
+    event DocumentKeyPersonalRetrieved(
+        bytes32 indexed serverKeyId,
+        address indexed requester,
+        bytes decryptedSecret,
+        bytes shadow
+    );
+
     /// When error occurs during document key retrieval.
     event DocumentKeyShadowRetrievalError(bytes32 indexed serverKeyId, address indexed requester);
 
@@ -75,18 +94,24 @@ contract SecretStoreDocumentKeyShadowRetrievalService is SecretStoreServiceBase,
     // === Interface methods ===
 
     /// We do not support direct payments.
-    function() public payable {
+    receive() external payable {
         revert("Direct payments are not supported!");
     }
 
     /// Request document key retrieval.
-    function retrieveDocumentKeyShadow(bytes32 serverKeyId, bytes requesterPublic) external payable
+    function retrieveDocumentKeyShadow(bytes32 serverKeyId, bytes calldata requesterPublic)
+        external
+        payable
+        override
         whenFeePaid(documentKeyShadowRetrievalFee)
         validPublic(requesterPublic)
         onlyPublicOwner(requesterPublic)
     {
         // check maximum number of requests
-        require(documentKeyShadowRetrievalRequestsKeys.length < maxDocumentKeyShadowRetrievalRequests, "Maximum number of requests reached.");
+        require(
+            documentKeyShadowRetrievalRequestsKeys.length < maxDocumentKeyShadowRetrievalRequests,
+            "Maximum number of requests reached."
+        );
 
         bytes32 retrievalId = keccak256(abi.encodePacked(serverKeyId, msg.sender));
         DocumentKeyShadowRetrievalRequest storage request = documentKeyShadowRetrievalRequests[retrievalId];
@@ -105,7 +130,8 @@ contract SecretStoreDocumentKeyShadowRetrievalService is SecretStoreServiceBase,
         // 1) every authority that is seeing retrieval request, publishes { commonPoint, encryptedPoint, threshold }
         // 2) master node starts decryption session
         // 2.1) every node participating in decryption session publishes { address[], shadow }
-        // 2.2) once there are threshold + 1 confirmations of { address[], shadow } from exactly address[] authorities, we are publishing the key
+        // 2.2) once there are threshold + 1 confirmations of { address[], shadow } from exactly address[] authorities,
+        //      we are publishing the key
 
         request.serverKeyId = serverKeyId;
         request.requesterPublic = requesterPublic;
@@ -118,8 +144,12 @@ contract SecretStoreDocumentKeyShadowRetrievalService is SecretStoreServiceBase,
     function documentKeyCommonRetrieved(
         bytes32 serverKeyId,
         address requester,
-        bytes commonPoint,
-        uint8 threshold) external validPublic(commonPoint)
+        bytes calldata commonPoint,
+        uint8 threshold
+    )
+        external
+        override
+        validPublic(commonPoint)
     {
         // check if request still active
         bytes32 retrievalId = keccak256(abi.encodePacked(serverKeyId, requester));
@@ -167,8 +197,11 @@ contract SecretStoreDocumentKeyShadowRetrievalService is SecretStoreServiceBase,
         bytes32 serverKeyId,
         address requester,
         uint256 participants,
-        bytes decryptedSecret,
-        bytes shadow) external
+        bytes calldata decryptedSecret,
+        bytes calldata shadow
+    )
+        external
+        override
         validPublic(decryptedSecret)
     {
         // check if request still active
@@ -220,7 +253,10 @@ contract SecretStoreDocumentKeyShadowRetrievalService is SecretStoreServiceBase,
     }
 
     /// Called when error occurs during document key shadow retrieval.
-    function documentKeyShadowRetrievalError(bytes32 serverKeyId, address requester) external {
+    function documentKeyShadowRetrievalError(bytes32 serverKeyId, address requester)
+        external
+        override
+    {
         // check if request still active
         bytes32 retrievalId = keccak256(abi.encodePacked(serverKeyId, requester));
         DocumentKeyShadowRetrievalRequest storage request = documentKeyShadowRetrievalRequests[retrievalId];
@@ -280,13 +316,22 @@ contract SecretStoreDocumentKeyShadowRetrievalService is SecretStoreServiceBase,
     }
 
     /// Get count of pending document key shadow retrieval requests.
-    function documentKeyShadowRetrievalRequestsCount() external view returns (uint256) {
+    function documentKeyShadowRetrievalRequestsCount()
+        external
+        view
+        override
+        returns (uint256) {
         return documentKeyShadowRetrievalRequestsKeys.length;
     }
 
     /// Get document key shadow retrieval request with given index.
     /// Returns: (serverKeyId, requesterPublic, isCommonRetrievalCompleted)
-    function getDocumentKeyShadowRetrievalRequest(uint256 index) external view returns (bytes32, bytes, bool) {
+    function getDocumentKeyShadowRetrievalRequest(uint256 index)
+        external
+        view
+        override
+        returns (bytes32, bytes memory, bool)
+    {
         bytes32 retrievalId = documentKeyShadowRetrievalRequestsKeys[index];
         DocumentKeyShadowRetrievalRequest storage request = documentKeyShadowRetrievalRequests[retrievalId];
         return (
@@ -300,6 +345,7 @@ contract SecretStoreDocumentKeyShadowRetrievalService is SecretStoreServiceBase,
     function isDocumentKeyShadowRetrievalResponseRequired(bytes32 serverKeyId, address requester, address keyServer)
         external
         view
+        override
         returns (bool)
     {
         uint8 keyServerIndex = requireKeyServer(keyServer);
@@ -343,7 +389,12 @@ contract SecretStoreDocumentKeyShadowRetrievalService is SecretStoreServiceBase,
     // === Internal methods ===
 
     /// Clear document key shadow retrieval request traces.
-    function clearDocumentKeyShadowRetrievalRequest(bytes32 retrievalId, DocumentKeyShadowRetrievalRequest storage request) private {
+    function clearDocumentKeyShadowRetrievalRequest(
+        bytes32 retrievalId,
+        DocumentKeyShadowRetrievalRequest storage request
+    )
+        private
+    {
         for (uint i = 0; i < request.personalDataKeys.length; ++i) {
             delete request.personalData[request.personalDataKeys[i]];
         }

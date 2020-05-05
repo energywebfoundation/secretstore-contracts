@@ -2,23 +2,22 @@
   "contractName": "KeyServerSet",
   "abi": [
     {
-      "constant": true,
       "inputs": [],
       "name": "getCurrentLastChange",
       "outputs": [
         {
+          "internalType": "uint256",
           "name": "",
           "type": "uint256"
         }
       ],
-      "payable": false,
       "stateMutability": "view",
       "type": "function"
     },
     {
-      "constant": true,
       "inputs": [
         {
+          "internalType": "address",
           "name": "keyServer",
           "type": "address"
         }
@@ -26,32 +25,31 @@
       "name": "getCurrentKeyServerIndex",
       "outputs": [
         {
+          "internalType": "uint8",
           "name": "",
           "type": "uint8"
         }
       ],
-      "payable": false,
       "stateMutability": "view",
       "type": "function"
     },
     {
-      "constant": true,
       "inputs": [],
       "name": "getCurrentKeyServersCount",
       "outputs": [
         {
+          "internalType": "uint8",
           "name": "",
           "type": "uint8"
         }
       ],
-      "payable": false,
       "stateMutability": "view",
       "type": "function"
     },
     {
-      "constant": true,
       "inputs": [
         {
+          "internalType": "uint8",
           "name": "index",
           "type": "uint8"
         }
@@ -59,32 +57,31 @@
       "name": "getCurrentKeyServer",
       "outputs": [
         {
+          "internalType": "address",
           "name": "",
           "type": "address"
         }
       ],
-      "payable": false,
       "stateMutability": "view",
       "type": "function"
     },
     {
-      "constant": true,
       "inputs": [],
       "name": "getCurrentKeyServers",
       "outputs": [
         {
+          "internalType": "address[]",
           "name": "",
           "type": "address[]"
         }
       ],
-      "payable": false,
       "stateMutability": "view",
       "type": "function"
     },
     {
-      "constant": true,
       "inputs": [
         {
+          "internalType": "address",
           "name": "keyServer",
           "type": "address"
         }
@@ -92,18 +89,18 @@
       "name": "getCurrentKeyServerPublic",
       "outputs": [
         {
+          "internalType": "bytes",
           "name": "",
           "type": "bytes"
         }
       ],
-      "payable": false,
       "stateMutability": "view",
       "type": "function"
     },
     {
-      "constant": true,
       "inputs": [
         {
+          "internalType": "address",
           "name": "keyServer",
           "type": "address"
         }
@@ -111,86 +108,99 @@
       "name": "getCurrentKeyServerAddress",
       "outputs": [
         {
+          "internalType": "string",
           "name": "",
           "type": "string"
         }
       ],
-      "payable": false,
       "stateMutability": "view",
       "type": "function"
     }
   ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.5+commit.f956cc89\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"index\",\"type\":\"uint8\"}],\"name\":\"getCurrentKeyServer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"keyServer\",\"type\":\"address\"}],\"name\":\"getCurrentKeyServerAddress\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"keyServer\",\"type\":\"address\"}],\"name\":\"getCurrentKeyServerIndex\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"keyServer\",\"type\":\"address\"}],\"name\":\"getCurrentKeyServerPublic\",\"outputs\":[{\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCurrentKeyServers\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCurrentKeyServersCount\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCurrentLastChange\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{\"getCurrentKeyServer(uint8)\":{\"notice\":\"Get address of key server in current set.\"},\"getCurrentKeyServerAddress(address)\":{\"notice\":\"Get current key server address.\"},\"getCurrentKeyServerIndex(address)\":{\"notice\":\"Get index of given key server in current set.\"},\"getCurrentKeyServerPublic(address)\":{\"notice\":\"Get current key server public key.\"},\"getCurrentKeyServers()\":{\"notice\":\"Get all current key servers.\"},\"getCurrentKeyServersCount()\":{\"notice\":\"Get count of key servers in current set.\"},\"getCurrentLastChange()\":{\"notice\":\"Get number of block when current set has been changed last time.\"}},\"notice\":\"Simple key server set.\"}},\"settings\":{\"compilationTarget\":{\"/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/KeyServerSet.sol\":\"KeyServerSet\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/KeyServerSet.sol\":{\"keccak256\":\"0x530317f16d6049a040b87fad221fd80e4037007262e613a45fd090988768761b\",\"urls\":[\"bzz-raw://f6fc93dc2b2735ef64fc32d0ca0ac902a86a12d9dd3b6e966af08b3abc115197\",\"dweb:/ipfs/QmVeYM9nseN8uBP4XimEPwBEZFihwNweFJnzRM7CoF2Erg\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "//! The KeyServerSet contract.\n//!\n//! Copyright 2017 Svyatoslav Nikolsky, Parity Technologies Ltd.\n//!\n//! Licensed under the Apache License, Version 2.0 (the \"License\");\n//! you may not use this file except in compliance with the License.\n//! You may obtain a copy of the License at\n//!\n//!     http://www.apache.org/licenses/LICENSE-2.0\n//!\n//! Unless required by applicable law or agreed to in writing, software\n//! distributed under the License is distributed on an \"AS IS\" BASIS,\n//! WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n//! See the License for the specific language governing permissions and\n//! limitations under the License.\n\npragma solidity ^0.4.24;\n\n/// Simple key server set.\ninterface KeyServerSet {\n    /// Get number of block when current set has been changed last time.\n    function getCurrentLastChange() external view returns (uint256);\n    /// Get index of given key server in current set.\n    function getCurrentKeyServerIndex(address keyServer) external view returns (uint8);\n    /// Get count of key servers in current set.\n    function getCurrentKeyServersCount() external view returns (uint8);\n    /// Get address of key server in current set.\n    function getCurrentKeyServer(uint8 index) external view returns (address);\n\n    /// Get all current key servers.\n    function getCurrentKeyServers() external view returns (address[] memory);\n    /// Get current key server public key.\n    function getCurrentKeyServerPublic(address keyServer) external view returns (bytes memory);\n    /// Get current key server address.\n    function getCurrentKeyServerAddress(address keyServer) external view returns (string memory);\n}\n\n/// Key server set with migration support.\ninterface KeyServerSetWithMigration {\n    /// When new server is added to new set.\n    event KeyServerAdded(address keyServer);\n    /// When existing server is removed from new set.\n    event KeyServerRemoved(address keyServer);\n    /// When migration is started.\n    event MigrationStarted();\n    /// When migration is completed.\n    event MigrationCompleted();\n\n    /// Get number of block when current set has been changed last time.\n    function getCurrentLastChange() external view returns (uint256);\n    /// Get index of given key server in current set.\n    function getCurrentKeyServerIndex(address keyServer) external view returns (uint8);\n    /// Get count of key servers in current set.\n    function getCurrentKeyServersCount() external view returns (uint8);\n    /// Get address of key server in current set.\n    function getCurrentKeyServer(uint8 index) external view returns (address);\n\n    /// Get all current key servers.\n    function getCurrentKeyServers() external view returns (address[] memory);\n    /// Get current key server public key.\n    function getCurrentKeyServerPublic(address keyServer) external view returns (bytes memory);\n    /// Get current key server address.\n    function getCurrentKeyServerAddress(address keyServer) external view returns (string memory);\n\n    /// Get all migration key servers.\n    function getMigrationKeyServers() external view returns (address[] memory);\n    /// Get migration key server public key.\n    function getMigrationKeyServerPublic(address keyServer) external view returns (bytes memory);\n    /// Get migration key server address.\n    function getMigrationKeyServerAddress(address keyServer) external view returns (string memory);\n\n    /// Get all new key servers.\n    function getNewKeyServers() external view returns (address[] memory);\n    /// Get new key server public key.\n    function getNewKeyServerPublic(address keyServer) external view returns (bytes memory);\n    /// Get new key server address.\n    function getNewKeyServerAddress(address keyServer) external view returns (string memory);\n\n    /// Get migration id.\n    function getMigrationId() external view returns (bytes32);\n    /// Get migration master.\n    function getMigrationMaster() external view returns (address);\n    /// Is migration confirmed by given node?\n    function isMigrationConfirmed(address keyServer) external view returns (bool);\n    /// Start migration.\n    function startMigration(bytes32 id) external;\n    /// Confirm migration.\n    function confirmMigration(bytes32 id) external;\n}\n",
+  "source": "//! The KeyServerSet contract.\n//!\n//! Copyright 2017 Svyatoslav Nikolsky, Parity Technologies Ltd.\n//!\n//! Licensed under the Apache License, Version 2.0 (the \"License\");\n//! you may not use this file except in compliance with the License.\n//! You may obtain a copy of the License at\n//!\n//!     http://www.apache.org/licenses/LICENSE-2.0\n//!\n//! Unless required by applicable law or agreed to in writing, software\n//! distributed under the License is distributed on an \"AS IS\" BASIS,\n//! WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n//! See the License for the specific language governing permissions and\n//! limitations under the License.\n\npragma solidity ^0.6.0;\n\n/// Simple key server set.\ninterface KeyServerSet {\n    /// Get number of block when current set has been changed last time.\n    function getCurrentLastChange() external view returns (uint256);\n    /// Get index of given key server in current set.\n    function getCurrentKeyServerIndex(address keyServer) external view returns (uint8);\n    /// Get count of key servers in current set.\n    function getCurrentKeyServersCount() external view returns (uint8);\n    /// Get address of key server in current set.\n    function getCurrentKeyServer(uint8 index) external view returns (address);\n\n    /// Get all current key servers.\n    function getCurrentKeyServers() external view returns (address[] memory);\n    /// Get current key server public key.\n    function getCurrentKeyServerPublic(address keyServer) external view returns (bytes memory);\n    /// Get current key server address.\n    function getCurrentKeyServerAddress(address keyServer) external view returns (string memory);\n}\n\n/// Key server set with migration support.\ninterface KeyServerSetWithMigration {\n    /// When new server is added to new set.\n    event KeyServerAdded(address keyServer);\n    /// When existing server is removed from new set.\n    event KeyServerRemoved(address keyServer);\n    /// When migration is started.\n    event MigrationStarted();\n    /// When migration is completed.\n    event MigrationCompleted();\n\n    /// Get number of block when current set has been changed last time.\n    function getCurrentLastChange() external view returns (uint256);\n    /// Get index of given key server in current set.\n    function getCurrentKeyServerIndex(address keyServer) external view returns (uint8);\n    /// Get count of key servers in current set.\n    function getCurrentKeyServersCount() external view returns (uint8);\n    /// Get address of key server in current set.\n    function getCurrentKeyServer(uint8 index) external view returns (address);\n\n    /// Get all current key servers.\n    function getCurrentKeyServers() external view returns (address[] memory);\n    /// Get current key server public key.\n    function getCurrentKeyServerPublic(address keyServer) external view returns (bytes memory);\n    /// Get current key server address.\n    function getCurrentKeyServerAddress(address keyServer) external view returns (string memory);\n\n    /// Get all migration key servers.\n    function getMigrationKeyServers() external view returns (address[] memory);\n    /// Get migration key server public key.\n    function getMigrationKeyServerPublic(address keyServer) external view returns (bytes memory);\n    /// Get migration key server address.\n    function getMigrationKeyServerAddress(address keyServer) external view returns (string memory);\n\n    /// Get all new key servers.\n    function getNewKeyServers() external view returns (address[] memory);\n    /// Get new key server public key.\n    function getNewKeyServerPublic(address keyServer) external view returns (bytes memory);\n    /// Get new key server address.\n    function getNewKeyServerAddress(address keyServer) external view returns (string memory);\n\n    /// Get migration id.\n    function getMigrationId() external view returns (bytes32);\n    /// Get migration master.\n    function getMigrationMaster() external view returns (address);\n    /// Is migration confirmed by given node?\n    function isMigrationConfirmed(address keyServer) external view returns (bool);\n    /// Start migration.\n    function startMigration(bytes32 id) external;\n    /// Confirm migration.\n    function confirmMigration(bytes32 id) external;\n}\n",
   "sourcePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/KeyServerSet.sol",
   "ast": {
     "absolutePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/KeyServerSet.sol",
     "exportedSymbols": {
       "KeyServerSet": [
-        452
+        1334
       ],
       "KeyServerSetWithMigration": [
-        576
+        1481
       ]
     },
-    "id": 577,
+    "id": 1482,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 407,
+        "id": 1281,
         "literals": [
           "solidity",
           "^",
-          "0.4",
-          ".24"
+          "0.6",
+          ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "671:24:2"
+        "src": "671:23:7"
       },
       {
+        "abstract": false,
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "interface",
-        "documentation": "Simple key server set.",
+        "documentation": {
+          "id": 1282,
+          "nodeType": "StructuredDocumentation",
+          "src": "696:27:7",
+          "text": "Simple key server set."
+        },
         "fullyImplemented": false,
-        "id": 452,
+        "id": 1334,
         "linearizedBaseContracts": [
-          452
+          1334
         ],
         "name": "KeyServerSet",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": null,
-            "documentation": "Get number of block when current set has been changed last time.",
-            "id": 412,
+            "documentation": {
+              "id": 1283,
+              "nodeType": "StructuredDocumentation",
+              "src": "752:68:7",
+              "text": "Get number of block when current set has been changed last time."
+            },
+            "functionSelector": "6452e821",
+            "id": 1288,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentLastChange",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 408,
+              "id": 1284,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "855:2:2"
+              "src": "854:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 411,
+              "id": 1287,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 410,
+                  "id": 1286,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 412,
-                  "src": "881:7:2",
+                  "overrides": null,
+                  "scope": 1288,
+                  "src": "880:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -198,10 +208,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 409,
+                    "id": 1285,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "881:7:2",
+                    "src": "880:7:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -211,35 +221,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "880:9:2"
+              "src": "879:9:7"
             },
-            "scope": 452,
-            "src": "826:64:2",
+            "scope": 1334,
+            "src": "825:64:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get index of given key server in current set.",
-            "id": 419,
+            "documentation": {
+              "id": 1289,
+              "nodeType": "StructuredDocumentation",
+              "src": "894:49:7",
+              "text": "Get index of given key server in current set."
+            },
+            "functionSelector": "287fb40c",
+            "id": 1296,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServerIndex",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 415,
+              "id": 1292,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 414,
+                  "id": 1291,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "983:17:2",
+                  "overrides": null,
+                  "scope": 1296,
+                  "src": "982:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -247,10 +264,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 413,
+                    "id": 1290,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "983:7:2",
+                    "src": "982:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -260,20 +278,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "982:19:2"
+              "src": "981:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 418,
+              "id": 1295,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 417,
+                  "id": 1294,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "1025:5:2",
+                  "overrides": null,
+                  "scope": 1296,
+                  "src": "1024:5:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -281,10 +299,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 416,
+                    "id": 1293,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1025:5:2",
+                    "src": "1024:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -294,42 +312,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1024:7:2"
+              "src": "1023:7:7"
             },
-            "scope": 452,
-            "src": "949:83:2",
+            "scope": 1334,
+            "src": "948:83:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get count of key servers in current set.",
-            "id": 424,
+            "documentation": {
+              "id": 1297,
+              "nodeType": "StructuredDocumentation",
+              "src": "1036:44:7",
+              "text": "Get count of key servers in current set."
+            },
+            "functionSelector": "5560c965",
+            "id": 1302,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServersCount",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 420,
+              "id": 1298,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1120:2:2"
+              "src": "1119:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 423,
+              "id": 1301,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 422,
+                  "id": 1300,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 424,
-                  "src": "1146:5:2",
+                  "overrides": null,
+                  "scope": 1302,
+                  "src": "1145:5:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -337,10 +361,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 421,
+                    "id": 1299,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1146:5:2",
+                    "src": "1145:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -350,35 +374,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1145:7:2"
+              "src": "1144:7:7"
             },
-            "scope": 452,
-            "src": "1086:67:2",
+            "scope": 1334,
+            "src": "1085:67:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get address of key server in current set.",
-            "id": 431,
+            "documentation": {
+              "id": 1303,
+              "nodeType": "StructuredDocumentation",
+              "src": "1157:45:7",
+              "text": "Get address of key server in current set."
+            },
+            "functionSelector": "c66198dc",
+            "id": 1310,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServer",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 427,
+              "id": 1306,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 426,
+                  "id": 1305,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 431,
-                  "src": "1237:11:2",
+                  "overrides": null,
+                  "scope": 1310,
+                  "src": "1236:11:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -386,10 +417,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 425,
+                    "id": 1304,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1237:5:2",
+                    "src": "1236:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -399,20 +430,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1236:13:2"
+              "src": "1235:13:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 430,
+              "id": 1309,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 429,
+                  "id": 1308,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 431,
-                  "src": "1273:7:2",
+                  "overrides": null,
+                  "scope": 1310,
+                  "src": "1272:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -420,10 +451,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 428,
+                    "id": 1307,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1273:7:2",
+                    "src": "1272:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -433,42 +465,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1272:9:2"
+              "src": "1271:9:7"
             },
-            "scope": 452,
-            "src": "1208:74:2",
+            "scope": 1334,
+            "src": "1207:74:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get all current key servers.",
-            "id": 437,
+            "documentation": {
+              "id": 1311,
+              "nodeType": "StructuredDocumentation",
+              "src": "1287:32:7",
+              "text": "Get all current key servers."
+            },
+            "functionSelector": "5e9f171d",
+            "id": 1317,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServers",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 432,
+              "id": 1312,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1354:2:2"
+              "src": "1353:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 436,
+              "id": 1316,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 435,
+                  "id": 1315,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 437,
-                  "src": "1380:9:2",
+                  "overrides": null,
+                  "scope": 1317,
+                  "src": "1379:16:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -477,19 +515,20 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 433,
+                      "id": 1313,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1380:7:2",
+                      "src": "1379:7:7",
+                      "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 434,
+                    "id": 1314,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "1380:9:2",
+                    "src": "1379:9:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -499,35 +538,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1379:18:2"
+              "src": "1378:18:7"
             },
-            "scope": 452,
-            "src": "1325:73:2",
+            "scope": 1334,
+            "src": "1324:73:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get current key server public key.",
-            "id": 444,
+            "documentation": {
+              "id": 1318,
+              "nodeType": "StructuredDocumentation",
+              "src": "1402:38:7",
+              "text": "Get current key server public key."
+            },
+            "functionSelector": "75de2a06",
+            "id": 1325,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServerPublic",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 440,
+              "id": 1321,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 439,
+                  "id": 1320,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 444,
-                  "src": "1481:17:2",
+                  "overrides": null,
+                  "scope": 1325,
+                  "src": "1480:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -535,10 +581,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 438,
+                    "id": 1319,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1481:7:2",
+                    "src": "1480:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -548,20 +595,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1480:19:2"
+              "src": "1479:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 443,
+              "id": 1324,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 442,
+                  "id": 1323,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 444,
-                  "src": "1523:5:2",
+                  "overrides": null,
+                  "scope": 1325,
+                  "src": "1522:12:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -569,10 +616,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 441,
+                    "id": 1322,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1523:5:2",
+                    "src": "1522:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -582,35 +629,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1522:14:2"
+              "src": "1521:14:7"
             },
-            "scope": 452,
-            "src": "1446:91:2",
+            "scope": 1334,
+            "src": "1445:91:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get current key server address.",
-            "id": 451,
+            "documentation": {
+              "id": 1326,
+              "nodeType": "StructuredDocumentation",
+              "src": "1541:35:7",
+              "text": "Get current key server address."
+            },
+            "functionSelector": "a86560be",
+            "id": 1333,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServerAddress",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 447,
+              "id": 1329,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 446,
+                  "id": 1328,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 451,
-                  "src": "1618:17:2",
+                  "overrides": null,
+                  "scope": 1333,
+                  "src": "1617:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -618,10 +672,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 445,
+                    "id": 1327,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1618:7:2",
+                    "src": "1617:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -631,20 +686,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1617:19:2"
+              "src": "1616:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 450,
+              "id": 1332,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 449,
+                  "id": 1331,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 451,
-                  "src": "1660:6:2",
+                  "overrides": null,
+                  "scope": 1333,
+                  "src": "1659:13:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -652,10 +707,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 448,
+                    "id": 1330,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1660:6:2",
+                    "src": "1659:6:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -665,49 +720,61 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1659:15:2"
+              "src": "1658:15:7"
             },
-            "scope": 452,
-            "src": "1582:93:2",
+            "scope": 1334,
+            "src": "1581:93:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 577,
-        "src": "724:953:2"
+        "scope": 1482,
+        "src": "723:953:7"
       },
       {
+        "abstract": false,
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "interface",
-        "documentation": "Key server set with migration support.",
+        "documentation": {
+          "id": 1335,
+          "nodeType": "StructuredDocumentation",
+          "src": "1678:43:7",
+          "text": "Key server set with migration support."
+        },
         "fullyImplemented": false,
-        "id": 576,
+        "id": 1481,
         "linearizedBaseContracts": [
-          576
+          1481
         ],
         "name": "KeyServerSetWithMigration",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "anonymous": false,
-            "documentation": "When new server is added to new set.",
-            "id": 456,
+            "documentation": {
+              "id": 1336,
+              "nodeType": "StructuredDocumentation",
+              "src": "1763:40:7",
+              "text": "When new server is added to new set."
+            },
+            "id": 1340,
             "name": "KeyServerAdded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 455,
+              "id": 1339,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 454,
+                  "id": 1338,
                   "indexed": false,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 456,
-                  "src": "1830:17:2",
+                  "overrides": null,
+                  "scope": 1340,
+                  "src": "1829:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -715,10 +782,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 453,
+                    "id": 1337,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1830:7:2",
+                    "src": "1829:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -728,28 +796,34 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1829:19:2"
+              "src": "1828:19:7"
             },
-            "src": "1809:40:2"
+            "src": "1808:40:7"
           },
           {
             "anonymous": false,
-            "documentation": "When existing server is removed from new set.",
-            "id": 460,
+            "documentation": {
+              "id": 1341,
+              "nodeType": "StructuredDocumentation",
+              "src": "1853:49:7",
+              "text": "When existing server is removed from new set."
+            },
+            "id": 1345,
             "name": "KeyServerRemoved",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 459,
+              "id": 1344,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 458,
+                  "id": 1343,
                   "indexed": false,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 460,
-                  "src": "1931:17:2",
+                  "overrides": null,
+                  "scope": 1345,
+                  "src": "1930:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -757,10 +831,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 457,
+                    "id": 1342,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1931:7:2",
+                    "src": "1930:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -770,66 +845,82 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1930:19:2"
+              "src": "1929:19:7"
             },
-            "src": "1908:42:2"
+            "src": "1907:42:7"
           },
           {
             "anonymous": false,
-            "documentation": "When migration is started.",
-            "id": 462,
+            "documentation": {
+              "id": 1346,
+              "nodeType": "StructuredDocumentation",
+              "src": "1954:30:7",
+              "text": "When migration is started."
+            },
+            "id": 1348,
             "name": "MigrationStarted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 461,
+              "id": 1347,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2012:2:2"
+              "src": "2011:2:7"
             },
-            "src": "1990:25:2"
+            "src": "1989:25:7"
           },
           {
             "anonymous": false,
-            "documentation": "When migration is completed.",
-            "id": 464,
+            "documentation": {
+              "id": 1349,
+              "nodeType": "StructuredDocumentation",
+              "src": "2019:32:7",
+              "text": "When migration is completed."
+            },
+            "id": 1351,
             "name": "MigrationCompleted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 463,
+              "id": 1350,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2081:2:2"
+              "src": "2080:2:7"
             },
-            "src": "2057:27:2"
+            "src": "2056:27:7"
           },
           {
             "body": null,
-            "documentation": "Get number of block when current set has been changed last time.",
-            "id": 469,
+            "documentation": {
+              "id": 1352,
+              "nodeType": "StructuredDocumentation",
+              "src": "2089:68:7",
+              "text": "Get number of block when current set has been changed last time."
+            },
+            "functionSelector": "6452e821",
+            "id": 1357,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentLastChange",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 465,
+              "id": 1353,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2192:2:2"
+              "src": "2191:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 468,
+              "id": 1356,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 467,
+                  "id": 1355,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 469,
-                  "src": "2218:7:2",
+                  "overrides": null,
+                  "scope": 1357,
+                  "src": "2217:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -837,10 +928,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 466,
+                    "id": 1354,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2218:7:2",
+                    "src": "2217:7:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -850,35 +941,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2217:9:2"
+              "src": "2216:9:7"
             },
-            "scope": 576,
-            "src": "2163:64:2",
+            "scope": 1481,
+            "src": "2162:64:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get index of given key server in current set.",
-            "id": 476,
+            "documentation": {
+              "id": 1358,
+              "nodeType": "StructuredDocumentation",
+              "src": "2231:49:7",
+              "text": "Get index of given key server in current set."
+            },
+            "functionSelector": "287fb40c",
+            "id": 1365,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServerIndex",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 472,
+              "id": 1361,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 471,
+                  "id": 1360,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 476,
-                  "src": "2320:17:2",
+                  "overrides": null,
+                  "scope": 1365,
+                  "src": "2319:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -886,10 +984,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 470,
+                    "id": 1359,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2320:7:2",
+                    "src": "2319:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -899,20 +998,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2319:19:2"
+              "src": "2318:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 475,
+              "id": 1364,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 474,
+                  "id": 1363,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 476,
-                  "src": "2362:5:2",
+                  "overrides": null,
+                  "scope": 1365,
+                  "src": "2361:5:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -920,10 +1019,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 473,
+                    "id": 1362,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2362:5:2",
+                    "src": "2361:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -933,42 +1032,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2361:7:2"
+              "src": "2360:7:7"
             },
-            "scope": 576,
-            "src": "2286:83:2",
+            "scope": 1481,
+            "src": "2285:83:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get count of key servers in current set.",
-            "id": 481,
+            "documentation": {
+              "id": 1366,
+              "nodeType": "StructuredDocumentation",
+              "src": "2373:44:7",
+              "text": "Get count of key servers in current set."
+            },
+            "functionSelector": "5560c965",
+            "id": 1371,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServersCount",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 477,
+              "id": 1367,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2457:2:2"
+              "src": "2456:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 480,
+              "id": 1370,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 479,
+                  "id": 1369,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 481,
-                  "src": "2483:5:2",
+                  "overrides": null,
+                  "scope": 1371,
+                  "src": "2482:5:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -976,10 +1081,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 478,
+                    "id": 1368,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2483:5:2",
+                    "src": "2482:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -989,35 +1094,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2482:7:2"
+              "src": "2481:7:7"
             },
-            "scope": 576,
-            "src": "2423:67:2",
+            "scope": 1481,
+            "src": "2422:67:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get address of key server in current set.",
-            "id": 488,
+            "documentation": {
+              "id": 1372,
+              "nodeType": "StructuredDocumentation",
+              "src": "2494:45:7",
+              "text": "Get address of key server in current set."
+            },
+            "functionSelector": "c66198dc",
+            "id": 1379,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServer",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 484,
+              "id": 1375,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 483,
+                  "id": 1374,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 488,
-                  "src": "2574:11:2",
+                  "overrides": null,
+                  "scope": 1379,
+                  "src": "2573:11:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1025,10 +1137,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 482,
+                    "id": 1373,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2574:5:2",
+                    "src": "2573:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -1038,20 +1150,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2573:13:2"
+              "src": "2572:13:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 487,
+              "id": 1378,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 486,
+                  "id": 1377,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 488,
-                  "src": "2610:7:2",
+                  "overrides": null,
+                  "scope": 1379,
+                  "src": "2609:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1059,10 +1171,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 485,
+                    "id": 1376,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2610:7:2",
+                    "src": "2609:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1072,42 +1185,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2609:9:2"
+              "src": "2608:9:7"
             },
-            "scope": 576,
-            "src": "2545:74:2",
+            "scope": 1481,
+            "src": "2544:74:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get all current key servers.",
-            "id": 494,
+            "documentation": {
+              "id": 1380,
+              "nodeType": "StructuredDocumentation",
+              "src": "2624:32:7",
+              "text": "Get all current key servers."
+            },
+            "functionSelector": "5e9f171d",
+            "id": 1386,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServers",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 489,
+              "id": 1381,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2691:2:2"
+              "src": "2690:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 493,
+              "id": 1385,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 492,
+                  "id": 1384,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 494,
-                  "src": "2717:9:2",
+                  "overrides": null,
+                  "scope": 1386,
+                  "src": "2716:16:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1116,19 +1235,20 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 490,
+                      "id": 1382,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2717:7:2",
+                      "src": "2716:7:7",
+                      "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 491,
+                    "id": 1383,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "2717:9:2",
+                    "src": "2716:9:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -1138,35 +1258,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2716:18:2"
+              "src": "2715:18:7"
             },
-            "scope": 576,
-            "src": "2662:73:2",
+            "scope": 1481,
+            "src": "2661:73:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get current key server public key.",
-            "id": 501,
+            "documentation": {
+              "id": 1387,
+              "nodeType": "StructuredDocumentation",
+              "src": "2739:38:7",
+              "text": "Get current key server public key."
+            },
+            "functionSelector": "75de2a06",
+            "id": 1394,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServerPublic",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 497,
+              "id": 1390,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 496,
+                  "id": 1389,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 501,
-                  "src": "2818:17:2",
+                  "overrides": null,
+                  "scope": 1394,
+                  "src": "2817:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1174,10 +1301,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 495,
+                    "id": 1388,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2818:7:2",
+                    "src": "2817:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1187,20 +1315,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2817:19:2"
+              "src": "2816:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 500,
+              "id": 1393,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 499,
+                  "id": 1392,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 501,
-                  "src": "2860:5:2",
+                  "overrides": null,
+                  "scope": 1394,
+                  "src": "2859:12:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1208,10 +1336,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 498,
+                    "id": 1391,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2860:5:2",
+                    "src": "2859:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -1221,35 +1349,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2859:14:2"
+              "src": "2858:14:7"
             },
-            "scope": 576,
-            "src": "2783:91:2",
+            "scope": 1481,
+            "src": "2782:91:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get current key server address.",
-            "id": 508,
+            "documentation": {
+              "id": 1395,
+              "nodeType": "StructuredDocumentation",
+              "src": "2878:35:7",
+              "text": "Get current key server address."
+            },
+            "functionSelector": "a86560be",
+            "id": 1402,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServerAddress",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 504,
+              "id": 1398,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 503,
+                  "id": 1397,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 508,
-                  "src": "2955:17:2",
+                  "overrides": null,
+                  "scope": 1402,
+                  "src": "2954:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1257,10 +1392,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 502,
+                    "id": 1396,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2955:7:2",
+                    "src": "2954:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1270,20 +1406,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2954:19:2"
+              "src": "2953:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 507,
+              "id": 1401,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 506,
+                  "id": 1400,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 508,
-                  "src": "2997:6:2",
+                  "overrides": null,
+                  "scope": 1402,
+                  "src": "2996:13:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1291,10 +1427,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 505,
+                    "id": 1399,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2997:6:2",
+                    "src": "2996:6:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1304,42 +1440,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2996:15:2"
+              "src": "2995:15:7"
             },
-            "scope": 576,
-            "src": "2919:93:2",
+            "scope": 1481,
+            "src": "2918:93:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get all migration key servers.",
-            "id": 514,
+            "documentation": {
+              "id": 1403,
+              "nodeType": "StructuredDocumentation",
+              "src": "3017:34:7",
+              "text": "Get all migration key servers."
+            },
+            "functionSelector": "447f5b18",
+            "id": 1409,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getMigrationKeyServers",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 509,
+              "id": 1404,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3088:2:2"
+              "src": "3087:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 513,
+              "id": 1408,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 512,
+                  "id": 1407,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 514,
-                  "src": "3114:9:2",
+                  "overrides": null,
+                  "scope": 1409,
+                  "src": "3113:16:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1348,19 +1490,20 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 510,
+                      "id": 1405,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "3114:7:2",
+                      "src": "3113:7:7",
+                      "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 511,
+                    "id": 1406,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "3114:9:2",
+                    "src": "3113:9:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -1370,35 +1513,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3113:18:2"
+              "src": "3112:18:7"
             },
-            "scope": 576,
-            "src": "3057:75:2",
+            "scope": 1481,
+            "src": "3056:75:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get migration key server public key.",
-            "id": 521,
+            "documentation": {
+              "id": 1410,
+              "nodeType": "StructuredDocumentation",
+              "src": "3136:40:7",
+              "text": "Get migration key server public key."
+            },
+            "functionSelector": "1455eb9a",
+            "id": 1417,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getMigrationKeyServerPublic",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 517,
+              "id": 1413,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 516,
+                  "id": 1412,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 521,
-                  "src": "3219:17:2",
+                  "overrides": null,
+                  "scope": 1417,
+                  "src": "3218:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1406,10 +1556,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 515,
+                    "id": 1411,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3219:7:2",
+                    "src": "3218:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1419,20 +1570,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3218:19:2"
+              "src": "3217:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 520,
+              "id": 1416,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 519,
+                  "id": 1415,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 521,
-                  "src": "3261:5:2",
+                  "overrides": null,
+                  "scope": 1417,
+                  "src": "3260:12:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1440,10 +1591,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 518,
+                    "id": 1414,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3261:5:2",
+                    "src": "3260:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -1453,35 +1604,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3260:14:2"
+              "src": "3259:14:7"
             },
-            "scope": 576,
-            "src": "3182:93:2",
+            "scope": 1481,
+            "src": "3181:93:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get migration key server address.",
-            "id": 528,
+            "documentation": {
+              "id": 1418,
+              "nodeType": "StructuredDocumentation",
+              "src": "3279:37:7",
+              "text": "Get migration key server address."
+            },
+            "functionSelector": "2ac4ecd8",
+            "id": 1425,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getMigrationKeyServerAddress",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 524,
+              "id": 1421,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 523,
+                  "id": 1420,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 528,
-                  "src": "3360:17:2",
+                  "overrides": null,
+                  "scope": 1425,
+                  "src": "3359:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1489,10 +1647,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 522,
+                    "id": 1419,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3360:7:2",
+                    "src": "3359:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1502,20 +1661,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3359:19:2"
+              "src": "3358:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 527,
+              "id": 1424,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 526,
+                  "id": 1423,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 528,
-                  "src": "3402:6:2",
+                  "overrides": null,
+                  "scope": 1425,
+                  "src": "3401:13:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1523,10 +1682,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 525,
+                    "id": 1422,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3402:6:2",
+                    "src": "3401:6:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1536,42 +1695,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3401:15:2"
+              "src": "3400:15:7"
             },
-            "scope": 576,
-            "src": "3322:95:2",
+            "scope": 1481,
+            "src": "3321:95:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get all new key servers.",
-            "id": 534,
+            "documentation": {
+              "id": 1426,
+              "nodeType": "StructuredDocumentation",
+              "src": "3422:28:7",
+              "text": "Get all new key servers."
+            },
+            "functionSelector": "362b282d",
+            "id": 1432,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getNewKeyServers",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 529,
+              "id": 1427,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3481:2:2"
+              "src": "3480:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 533,
+              "id": 1431,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 532,
+                  "id": 1430,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 534,
-                  "src": "3507:9:2",
+                  "overrides": null,
+                  "scope": 1432,
+                  "src": "3506:16:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1580,19 +1745,20 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 530,
+                      "id": 1428,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "3507:7:2",
+                      "src": "3506:7:7",
+                      "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 531,
+                    "id": 1429,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "3507:9:2",
+                    "src": "3506:9:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -1602,35 +1768,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3506:18:2"
+              "src": "3505:18:7"
             },
-            "scope": 576,
-            "src": "3456:69:2",
+            "scope": 1481,
+            "src": "3455:69:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get new key server public key.",
-            "id": 541,
+            "documentation": {
+              "id": 1433,
+              "nodeType": "StructuredDocumentation",
+              "src": "3529:34:7",
+              "text": "Get new key server public key."
+            },
+            "functionSelector": "ab55cb48",
+            "id": 1440,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getNewKeyServerPublic",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 537,
+              "id": 1436,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 536,
+                  "id": 1435,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 541,
-                  "src": "3600:17:2",
+                  "overrides": null,
+                  "scope": 1440,
+                  "src": "3599:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1638,10 +1811,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 535,
+                    "id": 1434,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3600:7:2",
+                    "src": "3599:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1651,20 +1825,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3599:19:2"
+              "src": "3598:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 540,
+              "id": 1439,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 539,
+                  "id": 1438,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 541,
-                  "src": "3642:5:2",
+                  "overrides": null,
+                  "scope": 1440,
+                  "src": "3641:12:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1672,10 +1846,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 538,
+                    "id": 1437,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3642:5:2",
+                    "src": "3641:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -1685,35 +1859,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3641:14:2"
+              "src": "3640:14:7"
             },
-            "scope": 576,
-            "src": "3569:87:2",
+            "scope": 1481,
+            "src": "3568:87:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get new key server address.",
-            "id": 548,
+            "documentation": {
+              "id": 1441,
+              "nodeType": "StructuredDocumentation",
+              "src": "3660:31:7",
+              "text": "Get new key server address."
+            },
+            "functionSelector": "8416e7c2",
+            "id": 1448,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getNewKeyServerAddress",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 544,
+              "id": 1444,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 543,
+                  "id": 1443,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 548,
-                  "src": "3729:17:2",
+                  "overrides": null,
+                  "scope": 1448,
+                  "src": "3728:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1721,10 +1902,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 542,
+                    "id": 1442,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3729:7:2",
+                    "src": "3728:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1734,20 +1916,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3728:19:2"
+              "src": "3727:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 547,
+              "id": 1447,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 546,
+                  "id": 1446,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 548,
-                  "src": "3771:6:2",
+                  "overrides": null,
+                  "scope": 1448,
+                  "src": "3770:13:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1755,10 +1937,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 545,
+                    "id": 1445,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3771:6:2",
+                    "src": "3770:6:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -1768,42 +1950,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3770:15:2"
+              "src": "3769:15:7"
             },
-            "scope": 576,
-            "src": "3697:89:2",
+            "scope": 1481,
+            "src": "3696:89:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get migration id.",
-            "id": 553,
+            "documentation": {
+              "id": 1449,
+              "nodeType": "StructuredDocumentation",
+              "src": "3791:21:7",
+              "text": "Get migration id."
+            },
+            "functionSelector": "2b73af52",
+            "id": 1454,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getMigrationId",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 549,
+              "id": 1450,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3841:2:2"
+              "src": "3840:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 552,
+              "id": 1453,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 551,
+                  "id": 1452,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 553,
-                  "src": "3867:7:2",
+                  "overrides": null,
+                  "scope": 1454,
+                  "src": "3866:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1811,10 +1999,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 550,
+                    "id": 1451,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3867:7:2",
+                    "src": "3866:7:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1824,42 +2012,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3866:9:2"
+              "src": "3865:9:7"
             },
-            "scope": 576,
-            "src": "3818:58:2",
+            "scope": 1481,
+            "src": "3817:58:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get migration master.",
-            "id": 558,
+            "documentation": {
+              "id": 1455,
+              "nodeType": "StructuredDocumentation",
+              "src": "3880:25:7",
+              "text": "Get migration master."
+            },
+            "functionSelector": "0ec71f82",
+            "id": 1460,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getMigrationMaster",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 554,
+              "id": 1456,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3938:2:2"
+              "src": "3937:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 557,
+              "id": 1459,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 556,
+                  "id": 1458,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 558,
-                  "src": "3964:7:2",
+                  "overrides": null,
+                  "scope": 1460,
+                  "src": "3963:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1867,10 +2061,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 555,
+                    "id": 1457,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3964:7:2",
+                    "src": "3963:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1880,35 +2075,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3963:9:2"
+              "src": "3962:9:7"
             },
-            "scope": 576,
-            "src": "3911:62:2",
+            "scope": 1481,
+            "src": "3910:62:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Is migration confirmed by given node?",
-            "id": 565,
+            "documentation": {
+              "id": 1461,
+              "nodeType": "StructuredDocumentation",
+              "src": "3977:41:7",
+              "text": "Is migration confirmed by given node?"
+            },
+            "functionSelector": "529377d0",
+            "id": 1468,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "isMigrationConfirmed",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 561,
+              "id": 1464,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 560,
+                  "id": 1463,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 565,
-                  "src": "4054:17:2",
+                  "overrides": null,
+                  "scope": 1468,
+                  "src": "4053:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1916,10 +2118,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 559,
+                    "id": 1462,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4054:7:2",
+                    "src": "4053:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1929,20 +2132,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4053:19:2"
+              "src": "4052:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 564,
+              "id": 1467,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 563,
+                  "id": 1466,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 565,
-                  "src": "4096:4:2",
+                  "overrides": null,
+                  "scope": 1468,
+                  "src": "4095:4:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1950,10 +2153,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 562,
+                    "id": 1465,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4096:4:2",
+                    "src": "4095:4:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -1963,35 +2166,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4095:6:2"
+              "src": "4094:6:7"
             },
-            "scope": 576,
-            "src": "4024:78:2",
+            "scope": 1481,
+            "src": "4023:78:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Start migration.",
-            "id": 570,
+            "documentation": {
+              "id": 1469,
+              "nodeType": "StructuredDocumentation",
+              "src": "4106:20:7",
+              "text": "Start migration."
+            },
+            "functionSelector": "1d7f7673",
+            "id": 1474,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "startMigration",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 568,
+              "id": 1472,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 567,
+                  "id": 1471,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 570,
-                  "src": "4156:10:2",
+                  "overrides": null,
+                  "scope": 1474,
+                  "src": "4155:10:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1999,10 +2209,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 566,
+                    "id": 1470,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4156:7:2",
+                    "src": "4155:7:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2012,42 +2222,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4155:12:2"
+              "src": "4154:12:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 569,
+              "id": 1473,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4176:0:2"
+              "src": "4175:0:7"
             },
-            "scope": 576,
-            "src": "4132:45:2",
+            "scope": 1481,
+            "src": "4131:45:7",
             "stateMutability": "nonpayable",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Confirm migration.",
-            "id": 575,
+            "documentation": {
+              "id": 1475,
+              "nodeType": "StructuredDocumentation",
+              "src": "4181:22:7",
+              "text": "Confirm migration."
+            },
+            "functionSelector": "3a3f7201",
+            "id": 1480,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "confirmMigration",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 573,
+              "id": 1478,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 572,
+                  "id": 1477,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 575,
-                  "src": "4235:10:2",
+                  "overrides": null,
+                  "scope": 1480,
+                  "src": "4234:10:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2055,10 +2271,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 571,
+                    "id": 1476,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4235:7:2",
+                    "src": "4234:7:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2068,93 +2284,104 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4234:12:2"
+              "src": "4233:12:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 574,
+              "id": 1479,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4255:0:2"
+              "src": "4254:0:7"
             },
-            "scope": 576,
-            "src": "4209:47:2",
+            "scope": 1481,
+            "src": "4208:47:7",
             "stateMutability": "nonpayable",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 577,
-        "src": "1722:2536:2"
+        "scope": 1482,
+        "src": "1721:2536:7"
       }
     ],
-    "src": "671:3588:2"
+    "src": "671:3587:7"
   },
   "legacyAST": {
     "absolutePath": "/home/aznagy/work/secretstore/secretstore-contracts/contracts/interfaces/KeyServerSet.sol",
     "exportedSymbols": {
       "KeyServerSet": [
-        452
+        1334
       ],
       "KeyServerSetWithMigration": [
-        576
+        1481
       ]
     },
-    "id": 577,
+    "id": 1482,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 407,
+        "id": 1281,
         "literals": [
           "solidity",
           "^",
-          "0.4",
-          ".24"
+          "0.6",
+          ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "671:24:2"
+        "src": "671:23:7"
       },
       {
+        "abstract": false,
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "interface",
-        "documentation": "Simple key server set.",
+        "documentation": {
+          "id": 1282,
+          "nodeType": "StructuredDocumentation",
+          "src": "696:27:7",
+          "text": "Simple key server set."
+        },
         "fullyImplemented": false,
-        "id": 452,
+        "id": 1334,
         "linearizedBaseContracts": [
-          452
+          1334
         ],
         "name": "KeyServerSet",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": null,
-            "documentation": "Get number of block when current set has been changed last time.",
-            "id": 412,
+            "documentation": {
+              "id": 1283,
+              "nodeType": "StructuredDocumentation",
+              "src": "752:68:7",
+              "text": "Get number of block when current set has been changed last time."
+            },
+            "functionSelector": "6452e821",
+            "id": 1288,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentLastChange",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 408,
+              "id": 1284,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "855:2:2"
+              "src": "854:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 411,
+              "id": 1287,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 410,
+                  "id": 1286,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 412,
-                  "src": "881:7:2",
+                  "overrides": null,
+                  "scope": 1288,
+                  "src": "880:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2162,10 +2389,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 409,
+                    "id": 1285,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "881:7:2",
+                    "src": "880:7:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2175,35 +2402,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "880:9:2"
+              "src": "879:9:7"
             },
-            "scope": 452,
-            "src": "826:64:2",
+            "scope": 1334,
+            "src": "825:64:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get index of given key server in current set.",
-            "id": 419,
+            "documentation": {
+              "id": 1289,
+              "nodeType": "StructuredDocumentation",
+              "src": "894:49:7",
+              "text": "Get index of given key server in current set."
+            },
+            "functionSelector": "287fb40c",
+            "id": 1296,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServerIndex",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 415,
+              "id": 1292,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 414,
+                  "id": 1291,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "983:17:2",
+                  "overrides": null,
+                  "scope": 1296,
+                  "src": "982:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2211,10 +2445,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 413,
+                    "id": 1290,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "983:7:2",
+                    "src": "982:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2224,20 +2459,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "982:19:2"
+              "src": "981:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 418,
+              "id": 1295,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 417,
+                  "id": 1294,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 419,
-                  "src": "1025:5:2",
+                  "overrides": null,
+                  "scope": 1296,
+                  "src": "1024:5:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2245,10 +2480,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 416,
+                    "id": 1293,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1025:5:2",
+                    "src": "1024:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -2258,42 +2493,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1024:7:2"
+              "src": "1023:7:7"
             },
-            "scope": 452,
-            "src": "949:83:2",
+            "scope": 1334,
+            "src": "948:83:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get count of key servers in current set.",
-            "id": 424,
+            "documentation": {
+              "id": 1297,
+              "nodeType": "StructuredDocumentation",
+              "src": "1036:44:7",
+              "text": "Get count of key servers in current set."
+            },
+            "functionSelector": "5560c965",
+            "id": 1302,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServersCount",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 420,
+              "id": 1298,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1120:2:2"
+              "src": "1119:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 423,
+              "id": 1301,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 422,
+                  "id": 1300,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 424,
-                  "src": "1146:5:2",
+                  "overrides": null,
+                  "scope": 1302,
+                  "src": "1145:5:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2301,10 +2542,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 421,
+                    "id": 1299,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1146:5:2",
+                    "src": "1145:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -2314,35 +2555,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1145:7:2"
+              "src": "1144:7:7"
             },
-            "scope": 452,
-            "src": "1086:67:2",
+            "scope": 1334,
+            "src": "1085:67:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get address of key server in current set.",
-            "id": 431,
+            "documentation": {
+              "id": 1303,
+              "nodeType": "StructuredDocumentation",
+              "src": "1157:45:7",
+              "text": "Get address of key server in current set."
+            },
+            "functionSelector": "c66198dc",
+            "id": 1310,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServer",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 427,
+              "id": 1306,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 426,
+                  "id": 1305,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 431,
-                  "src": "1237:11:2",
+                  "overrides": null,
+                  "scope": 1310,
+                  "src": "1236:11:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2350,10 +2598,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 425,
+                    "id": 1304,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1237:5:2",
+                    "src": "1236:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -2363,20 +2611,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1236:13:2"
+              "src": "1235:13:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 430,
+              "id": 1309,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 429,
+                  "id": 1308,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 431,
-                  "src": "1273:7:2",
+                  "overrides": null,
+                  "scope": 1310,
+                  "src": "1272:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2384,10 +2632,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 428,
+                    "id": 1307,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1273:7:2",
+                    "src": "1272:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2397,42 +2646,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1272:9:2"
+              "src": "1271:9:7"
             },
-            "scope": 452,
-            "src": "1208:74:2",
+            "scope": 1334,
+            "src": "1207:74:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get all current key servers.",
-            "id": 437,
+            "documentation": {
+              "id": 1311,
+              "nodeType": "StructuredDocumentation",
+              "src": "1287:32:7",
+              "text": "Get all current key servers."
+            },
+            "functionSelector": "5e9f171d",
+            "id": 1317,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServers",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 432,
+              "id": 1312,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1354:2:2"
+              "src": "1353:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 436,
+              "id": 1316,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 435,
+                  "id": 1315,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 437,
-                  "src": "1380:9:2",
+                  "overrides": null,
+                  "scope": 1317,
+                  "src": "1379:16:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2441,19 +2696,20 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 433,
+                      "id": 1313,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "1380:7:2",
+                      "src": "1379:7:7",
+                      "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 434,
+                    "id": 1314,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "1380:9:2",
+                    "src": "1379:9:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -2463,35 +2719,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1379:18:2"
+              "src": "1378:18:7"
             },
-            "scope": 452,
-            "src": "1325:73:2",
+            "scope": 1334,
+            "src": "1324:73:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get current key server public key.",
-            "id": 444,
+            "documentation": {
+              "id": 1318,
+              "nodeType": "StructuredDocumentation",
+              "src": "1402:38:7",
+              "text": "Get current key server public key."
+            },
+            "functionSelector": "75de2a06",
+            "id": 1325,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServerPublic",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 440,
+              "id": 1321,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 439,
+                  "id": 1320,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 444,
-                  "src": "1481:17:2",
+                  "overrides": null,
+                  "scope": 1325,
+                  "src": "1480:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2499,10 +2762,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 438,
+                    "id": 1319,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1481:7:2",
+                    "src": "1480:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2512,20 +2776,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1480:19:2"
+              "src": "1479:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 443,
+              "id": 1324,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 442,
+                  "id": 1323,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 444,
-                  "src": "1523:5:2",
+                  "overrides": null,
+                  "scope": 1325,
+                  "src": "1522:12:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2533,10 +2797,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 441,
+                    "id": 1322,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1523:5:2",
+                    "src": "1522:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -2546,35 +2810,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1522:14:2"
+              "src": "1521:14:7"
             },
-            "scope": 452,
-            "src": "1446:91:2",
+            "scope": 1334,
+            "src": "1445:91:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get current key server address.",
-            "id": 451,
+            "documentation": {
+              "id": 1326,
+              "nodeType": "StructuredDocumentation",
+              "src": "1541:35:7",
+              "text": "Get current key server address."
+            },
+            "functionSelector": "a86560be",
+            "id": 1333,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServerAddress",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 447,
+              "id": 1329,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 446,
+                  "id": 1328,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 451,
-                  "src": "1618:17:2",
+                  "overrides": null,
+                  "scope": 1333,
+                  "src": "1617:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2582,10 +2853,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 445,
+                    "id": 1327,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1618:7:2",
+                    "src": "1617:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2595,20 +2867,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1617:19:2"
+              "src": "1616:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 450,
+              "id": 1332,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 449,
+                  "id": 1331,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 451,
-                  "src": "1660:6:2",
+                  "overrides": null,
+                  "scope": 1333,
+                  "src": "1659:13:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2616,10 +2888,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 448,
+                    "id": 1330,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1660:6:2",
+                    "src": "1659:6:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2629,49 +2901,61 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1659:15:2"
+              "src": "1658:15:7"
             },
-            "scope": 452,
-            "src": "1582:93:2",
+            "scope": 1334,
+            "src": "1581:93:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 577,
-        "src": "724:953:2"
+        "scope": 1482,
+        "src": "723:953:7"
       },
       {
+        "abstract": false,
         "baseContracts": [],
         "contractDependencies": [],
         "contractKind": "interface",
-        "documentation": "Key server set with migration support.",
+        "documentation": {
+          "id": 1335,
+          "nodeType": "StructuredDocumentation",
+          "src": "1678:43:7",
+          "text": "Key server set with migration support."
+        },
         "fullyImplemented": false,
-        "id": 576,
+        "id": 1481,
         "linearizedBaseContracts": [
-          576
+          1481
         ],
         "name": "KeyServerSetWithMigration",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "anonymous": false,
-            "documentation": "When new server is added to new set.",
-            "id": 456,
+            "documentation": {
+              "id": 1336,
+              "nodeType": "StructuredDocumentation",
+              "src": "1763:40:7",
+              "text": "When new server is added to new set."
+            },
+            "id": 1340,
             "name": "KeyServerAdded",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 455,
+              "id": 1339,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 454,
+                  "id": 1338,
                   "indexed": false,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 456,
-                  "src": "1830:17:2",
+                  "overrides": null,
+                  "scope": 1340,
+                  "src": "1829:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2679,10 +2963,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 453,
+                    "id": 1337,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1830:7:2",
+                    "src": "1829:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2692,28 +2977,34 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1829:19:2"
+              "src": "1828:19:7"
             },
-            "src": "1809:40:2"
+            "src": "1808:40:7"
           },
           {
             "anonymous": false,
-            "documentation": "When existing server is removed from new set.",
-            "id": 460,
+            "documentation": {
+              "id": 1341,
+              "nodeType": "StructuredDocumentation",
+              "src": "1853:49:7",
+              "text": "When existing server is removed from new set."
+            },
+            "id": 1345,
             "name": "KeyServerRemoved",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 459,
+              "id": 1344,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 458,
+                  "id": 1343,
                   "indexed": false,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 460,
-                  "src": "1931:17:2",
+                  "overrides": null,
+                  "scope": 1345,
+                  "src": "1930:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2721,10 +3012,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 457,
+                    "id": 1342,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1931:7:2",
+                    "src": "1930:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2734,66 +3026,82 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1930:19:2"
+              "src": "1929:19:7"
             },
-            "src": "1908:42:2"
+            "src": "1907:42:7"
           },
           {
             "anonymous": false,
-            "documentation": "When migration is started.",
-            "id": 462,
+            "documentation": {
+              "id": 1346,
+              "nodeType": "StructuredDocumentation",
+              "src": "1954:30:7",
+              "text": "When migration is started."
+            },
+            "id": 1348,
             "name": "MigrationStarted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 461,
+              "id": 1347,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2012:2:2"
+              "src": "2011:2:7"
             },
-            "src": "1990:25:2"
+            "src": "1989:25:7"
           },
           {
             "anonymous": false,
-            "documentation": "When migration is completed.",
-            "id": 464,
+            "documentation": {
+              "id": 1349,
+              "nodeType": "StructuredDocumentation",
+              "src": "2019:32:7",
+              "text": "When migration is completed."
+            },
+            "id": 1351,
             "name": "MigrationCompleted",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 463,
+              "id": 1350,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2081:2:2"
+              "src": "2080:2:7"
             },
-            "src": "2057:27:2"
+            "src": "2056:27:7"
           },
           {
             "body": null,
-            "documentation": "Get number of block when current set has been changed last time.",
-            "id": 469,
+            "documentation": {
+              "id": 1352,
+              "nodeType": "StructuredDocumentation",
+              "src": "2089:68:7",
+              "text": "Get number of block when current set has been changed last time."
+            },
+            "functionSelector": "6452e821",
+            "id": 1357,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentLastChange",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 465,
+              "id": 1353,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2192:2:2"
+              "src": "2191:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 468,
+              "id": 1356,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 467,
+                  "id": 1355,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 469,
-                  "src": "2218:7:2",
+                  "overrides": null,
+                  "scope": 1357,
+                  "src": "2217:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2801,10 +3109,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 466,
+                    "id": 1354,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2218:7:2",
+                    "src": "2217:7:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2814,35 +3122,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2217:9:2"
+              "src": "2216:9:7"
             },
-            "scope": 576,
-            "src": "2163:64:2",
+            "scope": 1481,
+            "src": "2162:64:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get index of given key server in current set.",
-            "id": 476,
+            "documentation": {
+              "id": 1358,
+              "nodeType": "StructuredDocumentation",
+              "src": "2231:49:7",
+              "text": "Get index of given key server in current set."
+            },
+            "functionSelector": "287fb40c",
+            "id": 1365,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServerIndex",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 472,
+              "id": 1361,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 471,
+                  "id": 1360,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 476,
-                  "src": "2320:17:2",
+                  "overrides": null,
+                  "scope": 1365,
+                  "src": "2319:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2850,10 +3165,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 470,
+                    "id": 1359,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2320:7:2",
+                    "src": "2319:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -2863,20 +3179,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2319:19:2"
+              "src": "2318:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 475,
+              "id": 1364,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 474,
+                  "id": 1363,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 476,
-                  "src": "2362:5:2",
+                  "overrides": null,
+                  "scope": 1365,
+                  "src": "2361:5:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2884,10 +3200,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 473,
+                    "id": 1362,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2362:5:2",
+                    "src": "2361:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -2897,42 +3213,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2361:7:2"
+              "src": "2360:7:7"
             },
-            "scope": 576,
-            "src": "2286:83:2",
+            "scope": 1481,
+            "src": "2285:83:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get count of key servers in current set.",
-            "id": 481,
+            "documentation": {
+              "id": 1366,
+              "nodeType": "StructuredDocumentation",
+              "src": "2373:44:7",
+              "text": "Get count of key servers in current set."
+            },
+            "functionSelector": "5560c965",
+            "id": 1371,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServersCount",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 477,
+              "id": 1367,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2457:2:2"
+              "src": "2456:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 480,
+              "id": 1370,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 479,
+                  "id": 1369,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 481,
-                  "src": "2483:5:2",
+                  "overrides": null,
+                  "scope": 1371,
+                  "src": "2482:5:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2940,10 +3262,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 478,
+                    "id": 1368,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2483:5:2",
+                    "src": "2482:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -2953,35 +3275,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2482:7:2"
+              "src": "2481:7:7"
             },
-            "scope": 576,
-            "src": "2423:67:2",
+            "scope": 1481,
+            "src": "2422:67:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get address of key server in current set.",
-            "id": 488,
+            "documentation": {
+              "id": 1372,
+              "nodeType": "StructuredDocumentation",
+              "src": "2494:45:7",
+              "text": "Get address of key server in current set."
+            },
+            "functionSelector": "c66198dc",
+            "id": 1379,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServer",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 484,
+              "id": 1375,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 483,
+                  "id": 1374,
                   "name": "index",
                   "nodeType": "VariableDeclaration",
-                  "scope": 488,
-                  "src": "2574:11:2",
+                  "overrides": null,
+                  "scope": 1379,
+                  "src": "2573:11:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2989,10 +3318,10 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 482,
+                    "id": 1373,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2574:5:2",
+                    "src": "2573:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint8",
                       "typeString": "uint8"
@@ -3002,20 +3331,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2573:13:2"
+              "src": "2572:13:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 487,
+              "id": 1378,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 486,
+                  "id": 1377,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 488,
-                  "src": "2610:7:2",
+                  "overrides": null,
+                  "scope": 1379,
+                  "src": "2609:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3023,10 +3352,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 485,
+                    "id": 1376,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2610:7:2",
+                    "src": "2609:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3036,42 +3366,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2609:9:2"
+              "src": "2608:9:7"
             },
-            "scope": 576,
-            "src": "2545:74:2",
+            "scope": 1481,
+            "src": "2544:74:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get all current key servers.",
-            "id": 494,
+            "documentation": {
+              "id": 1380,
+              "nodeType": "StructuredDocumentation",
+              "src": "2624:32:7",
+              "text": "Get all current key servers."
+            },
+            "functionSelector": "5e9f171d",
+            "id": 1386,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServers",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 489,
+              "id": 1381,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2691:2:2"
+              "src": "2690:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 493,
+              "id": 1385,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 492,
+                  "id": 1384,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 494,
-                  "src": "2717:9:2",
+                  "overrides": null,
+                  "scope": 1386,
+                  "src": "2716:16:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3080,19 +3416,20 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 490,
+                      "id": 1382,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "2717:7:2",
+                      "src": "2716:7:7",
+                      "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 491,
+                    "id": 1383,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "2717:9:2",
+                    "src": "2716:9:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -3102,35 +3439,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2716:18:2"
+              "src": "2715:18:7"
             },
-            "scope": 576,
-            "src": "2662:73:2",
+            "scope": 1481,
+            "src": "2661:73:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get current key server public key.",
-            "id": 501,
+            "documentation": {
+              "id": 1387,
+              "nodeType": "StructuredDocumentation",
+              "src": "2739:38:7",
+              "text": "Get current key server public key."
+            },
+            "functionSelector": "75de2a06",
+            "id": 1394,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServerPublic",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 497,
+              "id": 1390,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 496,
+                  "id": 1389,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 501,
-                  "src": "2818:17:2",
+                  "overrides": null,
+                  "scope": 1394,
+                  "src": "2817:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3138,10 +3482,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 495,
+                    "id": 1388,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2818:7:2",
+                    "src": "2817:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3151,20 +3496,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2817:19:2"
+              "src": "2816:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 500,
+              "id": 1393,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 499,
+                  "id": 1392,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 501,
-                  "src": "2860:5:2",
+                  "overrides": null,
+                  "scope": 1394,
+                  "src": "2859:12:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3172,10 +3517,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 498,
+                    "id": 1391,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2860:5:2",
+                    "src": "2859:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -3185,35 +3530,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2859:14:2"
+              "src": "2858:14:7"
             },
-            "scope": 576,
-            "src": "2783:91:2",
+            "scope": 1481,
+            "src": "2782:91:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get current key server address.",
-            "id": 508,
+            "documentation": {
+              "id": 1395,
+              "nodeType": "StructuredDocumentation",
+              "src": "2878:35:7",
+              "text": "Get current key server address."
+            },
+            "functionSelector": "a86560be",
+            "id": 1402,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getCurrentKeyServerAddress",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 504,
+              "id": 1398,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 503,
+                  "id": 1397,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 508,
-                  "src": "2955:17:2",
+                  "overrides": null,
+                  "scope": 1402,
+                  "src": "2954:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3221,10 +3573,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 502,
+                    "id": 1396,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2955:7:2",
+                    "src": "2954:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3234,20 +3587,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2954:19:2"
+              "src": "2953:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 507,
+              "id": 1401,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 506,
+                  "id": 1400,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 508,
-                  "src": "2997:6:2",
+                  "overrides": null,
+                  "scope": 1402,
+                  "src": "2996:13:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3255,10 +3608,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 505,
+                    "id": 1399,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2997:6:2",
+                    "src": "2996:6:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3268,42 +3621,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2996:15:2"
+              "src": "2995:15:7"
             },
-            "scope": 576,
-            "src": "2919:93:2",
+            "scope": 1481,
+            "src": "2918:93:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get all migration key servers.",
-            "id": 514,
+            "documentation": {
+              "id": 1403,
+              "nodeType": "StructuredDocumentation",
+              "src": "3017:34:7",
+              "text": "Get all migration key servers."
+            },
+            "functionSelector": "447f5b18",
+            "id": 1409,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getMigrationKeyServers",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 509,
+              "id": 1404,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3088:2:2"
+              "src": "3087:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 513,
+              "id": 1408,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 512,
+                  "id": 1407,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 514,
-                  "src": "3114:9:2",
+                  "overrides": null,
+                  "scope": 1409,
+                  "src": "3113:16:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3312,19 +3671,20 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 510,
+                      "id": 1405,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "3114:7:2",
+                      "src": "3113:7:7",
+                      "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 511,
+                    "id": 1406,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "3114:9:2",
+                    "src": "3113:9:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -3334,35 +3694,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3113:18:2"
+              "src": "3112:18:7"
             },
-            "scope": 576,
-            "src": "3057:75:2",
+            "scope": 1481,
+            "src": "3056:75:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get migration key server public key.",
-            "id": 521,
+            "documentation": {
+              "id": 1410,
+              "nodeType": "StructuredDocumentation",
+              "src": "3136:40:7",
+              "text": "Get migration key server public key."
+            },
+            "functionSelector": "1455eb9a",
+            "id": 1417,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getMigrationKeyServerPublic",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 517,
+              "id": 1413,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 516,
+                  "id": 1412,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 521,
-                  "src": "3219:17:2",
+                  "overrides": null,
+                  "scope": 1417,
+                  "src": "3218:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3370,10 +3737,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 515,
+                    "id": 1411,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3219:7:2",
+                    "src": "3218:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3383,20 +3751,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3218:19:2"
+              "src": "3217:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 520,
+              "id": 1416,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 519,
+                  "id": 1415,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 521,
-                  "src": "3261:5:2",
+                  "overrides": null,
+                  "scope": 1417,
+                  "src": "3260:12:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3404,10 +3772,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 518,
+                    "id": 1414,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3261:5:2",
+                    "src": "3260:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -3417,35 +3785,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3260:14:2"
+              "src": "3259:14:7"
             },
-            "scope": 576,
-            "src": "3182:93:2",
+            "scope": 1481,
+            "src": "3181:93:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get migration key server address.",
-            "id": 528,
+            "documentation": {
+              "id": 1418,
+              "nodeType": "StructuredDocumentation",
+              "src": "3279:37:7",
+              "text": "Get migration key server address."
+            },
+            "functionSelector": "2ac4ecd8",
+            "id": 1425,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getMigrationKeyServerAddress",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 524,
+              "id": 1421,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 523,
+                  "id": 1420,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 528,
-                  "src": "3360:17:2",
+                  "overrides": null,
+                  "scope": 1425,
+                  "src": "3359:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3453,10 +3828,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 522,
+                    "id": 1419,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3360:7:2",
+                    "src": "3359:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3466,20 +3842,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3359:19:2"
+              "src": "3358:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 527,
+              "id": 1424,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 526,
+                  "id": 1423,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 528,
-                  "src": "3402:6:2",
+                  "overrides": null,
+                  "scope": 1425,
+                  "src": "3401:13:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3487,10 +3863,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 525,
+                    "id": 1422,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3402:6:2",
+                    "src": "3401:6:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3500,42 +3876,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3401:15:2"
+              "src": "3400:15:7"
             },
-            "scope": 576,
-            "src": "3322:95:2",
+            "scope": 1481,
+            "src": "3321:95:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get all new key servers.",
-            "id": 534,
+            "documentation": {
+              "id": 1426,
+              "nodeType": "StructuredDocumentation",
+              "src": "3422:28:7",
+              "text": "Get all new key servers."
+            },
+            "functionSelector": "362b282d",
+            "id": 1432,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getNewKeyServers",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 529,
+              "id": 1427,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3481:2:2"
+              "src": "3480:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 533,
+              "id": 1431,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 532,
+                  "id": 1430,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 534,
-                  "src": "3507:9:2",
+                  "overrides": null,
+                  "scope": 1432,
+                  "src": "3506:16:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3544,19 +3926,20 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 530,
+                      "id": 1428,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "3507:7:2",
+                      "src": "3506:7:7",
+                      "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 531,
+                    "id": 1429,
                     "length": null,
                     "nodeType": "ArrayTypeName",
-                    "src": "3507:9:2",
+                    "src": "3506:9:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -3566,35 +3949,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3506:18:2"
+              "src": "3505:18:7"
             },
-            "scope": 576,
-            "src": "3456:69:2",
+            "scope": 1481,
+            "src": "3455:69:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get new key server public key.",
-            "id": 541,
+            "documentation": {
+              "id": 1433,
+              "nodeType": "StructuredDocumentation",
+              "src": "3529:34:7",
+              "text": "Get new key server public key."
+            },
+            "functionSelector": "ab55cb48",
+            "id": 1440,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getNewKeyServerPublic",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 537,
+              "id": 1436,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 536,
+                  "id": 1435,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 541,
-                  "src": "3600:17:2",
+                  "overrides": null,
+                  "scope": 1440,
+                  "src": "3599:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3602,10 +3992,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 535,
+                    "id": 1434,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3600:7:2",
+                    "src": "3599:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3615,20 +4006,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3599:19:2"
+              "src": "3598:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 540,
+              "id": 1439,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 539,
+                  "id": 1438,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 541,
-                  "src": "3642:5:2",
+                  "overrides": null,
+                  "scope": 1440,
+                  "src": "3641:12:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3636,10 +4027,10 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 538,
+                    "id": 1437,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3642:5:2",
+                    "src": "3641:5:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_storage_ptr",
                       "typeString": "bytes"
@@ -3649,35 +4040,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3641:14:2"
+              "src": "3640:14:7"
             },
-            "scope": 576,
-            "src": "3569:87:2",
+            "scope": 1481,
+            "src": "3568:87:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get new key server address.",
-            "id": 548,
+            "documentation": {
+              "id": 1441,
+              "nodeType": "StructuredDocumentation",
+              "src": "3660:31:7",
+              "text": "Get new key server address."
+            },
+            "functionSelector": "8416e7c2",
+            "id": 1448,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getNewKeyServerAddress",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 544,
+              "id": 1444,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 543,
+                  "id": 1443,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 548,
-                  "src": "3729:17:2",
+                  "overrides": null,
+                  "scope": 1448,
+                  "src": "3728:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3685,10 +4083,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 542,
+                    "id": 1442,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3729:7:2",
+                    "src": "3728:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3698,20 +4097,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3728:19:2"
+              "src": "3727:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 547,
+              "id": 1447,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 546,
+                  "id": 1446,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 548,
-                  "src": "3771:6:2",
+                  "overrides": null,
+                  "scope": 1448,
+                  "src": "3770:13:7",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3719,10 +4118,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 545,
+                    "id": 1445,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3771:6:2",
+                    "src": "3770:6:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -3732,42 +4131,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3770:15:2"
+              "src": "3769:15:7"
             },
-            "scope": 576,
-            "src": "3697:89:2",
+            "scope": 1481,
+            "src": "3696:89:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get migration id.",
-            "id": 553,
+            "documentation": {
+              "id": 1449,
+              "nodeType": "StructuredDocumentation",
+              "src": "3791:21:7",
+              "text": "Get migration id."
+            },
+            "functionSelector": "2b73af52",
+            "id": 1454,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getMigrationId",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 549,
+              "id": 1450,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3841:2:2"
+              "src": "3840:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 552,
+              "id": 1453,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 551,
+                  "id": 1452,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 553,
-                  "src": "3867:7:2",
+                  "overrides": null,
+                  "scope": 1454,
+                  "src": "3866:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3775,10 +4180,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 550,
+                    "id": 1451,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3867:7:2",
+                    "src": "3866:7:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -3788,42 +4193,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3866:9:2"
+              "src": "3865:9:7"
             },
-            "scope": 576,
-            "src": "3818:58:2",
+            "scope": 1481,
+            "src": "3817:58:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Get migration master.",
-            "id": 558,
+            "documentation": {
+              "id": 1455,
+              "nodeType": "StructuredDocumentation",
+              "src": "3880:25:7",
+              "text": "Get migration master."
+            },
+            "functionSelector": "0ec71f82",
+            "id": 1460,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "getMigrationMaster",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 554,
+              "id": 1456,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3938:2:2"
+              "src": "3937:2:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 557,
+              "id": 1459,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 556,
+                  "id": 1458,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 558,
-                  "src": "3964:7:2",
+                  "overrides": null,
+                  "scope": 1460,
+                  "src": "3963:7:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3831,10 +4242,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 555,
+                    "id": 1457,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3964:7:2",
+                    "src": "3963:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3844,35 +4256,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3963:9:2"
+              "src": "3962:9:7"
             },
-            "scope": 576,
-            "src": "3911:62:2",
+            "scope": 1481,
+            "src": "3910:62:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Is migration confirmed by given node?",
-            "id": 565,
+            "documentation": {
+              "id": 1461,
+              "nodeType": "StructuredDocumentation",
+              "src": "3977:41:7",
+              "text": "Is migration confirmed by given node?"
+            },
+            "functionSelector": "529377d0",
+            "id": 1468,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": true,
+            "kind": "function",
             "modifiers": [],
             "name": "isMigrationConfirmed",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 561,
+              "id": 1464,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 560,
+                  "id": 1463,
                   "name": "keyServer",
                   "nodeType": "VariableDeclaration",
-                  "scope": 565,
-                  "src": "4054:17:2",
+                  "overrides": null,
+                  "scope": 1468,
+                  "src": "4053:17:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3880,10 +4299,11 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 559,
+                    "id": 1462,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4054:7:2",
+                    "src": "4053:7:7",
+                    "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -3893,20 +4313,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4053:19:2"
+              "src": "4052:19:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 564,
+              "id": 1467,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 563,
+                  "id": 1466,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 565,
-                  "src": "4096:4:2",
+                  "overrides": null,
+                  "scope": 1468,
+                  "src": "4095:4:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3914,10 +4334,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 562,
+                    "id": 1465,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4096:4:2",
+                    "src": "4095:4:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -3927,35 +4347,42 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4095:6:2"
+              "src": "4094:6:7"
             },
-            "scope": 576,
-            "src": "4024:78:2",
+            "scope": 1481,
+            "src": "4023:78:7",
             "stateMutability": "view",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Start migration.",
-            "id": 570,
+            "documentation": {
+              "id": 1469,
+              "nodeType": "StructuredDocumentation",
+              "src": "4106:20:7",
+              "text": "Start migration."
+            },
+            "functionSelector": "1d7f7673",
+            "id": 1474,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "startMigration",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 568,
+              "id": 1472,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 567,
+                  "id": 1471,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 570,
-                  "src": "4156:10:2",
+                  "overrides": null,
+                  "scope": 1474,
+                  "src": "4155:10:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3963,10 +4390,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 566,
+                    "id": 1470,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4156:7:2",
+                    "src": "4155:7:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -3976,42 +4403,48 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4155:12:2"
+              "src": "4154:12:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 569,
+              "id": 1473,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4176:0:2"
+              "src": "4175:0:7"
             },
-            "scope": 576,
-            "src": "4132:45:2",
+            "scope": 1481,
+            "src": "4131:45:7",
             "stateMutability": "nonpayable",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           },
           {
             "body": null,
-            "documentation": "Confirm migration.",
-            "id": 575,
+            "documentation": {
+              "id": 1475,
+              "nodeType": "StructuredDocumentation",
+              "src": "4181:22:7",
+              "text": "Confirm migration."
+            },
+            "functionSelector": "3a3f7201",
+            "id": 1480,
             "implemented": false,
-            "isConstructor": false,
-            "isDeclaredConst": false,
+            "kind": "function",
             "modifiers": [],
             "name": "confirmMigration",
             "nodeType": "FunctionDefinition",
+            "overrides": null,
             "parameters": {
-              "id": 573,
+              "id": 1478,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 572,
+                  "id": 1477,
                   "name": "id",
                   "nodeType": "VariableDeclaration",
-                  "scope": 575,
-                  "src": "4235:10:2",
+                  "overrides": null,
+                  "scope": 1480,
+                  "src": "4234:10:7",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -4019,10 +4452,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 571,
+                    "id": 1476,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4235:7:2",
+                    "src": "4234:7:7",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -4032,33 +4465,61 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4234:12:2"
+              "src": "4233:12:7"
             },
-            "payable": false,
             "returnParameters": {
-              "id": 574,
+              "id": 1479,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4255:0:2"
+              "src": "4254:0:7"
             },
-            "scope": 576,
-            "src": "4209:47:2",
+            "scope": 1481,
+            "src": "4208:47:7",
             "stateMutability": "nonpayable",
-            "superFunction": null,
+            "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 577,
-        "src": "1722:2536:2"
+        "scope": 1482,
+        "src": "1721:2536:7"
       }
     ],
-    "src": "671:3588:2"
+    "src": "671:3587:7"
   },
   "compiler": {
     "name": "solc",
-    "version": "0.4.25+commit.59dbf8f1.Emscripten.clang"
+    "version": "0.6.5+commit.f956cc89.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "2.0.2",
-  "updatedAt": "2019-01-23T09:53:59.512Z"
+  "schemaVersion": "3.0.23",
+  "updatedAt": "2020-04-08T13:26:55.912Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {
+      "getCurrentKeyServer(uint8)": {
+        "notice": "Get address of key server in current set."
+      },
+      "getCurrentKeyServerAddress(address)": {
+        "notice": "Get current key server address."
+      },
+      "getCurrentKeyServerIndex(address)": {
+        "notice": "Get index of given key server in current set."
+      },
+      "getCurrentKeyServerPublic(address)": {
+        "notice": "Get current key server public key."
+      },
+      "getCurrentKeyServers()": {
+        "notice": "Get all current key servers."
+      },
+      "getCurrentKeyServersCount()": {
+        "notice": "Get count of key servers in current set."
+      },
+      "getCurrentLastChange()": {
+        "notice": "Get number of block when current set has been changed last time."
+      }
+    },
+    "notice": "Simple key server set."
+  }
 }
