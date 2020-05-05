@@ -14,7 +14,7 @@
 //! See the License for the specific language governing permissions and
 //! limitations under the License.
 
-pragma solidity ^0.4.24;
+pragma solidity ^0.6.0;
 
 import "../interfaces/SecretStoreService.sol";
 import "./SecretStoreServiceBase.sol";
@@ -22,7 +22,11 @@ import "./SecretStoreServiceBase.sol";
 
 /// Server Key generation service contract.
 /* solium-disable-next-line */
-contract SecretStoreServerKeyGenerationService is SecretStoreServiceBase, ServerKeyGenerationServiceClientApi, ServerKeyGenerationServiceKeyServerApi {
+contract SecretStoreServerKeyGenerationService is
+    SecretStoreServiceBase,
+    ServerKeyGenerationServiceClientApi,
+    ServerKeyGenerationServiceKeyServerApi
+{
     /// Server key generation request.
     struct ServerKeyGenerationRequest {
         address author;
@@ -32,8 +36,10 @@ contract SecretStoreServerKeyGenerationService is SecretStoreServiceBase, Server
 
     /// When sever key generation request is received.
     event ServerKeyGenerationRequested(bytes32 serverKeyId, address author, uint8 threshold);
+
     /// When server key is generated.
     event ServerKeyGenerated(bytes32 indexed serverKeyId, bytes serverKeyPublic);
+
     /// When error occurs during server key generation.
     event ServerKeyGenerationError(bytes32 indexed serverKeyId);
 
@@ -46,18 +52,24 @@ contract SecretStoreServerKeyGenerationService is SecretStoreServiceBase, Server
     // === Interface methods ===
 
     /// We do not support direct payments.
-    function() public payable {
+    receive() external payable {
         revert("Direct payments are not supported.");
     }
 
     /// Request new server key generation. Generated key will be published via ServerKeyGenerated event when available.
-    function generateServerKey(bytes32 serverKeyId, uint8 threshold) external payable
+    function generateServerKey(bytes32 serverKeyId, uint8 threshold)
+        external
+        payable
+        override
         whenFeePaid(serverKeyGenerationFee)
     {
         // we can't process requests with invalid threshold
         require(threshold + 1 <= keyServersCount(), "Threshold is invalid.");
         // check maximum number of requests
-        require(serverKeyGenerationRequestsKeys.length < maxServerKeyGenerationRequests, "Maximum number of requests reached.");
+        require(
+            serverKeyGenerationRequestsKeys.length < maxServerKeyGenerationRequests,
+            "Maximum number of requests reached."
+        );
 
         ServerKeyGenerationRequest storage request = serverKeyGenerationRequests[serverKeyId];
         require(request.author == address(0), "Request author address cannot be 0x0.");
@@ -71,7 +83,11 @@ contract SecretStoreServerKeyGenerationService is SecretStoreServiceBase, Server
     }
 
     /// Called when generation is reported by key server.
-    function serverKeyGenerated(bytes32 serverKeyId, bytes serverKeyPublic) external validPublic(serverKeyPublic) {
+    function serverKeyGenerated(bytes32 serverKeyId, bytes calldata serverKeyPublic)
+        external
+        override
+        validPublic(serverKeyPublic)
+    {
         // check if request still active
         ServerKeyGenerationRequest storage request = serverKeyGenerationRequests[serverKeyId];
         if (request.author == address(0)) {
@@ -102,7 +118,10 @@ contract SecretStoreServerKeyGenerationService is SecretStoreServiceBase, Server
     }
 
     /// Called when error occurs during server key generation.
-    function serverKeyGenerationError(bytes32 serverKeyId) external {
+    function serverKeyGenerationError(bytes32 serverKeyId)
+        external
+        override
+    {
         // check that it is called by key server
         requireKeyServer(msg.sender);
 
@@ -119,13 +138,23 @@ contract SecretStoreServerKeyGenerationService is SecretStoreServiceBase, Server
     }
 
     /// Get count of pending server key generation requests.
-    function serverKeyGenerationRequestsCount() external view returns (uint256) {
+    function serverKeyGenerationRequestsCount()
+        external
+        view
+        override
+        returns (uint256)
+    {
         return serverKeyGenerationRequestsKeys.length;
     }
 
     /// Get server key generation request with given index.
     /// Returns: (serverKeyId, author, threshold)
-    function getServerKeyGenerationRequest(uint256 index) external view returns (bytes32, address, uint256) {
+    function getServerKeyGenerationRequest(uint256 index)
+        external
+        view
+        override
+        returns (bytes32, address, uint256)
+    {
         bytes32 serverKeyId = serverKeyGenerationRequestsKeys[index];
         ServerKeyGenerationRequest storage request = serverKeyGenerationRequests[serverKeyId];
         return (
@@ -136,7 +165,15 @@ contract SecretStoreServerKeyGenerationService is SecretStoreServiceBase, Server
     }
 
     /// Returs true if response from given keyServer is required.
-    function isServerKeyGenerationResponseRequired(bytes32 serverKeyId, address keyServer) external view returns (bool) {
+    function isServerKeyGenerationResponseRequired(
+        bytes32 serverKeyId,
+        address keyServer
+    )
+        external
+        view
+        override
+        returns (bool)
+    {
         uint8 keyServerIndex = requireKeyServer(keyServer);
         ServerKeyGenerationRequest storage request = serverKeyGenerationRequests[serverKeyId];
         return isResponseRequired(request.responses, keyServerIndex);

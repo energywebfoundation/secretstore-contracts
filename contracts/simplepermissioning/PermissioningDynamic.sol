@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.6.0;
 
 import "../interfaces/ISecretStorePermissioning.sol";
 
@@ -11,11 +11,17 @@ contract PermissioningDynamic is ISecretStorePermissioning {
     event Permission(bytes32 docID);
 
     // Utility function to return users of a key
-    function users(bytes32 document) external view returns (address[] memory) {
+    function users(bytes32 document)
+        external
+        view
+        returns (address[] memory)
+    {
         return permissions[document];
     }
 
-    function addPermission(bytes32 _docID, address[] memory _users) public {
+    function addPermission(bytes32 _docID, address[] memory _users)
+        public
+    {
         // if doc ID is already in use, we do not allow to add/modify
         if (permissions[_docID].length != 0)
             revert("Document key ID is already in use.");
@@ -23,7 +29,12 @@ contract PermissioningDynamic is ISecretStorePermissioning {
         emit Permission(_docID);
     }
 
-    function checkPermissions(address user, bytes32 document) public view returns (bool) {
+    function checkPermissions(address user, bytes32 document)
+        public
+        view
+        override
+        returns (bool)
+    {
         address[] storage addresses = permissions[document];
         for (uint i = 0; i < addresses.length; i++) {
             if (addresses[i] == user)

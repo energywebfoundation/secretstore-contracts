@@ -11,23 +11,19 @@ const expect = require('chai').expect;
 const checker = require(path.join(__dirname, "../../tools/checkpermissions.js"));
 const deployer = require(path.join(__dirname, "../../tools/deploypermission.js"));
 
-const alice = "0x3144de21da6de18061f818836fa3db8f3d6b6989";
-const bob = "0x6c4b8b199a41b721e0a95df9860cf0a18732e76d";
-const charlie = "0x8b2c16e09bfb011c5e4883cedb105124ccf01af7";
-
-
-function checkPermissionsTrue(permissions) {
-    assert.isTrue(permissions[alice]);
-    assert.isTrue(permissions[bob]);
-    assert.isFalse(permissions[charlie]);
-}
 
 let contract;
 let basicInput;
-describe("Permissiong checker", async function() {
-    this.timeout(25000);
+let accounts;
+let alice, bob, charlie;
+describe("Permission checker", async function() {
 
     before(async function() {
+
+        accounts = await require(path.join(__dirname, "../utils.js")).accounts("http://localhost:8545");
+        alice = accounts[0];
+        bob = accounts[1];
+        charlie = accounts[2];
         
         let deployInput = {
             _: [ 'permission' ],
@@ -43,6 +39,7 @@ describe("Permissiong checker", async function() {
             r: 'http://localhost:8545',
             '$0': 'deploy.js',
         };
+
         let instance = await deployer(deployInput);
         contract = instance.options.address;
 
@@ -73,12 +70,16 @@ describe("Permissiong checker", async function() {
             let res = await checker(vargs);
             finalres[ar[i]] = res[ar[i]];
         }
-        checkPermissionsTrue(finalres);
+        assert.isTrue(finalres[alice]);
+        assert.isTrue(finalres[bob]);
+        assert.isFalse(finalres[charlie]);
     });
 
     it('should check permissions correctly batched', async function() {
         let vargs = {...basicInput};
         let res = await checker(vargs);
-        checkPermissionsTrue(res);
+        assert.isTrue(res[alice]);
+        assert.isTrue(res[bob]);
+        assert.isFalse(res[charlie]);
     });
 });

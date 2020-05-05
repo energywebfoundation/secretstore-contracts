@@ -1,4 +1,4 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.6.0;
 
 import "../interfaces/ISecretStorePermissioning.sol";
 
@@ -12,9 +12,14 @@ contract PermissioningStatic is ISecretStorePermissioning {
     address bob = 0x6C4B8B199A41B721e0a95dF9860CF0A18732e76D;
 
     /// Both Alice and Bob can access the specified document
-    function checkPermissions(address user, bytes32 document) public view returns (bool) {
+    function checkPermissions(address user, bytes32 document)
+        public
+        view
+        override
+        returns (bool)
+    {
         if (document == documentKeyId && (user == alice || user == bob) )
             return true;
-        return false; 
+        return false;
     }
 }

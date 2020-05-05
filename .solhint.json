@@ -1,0 +1,10 @@
+{
+    "extends": "solhint:default",
+    "plugins": [],
+    "rules": {
+        "indent": ["error", 4],
+        "bracket-align": "off",
+        "compiler-fixed": "off",
+        "max-line-length": ["error", 120]
+  }
+}

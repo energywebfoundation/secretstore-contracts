@@ -1,7 +1,10 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.6.0;
 
 
-contract IERC165Query {
+interface IERC165Query {
 
-    function doesContractImplementInterface(address _contract, bytes4 _interfaceId) external view returns (bool);
+    function doesContractImplementInterface(address _contract, bytes4 _interfaceId)
+        external
+        view
+        returns (bool);
 }

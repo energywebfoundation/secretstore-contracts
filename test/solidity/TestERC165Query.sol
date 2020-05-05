@@ -1,8 +1,8 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.6.0;
 
 import "truffle/Assert.sol";
 import "truffle/DeployedAddresses.sol";
-import "openzeppelin-solidity/contracts/introspection/IERC165.sol";
+import "@openzeppelin/contracts/introspection/IERC165.sol";
 import "../../contracts/ERC165Query.sol";
 import "../../contracts/PermissioningRegistry.sol";
 
@@ -19,7 +19,7 @@ contract TestERC165Query {
                 bytes4(0x01ffc9a7)
             ),
             expected,
-            "Should return true on a contract that supports ERC-165 standard."
+            "Should return true on a contract that supports ERC-165 standard"
         );
     }
 
@@ -33,7 +33,7 @@ contract TestERC165Query {
                 bytes4(0x01ffc9a7)
             ),
             expected,
-            "Should return false on a contract not supporting the ERC-165 standard."
+            "Should return false on a contract not supporting the ERC-165 standard"
         );
     }
 
@@ -47,7 +47,7 @@ contract TestERC165Query {
                 bytes4(0x0caca9a7)
             ),
             expected,
-            "Should return false on an interface query that is not implemented."
+            "Should return false on an interface query that is not implemented"
         );
     }
 }

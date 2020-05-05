@@ -9,7 +9,6 @@ const web3 = new (require('web3'))("http://127.0.0.1:8545");
 const deployer = require(path.join(__dirname, "../../tools/deployset.js"));
 
 describe("Server set contract", async function() {
-    this.timeout(25000);
 
     const basicInput = {
         _: [ 'deployset' ],
