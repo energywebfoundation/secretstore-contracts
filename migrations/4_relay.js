@@ -1,7 +1,8 @@
-var PermissioningRelay = artifacts.require("./PermissioningRelay.sol");
-var PermissioningRegistry = artifacts.require("./PermissioningRegistry.sol");
-var ERC165Query = artifacts.require("./ERC165Query.sol");
+const PermissioningRelay = artifacts.require("./PermissioningRelay.sol");
+const PermissioningRegistry = artifacts.require("./PermissioningRegistry.sol");
+const ERC165Query = artifacts.require("./ERC165Query.sol");
 
-module.exports = function(deployer) {
-    deployer.deploy(PermissioningRelay, ERC165Query.address, PermissioningRegistry.address);
+
+module.exports = function(deployer, network, accounts) {
+    deployer.deploy(PermissioningRelay, ERC165Query.address, PermissioningRegistry.address, {from: accounts[0]});
 };
