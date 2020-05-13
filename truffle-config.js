@@ -22,13 +22,13 @@ module.exports = {
       network_id: "73799",
       gas: 6000000,
       gasPrice: "2",
-      provider: new HDWalletProvider(privatekeys, "https://volta-rpc.energyweb.org", 0, 2)
+      provider: privatekeys[0] && privatekeys[1] ? new HDWalletProvider(privatekeys, "https://volta-rpc.energyweb.org", 0, 2): undefined
     },
     ewc: {
       network_id: "246",
       gas: 6000000,
       gasPrice: "1000",
-      provider: new HDWalletProvider(privatekeys, "https://rpc.energyweb.org", 0, 2)
+      provider: privatekeys[0] && privatekeys[1] ? new HDWalletProvider(privatekeys, "https://rpc.energyweb.org", 0, 2): undefined
     }
   },
   // Set default mocha options here, use special reporters etc.
